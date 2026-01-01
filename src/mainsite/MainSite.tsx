@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import Gear1 from './assets/Subtract.svg';
-import Gear2 from './assets/Subtract (1).svg';
-import Gear3 from './assets/Subtract (2).svg';
-import Gear4 from './assets/Subtract (3).svg';
-import Gear5 from './assets/Subtract (4).svg';
-import Gear6 from './assets/Subtract (5).svg';
-import Gear7 from './assets/Subtract (6).svg';
+import Gear1 from '../assets/gears/Subtract.svg';
+import Gear2 from '../assets/gears/Subtract (1).svg';
+import Gear3 from '../assets/gears/Subtract (2).svg';
+import Gear4 from '../assets/gears/Subtract (3).svg';
+import Gear5 from '../assets/gears/Subtract (4).svg';
+import Gear6 from '../assets/gears/Subtract (5).svg';
+import Gear7 from '../assets/gears/Subtract (6).svg';
 import GearWithPeople from './assets/GearWithPeople.svg';
 import GearWithBackground from './assets/GearWithBackground.svg';
 import ITPMap from './assets/itp_map.svg';
@@ -16,10 +16,9 @@ import AllInUJ from './assets/sponsors/all_in_uj_logo.svg';
 import GEHealthcareLogo from './assets/sponsors/ge_healthcare_logo.svg';
 import IBMLogo from './assets/sponsors/ibm_logo.svg';
 import SponsorsCarousel from './SponsorsCarousel';
-import GabrielIwaniuk from './assets/organizers/Gabriel_Iwaniuk.svg';
-import NikodemSzafran from './assets/organizers/Nikodem_Szafran.svg';
-import ZofiaPalarz from './assets/organizers/Zofia_Palarz.svg';
-import Footer from '../footer/Footer';
+import GabrielIwaniuk from '../assets/organizers/Gabriel_Iwaniuk.svg';
+import NikodemSzafran from '../assets/organizers/Nikodem_Szafran.svg';
+import ZofiaPalarz from '../assets/organizers/Zofia_Palarz.svg';
 const HeroContainer = styled.section`
     display: flex;
     align-items: center;
@@ -439,7 +438,7 @@ function MainSite() {
             <SponsorsCarousel slides={[WoodwardLogo, AptivLogo, AllInUJ, GEHealthcareLogo, IBMLogo]} />
 
             <OrganizersContainer>
-                <OrganizersTitle>Zaufaj nam też i Ty!</OrganizersTitle>
+                <OrganizersTitle>Zaufaj nam i Ty!</OrganizersTitle>
                 <CardsContainer>
                     <OrganizerCard>
                         <OrganizerImage src={GabrielIwaniuk} alt="Gabriel Iwaniuk" />
@@ -466,7 +465,6 @@ function MainSite() {
                     </OrganizerCard>
                 </CardsContainer>
             </OrganizersContainer>
-            <Footer />
         </>
     );
 }
