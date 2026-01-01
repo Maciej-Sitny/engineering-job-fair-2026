@@ -73,6 +73,8 @@ const MenuLink = styled.a`
 
   &:hover {
     opacity: 0.8;
+    color: #1e1e1e;
+    transform: translateY(-1px);
   }
 `;
 
@@ -113,50 +115,50 @@ const SocialIcon = styled.img`
 `;
 
 const Footer = () => {
-    return (
-        <FooterContainer>
-            <FooterContent>
-                {/* Left Section - Logos */}
-                <LogosSection>
-                    <FooterLogo src={itpLogo} alt="Inżynierskie Targi Pracy" />
-                    <FooterLogo src={bestLogo} alt="BEST AGH Kraków" />
-                </LogosSection>
+  return (
+    <FooterContainer>
+      <FooterContent>
+        {/* Left Section - Logos */}
+        <LogosSection>
+          <FooterLogo src={itpLogo} alt="Inżynierskie Targi Pracy" />
+          <FooterLogo src={bestLogo} alt="BEST AGH Kraków" />
+        </LogosSection>
 
-                {/* Middle Section - Menu */}
-                <MenuSection>
-                    <MenuTitle>Menu</MenuTitle>
-                    <MenuList>
-                        <MenuItem><MenuLink href="#oferty-pracy">Oferty pracy</MenuLink></MenuItem>
-                        <MenuItem><MenuLink href="#o-nas">O nas</MenuLink></MenuItem>
-                        <MenuItem><MenuLink href="#dla-pracodawcow">Dla pracodawców</MenuLink></MenuItem>
-                        <MenuItem><MenuLink href="#kontakt">Kontakt</MenuLink></MenuItem>
-                        <MenuItem><MenuLink href="#baza-cv">Baza CV</MenuLink></MenuItem>
-                        <MenuItem><MenuLink href="#wypozyczalnia">Wypożyczalnia Wyposażeń</MenuLink></MenuItem>
-                        <MenuItem><MenuLink href="#strefa-firm">Strefa firm</MenuLink></MenuItem>
-                    </MenuList>
-                </MenuSection>
+        {/* Middle Section - Menu */}
+        <MenuSection>
+          <MenuTitle>Menu</MenuTitle>
+          <MenuList>
+            <MenuItem><MenuLink href="#oferty-pracy">Oferty pracy</MenuLink></MenuItem>
+            <MenuItem><MenuLink href="#o-nas">O nas</MenuLink></MenuItem>
+            <MenuItem><MenuLink href="#dla-pracodawcow">Dla pracodawców</MenuLink></MenuItem>
+            <MenuItem><MenuLink href="#kontakt">Kontakt</MenuLink></MenuItem>
+            <MenuItem><MenuLink href="#baza-cv">Baza CV</MenuLink></MenuItem>
+            <MenuItem><MenuLink href="#wypozyczalnia">Wypożyczalnia Wyposażeń</MenuLink></MenuItem>
+            <MenuItem><MenuLink href="#strefa-firm">Strefa firm</MenuLink></MenuItem>
+          </MenuList>
+        </MenuSection>
 
-                {/* Right Section - Contact Info */}
-                <ContactSection>
-                    <ContactTitle>Stowarzyszenie studentów<br />BEST AGH Kraków</ContactTitle>
-                    <ContactText>I DS. "Alfa" Blok II</ContactText>
-                    <ContactText>ul. Reymonta 17/3a</ContactText>
-                    <ContactText>30-059 Kraków</ContactText>
-                    <SocialIcons>
-                        <SocialLink href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                            <SocialIcon src={facebookIcon} alt="Facebook" />
-                        </SocialLink>
-                        <SocialLink href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                            <SocialIcon src={instagramIcon} alt="Instagram" />
-                        </SocialLink>
-                        <SocialLink href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                            <SocialIcon src={linkedinIcon} alt="LinkedIn" />
-                        </SocialLink>
-                    </SocialIcons>
-                </ContactSection>
-            </FooterContent>
-        </FooterContainer>
-    );
+        {/* Right Section - Contact Info */}
+        <ContactSection>
+          <ContactTitle>Stowarzyszenie studentów<br />BEST AGH Kraków</ContactTitle>
+          <ContactText>I DS. "Alfa" Blok II</ContactText>
+          <ContactText>ul. Reymonta 17/3a</ContactText>
+          <ContactText>30-059 Kraków</ContactText>
+          <SocialIcons>
+            <SocialLink href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <SocialIcon src={facebookIcon} alt="Facebook" />
+            </SocialLink>
+            <SocialLink href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <SocialIcon src={instagramIcon} alt="Instagram" />
+            </SocialLink>
+            <SocialLink href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <SocialIcon src={linkedinIcon} alt="LinkedIn" />
+            </SocialLink>
+          </SocialIcons>
+        </ContactSection>
+      </FooterContent>
+    </FooterContainer>
+  );
 };
 
 export default Footer;
