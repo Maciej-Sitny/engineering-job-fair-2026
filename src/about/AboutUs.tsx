@@ -17,113 +17,318 @@ import AgnieszkaPyka from '../assets/organizers/Agnieszka_Pyka.svg';
 import MajaKonopka from '../assets/organizers/Maja_Konopka.svg';
 import NikodemWlodarczyk from '../assets/organizers/Nikodem_Wlodarczyk.svg';
 
+/* ==========================================================================
+   ABOUT US - RESPONSIVE STYLES (Mobile-First Approach)
+   
+   Progi responsywności:
+   - Bazowe style: < 480px (bardzo małe telefony)
+   - 481px - 768px: standardowe telefony i małe tablety
+   - 769px - 1024px: tablety / małe laptopy
+   - 1025px+: duże ekrany / desktop
+   ========================================================================== */
+
 const Page = styled.section`
 	max-width: 100%;
-	/* Offset for fixed navbar so content isn't hidden */
-	padding: 120px 4vw 80px;
 	display: flex;
 	background-color: #fff;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	align-items: center;
 	position: relative;
 	overflow: hidden;
+	
+	/* --- BASE: Mobile First --- */
+	padding: 5rem 1rem 3rem;
+
+	/* --- 481px+: Większe telefony --- */
+	@media (min-width: 481px) {
+		padding: 6rem 1.5rem 4rem;
+	}
+
+	/* --- 769px+: Tablety --- */
+	@media (min-width: 769px) {
+		padding: 7rem 2rem 5rem;
+	}
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		padding: 7.5rem 4vw 5rem;
+	}
 `;
 
 const VerticalTitle = styled.h1`
-	transform: rotate(-90deg);
 	font-weight: 500;
 	color: #111;
 	letter-spacing: 2px;
-	font-size: clamp(48px, 12vw, 380px);
 	font-family: 'Alumni Sans', 'Arial Black', sans-serif;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	transform: rotate(180deg);
+	white-space: nowrap;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	align-self: center;
+	
+	/* --- BASE: Mobile (1.5x większy) --- */
+	font-size: clamp(3.75rem, 18vw, 6rem);
+
+	/* --- 481px+: Większe telefony (1.5x większy) --- */
+	@media (min-width: 481px) {
+		font-size: clamp(4.5rem, 15vw, 7.5rem);
+	}
+
+	/* --- 769px+: Tablety (1.5x większy) --- */
+	@media (min-width: 769px) {
+		font-size: clamp(6rem, 12vw, 10.5rem);
+	}
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		font-size: clamp(5rem, 10vw, 12rem);
+	}
 `;
 
 const Description = styled.div`
 	flex: 1;
 	color: #222;
-	font-size: 3vh;
 	line-height: 1.5;
 	max-width: 100%;
 	text-align: justify;
+	overflow-wrap: break-word;
+	word-break: break-word;
+	
+	/* --- BASE: Responsywny font --- */
+	font-size: clamp(1.1rem, 4vw, 1.8rem);
+
+	/* --- 481px+: Większe telefony --- */
+	@media (min-width: 481px) {
+		font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+	}
+
+	/* --- 769px+: Tablety --- */
+	@media (min-width: 769px) {
+		font-size: clamp(1.1rem, 2.5vh, 1.4rem);
+	}
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		font-size: 3vh;
+	}
+`;
+
+const TitleAndDescriptionWrapper = styled.div`
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 0.5rem;
+	width: 100%;
+	max-width: 100%;
+	min-height: 50vh;
+	overflow: hidden;
+	box-sizing: border-box;
+	
+	/* --- BASE: Mobile --- */
+	padding: 0 2.5rem 0 0.5rem;
+	margin-left: 0;
+
+	/* --- 481px+: Większe telefony --- */
+	@media (min-width: 481px) {
+		gap: 1.5rem;
+		min-height: 45vh;
+		margin-left: 5%;
+		padding: 0 3.5rem;
+	}
+
+	/* --- 769px+: Tablety --- */
+	@media (min-width: 769px) {
+		gap: 2rem;
+		min-height: 40vh;
+		margin-left: 8%;
+		padding: 0 5rem;
+	}
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		gap: 2.5rem;
+		min-height: 35vh;
+		margin-left: 10%;
+		padding: 0 6rem;
+	}
 `;
 
 const DescriptionContainer = styled.div`
-	max-width: 40%;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	flex: 1;
+	min-width: 0;
+	
+	/* --- BASE: Mobile --- */
+	max-width: 100%;
+
+	/* --- 769px+: Tablety --- */
+	@media (min-width: 769px) {
+		max-width: 50%;
+	}
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		max-width: 40%;
+	}
 `;
 
 const Content = styled.div`
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	width: 100%;
-	gap: 32px;
 	position: relative;
 	z-index: 1;
+
+	/* --- 769px+: Tablety --- */
+	@media (min-width: 769px) {
+		flex-direction: row;
+		align-items: flex-start;
+	}
 `;
 
-// const Breadcrumbs = styled.nav`
-// 	color: #9a9a9a;
-// 	font-size: 14px;
-// 	margin-bottom: 24px;
-// 	a {
-// 		color: inherit;
-// 		text-decoration: none;
-// 	}
-// `;
-
-// const Paragraph = styled.p`
-// 	color: #222;
-// 	font-size: 16px;
-// 	line-height: 1.8;
-// 	margin: 0 0 14px;
-// `;
-
 const OrganizersContainer = styled.section`
-    padding: 0 60px;
-    background: #fff;
-    text-align: center;
-    font-family: 'Alumni Sans', sans-serif;
-	margin-top: 57vh;
+	background: #fff;
+	text-align: center;
+	font-family: 'Alumni Sans', sans-serif;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	
+	/* --- BASE: Mobile --- */
+	padding: 0 1rem;
+	margin-top: 2rem;
+
+	/* --- 481px+: Większe telefony --- */
+	@media (min-width: 481px) {
+		padding: 0 1.5rem;
+		margin-top: 2rem;
+	}
+
+	/* --- 769px+: Tablety --- */
+	@media (min-width: 769px) {
+		padding: 0 2rem;
+		margin-top: 3rem;
+	}
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		padding: 0 3.75rem;
+		margin-top: 77vh;
+	}
 `;
 
 const CardsContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 320px);
-    gap: 40px;
-    justify-content: center;
-    margin: 0 auto;
+	display: grid;
+	justify-content: center;
+	justify-items: center;
+	margin: 0 auto;
+	
+	/* --- BASE: 1 kolumna na mobile --- */
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	max-width: 18rem;
+	width: 100%;
+
+	/* --- 481px+: Większe karty na większych telefonach --- */
+	@media (min-width: 481px) {
+		max-width: 22rem;
+		gap: 2.5rem;
+	}
+
+	/* --- 769px+: 3 kolumny mniejsze na tabletach --- */
+	@media (min-width: 769px) {
+		grid-template-columns: repeat(3, 160px);
+		gap: 1rem;
+		max-width: none;
+	}
+
+	/* --- 900px+: 3 kolumny trochę większe --- */
+	@media (min-width: 900px) {
+		grid-template-columns: repeat(3, 260px);
+		gap: 1.5rem;
+	}
+
+	/* --- 1200px+: 3 kolumny na desktop --- */
+	@media (min-width: 1200px) {
+		grid-template-columns: repeat(3, 320px);
+		gap: 2.5rem;
+		max-width: none;
+	}
 `;
 
-const OrganizerCard = styled.div<{ isMiddle?: boolean }>`
+const OrganizerCard = styled.div<{ isMiddle?: boolean; organizerId?: string }>`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 320px;
-	transform: ${props => props.isMiddle ? 'translateY(-40px)' : 'translateY(0)'};
+	
+	/* --- BASE: Pełna szerokość na mobile --- */
+	width: 100%;
+	transform: translateY(0);
+	
+	/* Nikodem Szafran pierwszy na mobile */
+	order: ${props => props.organizerId === 'nikodem-szafran' ? -1 : 0};
+
+	/* --- 769px+: Normalna kolejność, mniejsza szerokość --- */
+	@media (min-width: 769px) {
+		order: 0;
+		width: 160px;
+	}
+
+	/* --- 900px+: Trochę większe --- */
+	@media (min-width: 900px) {
+		width: 260px;
+	}
+
+	/* --- 1200px+: Efekt przesunięcia środkowej karty --- */
+	@media (min-width: 1200px) {
+		width: 320px;
+		transform: ${props => props.isMiddle ? 'translateY(-40px)' : 'translateY(0)'};
+	}
 `;
+
 const OrganizerVisual = styled.div`
 	position: relative;
 	width: 100%;
-	height: 60vh;
-	margin-bottom: 24px;
-	border-radius: 32px;
+	margin-bottom: 1rem;
+	border-radius: 1.5rem;
 	overflow: hidden;
 	cursor: pointer;
-	box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+	
+	/* --- BASE: Aspect ratio na mobile --- */
+	aspect-ratio: 3/4;
+	height: auto;
+
+	/* --- 769px+: Większy border-radius --- */
+	@media (min-width: 769px) {
+		margin-bottom: 1.5rem;
+		border-radius: 2rem;
+		box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+	}
+
+	/* --- 1025px+: Stała wysokość na desktop --- */
+	@media (min-width: 1025px) {
+		height: 60vh;
+		aspect-ratio: unset;
+	}
 `;
 
 const OrganizerImage = styled.img<{ $hidden?: boolean }>`
 	width: 100%;
 	height: 100%;
-	border-radius: 32px;
+	border-radius: inherit;
 	object-fit: cover;
 	opacity: ${props => props.$hidden ? '0' : '1'};
 	transition: opacity 0.4s ease-in-out;
@@ -134,8 +339,7 @@ const InfoCard = styled.div`
 	position: absolute;
 	inset: 0;
 	background: #fff;
-	border-radius: 32px;
-	padding: 32px 28px 36px;
+	border-radius: inherit;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -143,6 +347,14 @@ const InfoCard = styled.div`
 	box-shadow: inset 0 0 0 1px #f5f5f5;
 	opacity: 0;
 	animation: fadeIn 0.4s ease-in-out forwards;
+	
+	/* --- BASE: Mniejszy padding na mobile --- */
+	padding: 1.5rem 1.25rem;
+
+	/* --- 769px+: Większy padding --- */
+	@media (min-width: 769px) {
+		padding: 2rem 1.75rem 2.25rem;
+	}
 
 	@keyframes fadeIn {
 		from {
@@ -157,64 +369,123 @@ const InfoCard = styled.div`
 `;
 
 const InfoName = styled.h3`
-	font-size: 28px;
 	font-weight: 600;
-	margin: 0 0 16px 0;
+	margin: 0 0 1rem 0;
 	letter-spacing: 0.4px;
 	color: #1e1e1e;
 	text-align: left;
+	
+	/* --- BASE: Responsywny font --- */
+	font-size: clamp(1.25rem, 4vw, 1.75rem);
 `;
 
 const InfoDescription = styled.p`
 	margin: 0;
 	line-height: 1.3;
-	font-size: 3vh;
 	color: #2a2a2a;
 	text-align: justify;
 	font-weight: 500;
+	
+	/* --- BASE: Responsywny font --- */
+	font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		font-size: 3vh;
+	}
 `;
-const CloseHint = styled.span`
-	position: absolute;
-	top: 14px;
-	right: 18px;
-	font-size: 14px;
-	color: #7a7a7a;
-`;
+
 
 const GearCorner = styled.img<{ $top?: boolean; $right?: boolean }>`
 	position: absolute;
-	width: 64px;
 	opacity: 0.4;
 	${props => props.$top ? 'top: 12px;' : 'bottom: 12px;'}
 	${props => props.$right ? 'right: 12px;' : 'left: 12px;'}
+	
+	/* --- BASE: Mniejsze zębatki na mobile --- */
+	width: 2.5rem;
+
+	/* --- 769px+: Większe na tabletach --- */
+	@media (min-width: 769px) {
+		width: 4rem;
+	}
 `;
 
-const OrganizerName = styled.h3`
-    font-size: 5.5vh;
-    font-weight: 500;
-    color: #1e1e1e;
-    margin: 0 0 1px 0;
-    letter-spacing: 0.5px;
+const OrganizerName = styled.h3<{ $smaller?: boolean }>`
+	font-weight: 500;
+	color: #1e1e1e;
+	margin: 0 0 1px 0;
+	letter-spacing: 0.5px;
+	
+	/* --- BASE: Responsywny font --- */
+	font-size: clamp(1.75rem, 7vw, 2.5rem);
+
+	/* --- 769px+: Tablety (mniejsze) --- */
+	@media (min-width: 769px) {
+		font-size: clamp(1.1rem, 5vh, 2rem);
+	}
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		font-size: ${props => props.$smaller ? '5.25vh' : '5.5vh'};
+	}
 `;
 
 const OrganizerRole = styled.p`
-    font-size: 3.6vh;
-    font-weight: 500;
-    color: #f78f27;
-    margin: 0 0 0px 0;
-    letter-spacing: 0.5px;
+	font-weight: 500;
+	color: #f78f27;
+	margin: 0 0 0px 0;
+	letter-spacing: 0.5px;
+	
+	/* --- BASE: Responsywny font --- */
+	font-size: clamp(1.25rem, 5vw, 1.75rem);
+
+	/* --- 769px+: Tablety (mniejsze) --- */
+	@media (min-width: 769px) {
+		font-size: clamp(0.85rem, 3vh, 1.2rem);
+	}
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		font-size: 3.6vh;
+	}
 `;
 
 const OrganizerPhone = styled.p`
-    font-size: 3.6vh;
-    color: #1e1e1e;
-    margin: 0 0 0px 0;
+	color: #1e1e1e;
+	margin: 0 0 0px 0;
+	
+	/* --- BASE: Responsywny font --- */
+	font-size: clamp(1.25rem, 5vw, 1.75rem);
+
+	/* --- 769px+: Tablety (mniejsze) --- */
+	@media (min-width: 769px) {
+		font-size: clamp(0.85rem, 3vh, 1.2rem);
+	}
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		font-size: 3.6vh;
+	}
 `;
 
 const OrganizerEmail = styled.p`
-    font-size: 3.6vh;
-    color: #1e1e1e;
-    margin: 0;
+	color: #1e1e1e;
+	margin: 0;
+	word-break: break-word;
+	
+	/* --- BASE: Responsywny font --- */
+	font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+
+	/* --- 769px+: Tablety (mniejsze) --- */
+	@media (min-width: 769px) {
+		font-size: clamp(0.75rem, 3vh, 1.1rem);
+	}
+
+	/* --- 1025px+: Desktop --- */
+	@media (min-width: 1025px) {
+		font-size: 3.6vh;
+	}
 `;
 
 const GearWrapper = styled.div<{
@@ -222,24 +493,41 @@ const GearWrapper = styled.div<{
 	top: number;
 	left: number;
 	reverse?: boolean;
-}>
-	`
+}>`
 	position: absolute;
-	width: ${props => props.size}vw;
-	height: ${props => props.size}vw;
-	top: ${props => props.top}%;
-	left: ${props => props.left}%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	opacity: 0.85;
 	pointer-events: none;
 	transform: rotate(0deg);
 	transition: transform 0.2s ease-out;
 	z-index: 0;
+	
+	/* --- BASE: Ukryte na mobile --- */
+	display: none;
+	opacity: 0;
 
-	&:hover {
-		transform: ${props => (props.reverse ? 'rotate(-12deg)' : 'rotate(12deg)')};
+	/* --- 769px+: Widoczne, ale mniejsze na tabletach --- */
+	@media (min-width: 769px) {
+		display: flex;
+		opacity: 0.6;
+		width: ${props => props.size * 0.5}vw;
+		height: ${props => props.size * 0.5}vw;
+		top: ${props => props.top}%;
+		left: ${props => props.left}%;
+	}
+
+	/* --- 1025px+: Pełny rozmiar na desktop --- */
+	@media (min-width: 1025px) {
+		opacity: 0.85;
+		width: ${props => props.size}vw;
+		height: ${props => props.size}vw;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			transform: ${props => (props.reverse ? 'rotate(-12deg)' : 'rotate(12deg)')};
+		}
 	}
 
 	img {
@@ -376,23 +664,25 @@ const AboutUs = () => {
 				<img src={Gear3} alt="Dekoracyjna zębatka" />
 			</GearWrapper>
 			<Content>
-				<VerticalTitle>O nas</VerticalTitle>
-				{/* <Breadcrumbs aria-label="breadcrumb">
-						<a href="#">Strona główna</a> &nbsp;&gt;&nbsp; <span>O nas</span>
-					</Breadcrumbs> */}
-				<DescriptionContainer>
-					<Description>
-						Jesteśmy studentami z BEST AGH Kraków – organizacji, która od lat tworzy Inżynierskie Targi Pracy. Łączymy świat studentów z Firmami, pomagając młodym inżynierom stawiać pierwsze kroki w karierze. <br />
-						Działamy z pasji i całkowicie non-profit. Każda edycja to efekt pracy zespołu studentów, którzy chcą rozwijać siebie i innych. Jako część międzynarodowej organizacji BEST, wierzymy, że współpraca i energia młodych ludzi mogą zmieniać rzeczywistość.
-					</Description>
-				</DescriptionContainer>
+				<TitleAndDescriptionWrapper>
+					<VerticalTitle>O nas</VerticalTitle>
+					{/* <Breadcrumbs aria-label="breadcrumb">
+							<a href="#">Strona główna</a> &nbsp;&gt;&nbsp; <span>O nas</span>
+						</Breadcrumbs> */}
+					<DescriptionContainer>
+						<Description>
+							Jesteśmy studentami z BEST AGH Kraków – organizacji, która od lat tworzy Inżynierskie Targi Pracy. Łączymy świat studentów z Firmami, pomagając młodym inżynierom stawiać pierwsze kroki w karierze. <br />
+							Działamy z pasji i całkowicie non-profit. Każda edycja to efekt pracy zespołu studentów, którzy chcą rozwijać siebie i innych. Jako część międzynarodowej organizacji BEST, wierzymy, że współpraca i energia młodych ludzi mogą zmieniać rzeczywistość.
+						</Description>
+					</DescriptionContainer>
+				</TitleAndDescriptionWrapper>
 				<OrganizersContainer>
 					<CardsContainer>
-						{organizers.map((organizer, index) => {
+						{organizers.map((organizer) => {
 							const isOpen = openCardId === organizer.id;
 
 							return (
-								<OrganizerCard key={organizer.id}>
+								<OrganizerCard key={organizer.id} organizerId={organizer.id}>
 									<OrganizerVisual
 										onClick={() => handleToggleCard(organizer.id)}
 										onKeyDown={event => {
@@ -419,7 +709,7 @@ const AboutUs = () => {
 											</InfoCard>
 										)}
 									</OrganizerVisual>
-									<OrganizerName>{organizer.name}</OrganizerName>
+									<OrganizerName $smaller={organizer.id === 'nikodem-wlodarczyk'}>{organizer.name}</OrganizerName>
 									<OrganizerRole>{organizer.role}</OrganizerRole>
 									<OrganizerPhone>{organizer.phone}</OrganizerPhone>
 									<OrganizerEmail>{organizer.email}</OrganizerEmail>

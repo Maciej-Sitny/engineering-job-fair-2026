@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Gear1 from '../assets/gears/Subtract.svg';
 import Gear2 from '../assets/gears/Subtract (1).svg';
@@ -9,7 +9,7 @@ import Gear6 from '../assets/gears/Subtract (5).svg';
 import Gear7 from '../assets/gears/Subtract (6).svg';
 import GearWithPeople from './assets/GearWithPeople.svg';
 import GearWithBackground from './assets/GearWithBackground.svg';
-import ITPMap from './assets/itp_map.svg';
+import ITPMap from './assets/mapa_targow.svg';
 import WoodwardLogo from './assets/sponsors/woodward_logo.svg';
 import AptivLogo from './assets/sponsors/aptiv_logo.svg';
 import AllInUJ from './assets/sponsors/all_in_uj_logo.svg';
@@ -23,137 +23,413 @@ const HeroContainer = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
-    padding: 80px 60px 30px;
     background: #fff;
     position: relative;
     overflow: hidden;
     font-family: 'Alumni Sans', sans-serif;
     width: 100%;
     box-sizing: border-box;
+    
+    /* --- BASE: Mobile First --- */
+    flex-direction: row;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        padding: 3rem 1.5rem;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        padding: 5rem 2rem 2rem;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 150px 60px 30px;
+        min-height: 100vh;
+    }
 `;
 
 const HeroContent = styled.div`
     flex: 0;
     width: auto;
     z-index: 2;
-    padding-left: 40px;
+    
+    /* --- BASE: Mobile First --- */
+    padding-left: 10px;
+    text-align: left;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        padding-left: 20px;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding-left: 40px;
+    }
 `;
 
 const HeroTitle = styled.h1`
-    font-size: 170px;
     font-weight: 500;
     line-height: 0.8;
     color: #1e1e1e;
     margin: 0 0 20px 0;
     letter-spacing: -0.5px;
     font-family: 'Alumni Sans', sans-serif;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(3rem, 15vw, 5rem);
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        font-size: clamp(4rem, 12vw, 6rem);
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(5rem, 10vw, 8rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 170px;
+    }
 `;
 
 const OrganizersContainer = styled.section`
-    padding: 80px 60px;
     background: #fff;
     text-align: center;
     font-family: 'Alumni Sans', sans-serif;
+    
+    /* --- BASE: Mobile First --- */
+    padding: 3rem 1rem;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        padding: 4rem 1.5rem;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        padding: 5rem 2rem;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 80px 60px;
+    }
 `;
 
 const OrganizersTitle = styled.h2`
-    font-size: 38px;
     font-weight: 500;
     color: #1e1e1e;
     margin: 0 0 60px 0;
     letter-spacing: 0.5px;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 2rem;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+        margin-bottom: 3rem;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 38px;
+        margin-bottom: 60px;
+    }
 `;
 
 const CardsContainer = styled.div`
-    display: flex;
+    display: grid;
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    max-width: 1400px;
+    justify-items: center;
     margin: 0 auto;
+    
+    /* --- BASE: Mobile First --- */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 18rem;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        max-width: 20rem;
+        gap: 2.5rem;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        grid-template-columns: repeat(3, 160px);
+        gap: 1rem;
+        max-width: none;
+    }
+    
+    /* --- 900px+: Trochę większe --- */
+    @media (min-width: 900px) {
+        grid-template-columns: repeat(3, 200px);
+        gap: 1.5rem;
+    }
+    
+    /* --- 1200px+: Desktop --- */
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(3, 320px);
+        gap: 40px;
+        max-width: 1400px;
+    }
 `;
 
 const OrganizerCard = styled.div<{ isMiddle?: boolean }>`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 320px;
-    transform: ${props => props.isMiddle ? 'translateY(-40px)' : 'translateY(0)'};
     transition: transform 0.3s ease;
+    
+    /* --- BASE: Mobile First --- */
+    width: 100%;
+    transform: translateY(0);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        width: 160px;
+    }
+    
+    /* --- 900px+: Trochę większe --- */
+    @media (min-width: 900px) {
+        width: 200px;
+    }
+    
+    /* --- 1200px+: Desktop --- */
+    @media (min-width: 1200px) {
+        width: 320px;
+        transform: ${props => props.isMiddle ? 'translateY(-40px)' : 'translateY(0)'};
+    }
 
-    &:hover {
-        transform: ${props => props.isMiddle ? 'translateY(-60px)' : 'translateY(-20px)'};
+    @media (hover: hover) {
+        &:hover {
+            transform: ${props => props.isMiddle ? 'translateY(-60px)' : 'translateY(-20px)'};
+        }
     }
 `;
 
 const OrganizerImage = styled.img`
     width: 100%;
-    height: 60vh;
-    border-radius: 32px;
+    border-radius: 1.5rem;
     object-fit: cover;
-    margin-bottom: 24px;
+    
+    /* --- BASE: Mobile First --- */
+    aspect-ratio: 3/4;
+    height: auto;
+    margin-bottom: 1rem;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        border-radius: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        height: 60vh;
+        aspect-ratio: unset;
+        border-radius: 32px;
+        margin-bottom: 24px;
+    }
 `;
 
 const OrganizerName = styled.h3`
-    font-size: 5.5vh;
     font-weight: 500;
     color: #1e1e1e;
     margin: 0 0 1px 0;
     letter-spacing: 0.5px;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.1rem, 2.5vh, 1.5rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 5.5vh;
+    }
 `;
 
 const OrganizerRole = styled.p`
-    font-size: 3.6vh;
     font-weight: 500;
     color: #f78f27;
     margin: 0 0 0px 0;
     letter-spacing: 0.5px;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.85rem, 1.8vh, 1.2rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 3.6vh;
+    }
 `;
 
 const OrganizerPhone = styled.p`
-    font-size: 3.6vh;
     color: #1e1e1e;
     margin: 0 0 0px 0;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.85rem, 1.8vh, 1.2rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 3.6vh;
+    }
 `;
 
 const OrganizerEmail = styled.p`
-    font-size: 3.6vh;
     color: #1e1e1e;
     margin: 0;
+    word-break: break-word;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.75rem, 1.6vh, 1.1rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 3.6vh;
+    }
 `;
 
 const HeroSubtitle = styled.p`
-    font-size: 40px;
     font-weight: 500;
     color: #f78f27;
     margin: 0;
     letter-spacing: 0.5px;
     font-family: 'Alumni Sans', sans-serif;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 40px;
+    }
 `;
 
 const HeroSubtitleHour = styled.p`
-    font-size: 40px;
     font-weight: 500;
     color: #1e1e1e;
     margin: 0;
     letter-spacing: 0.5px;
     font-family: 'Alumni Sans', sans-serif;
-`
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 40px;
+    }
+`;
 
 const SubtitleContainer = styled.div`
     display: flex;
-    gap: 24px;
+    
+    /* --- BASE: Mobile First --- */
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        gap: 1rem;
+        justify-content: flex-start;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        gap: 24px;
+    }
 `;
 
 const HeroRightSection = styled.div`
-flex: 1.5;
-display: flex;
-align - items: center;
-justify - content: center;
-position: relative;
-height: 600px;
-width: 100 %;
+    flex: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    
+    /* --- BASE: Mobile First --- */
+    height: 250px;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        height: 300px;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        height: 400px;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        height: 600px;
+    }
+`;
+
+const MobileGearsContainer = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+    
+    /* Ukryte - gears są teraz w HeroRightSection */
+    display: none;
 `;
 
 const GearWrapper = styled.div<{
@@ -163,56 +439,293 @@ const GearWrapper = styled.div<{
     delay?: number;
     reverse?: boolean;
 }>`
-position: absolute;
-width: ${props => props.size}vw;
-height: ${props => props.size}vw;
-top: ${props => props.top}%;
-left: ${props => props.left}%;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: transform 0.1s ease-out;
+    position: absolute;
+    left: ${props => props.left}%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease-out;
     
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
+    /* --- BASE: Mobile First --- */
+    width: ${props => props.size * 0.85}vw;
+    height: ${props => props.size * 0.85}vw;
+    top: calc(50% + ${props => (props.top - 50) * 0.55}%);
+    left: ${props => props.left * 1.05}%;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        width: ${props => props.size * 0.75}vw;
+        height: ${props => props.size * 0.75}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.5}%);
+        left: ${props => props.left * 0.9}%;
+    }
+
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 600px) {
+        width: ${props => props.size * 0.75}vw;
+        height: ${props => props.size * 0.75}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.6}%);
+        left: ${props => props.left * 0.9}%;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        width: ${props => props.size * 0.9}vw;
+        height: ${props => props.size * 0.9}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.70}%);
+        left: ${props => props.left * 0.9}%;
+    }
+    
+    /* --- 1025px+: 50% rozmiaru --- */
+    @media (min-width: 1025px) {
+        display: flex;
+        width: ${props => props.size * 0.7}vw;
+        height: ${props => props.size * 0.7}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.55}%);
+        left: ${props => props.left * 0.95}%;
+    }
+    
+    /* --- 1200px+: 65% rozmiaru --- */
+    @media (min-width: 1200px) {
+        width: ${props => props.size * 0.85}vw;
+        height: ${props => props.size * 0.85}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.70}%);
+        left: ${props => props.left * 0.9}%;
+    }
+    
+    /* --- 1400px+: 80% rozmiaru --- */
+    @media (min-width: 1400px) {
+        width: ${props => props.size * 0.85}vw;
+        height: ${props => props.size * 0.85}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.8}%);
+        left: ${props => props.left * 0.9}%;
+    }
+    
+    /* --- 1600px+: Pełny rozmiar --- */
+    @media (min-width: 1600px) {
+        width: ${props => props.size}vw;
+        height: ${props => props.size}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.98}%);
+        left: ${props => props.left * 0.9}%;
+    }
+        
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+`;
+
+const WhoGearWrapper = styled.div<{
+    size: number;
+    top: number;
+    left: number;
+    delay?: number;
+    reverse?: boolean;
+}>`
+    position: absolute;
+    left: ${props => props.left}%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease-out;
+    
+    /* --- BASE: Mobile First --- */
+    width: ${props => props.size * 1.2}vw;
+    height: ${props => props.size * 1.2}vw;
+    top: calc(50% + ${props => (props.top - 50) * 1.2}%);
+    left: ${props => props.left * 0.82}%;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        width: ${props => props.size * 1}vw;
+        height: ${props => props.size * 1}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.8}%);
+        left: ${props => props.left * 0.85}%;
+    }
+
+    /* --- 600px+: Większe telefony --- */
+    @media (min-width: 600px) {
+        width: ${props => props.size * 0.93}vw;
+        height: ${props => props.size * 0.93}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.9}%);
+        left: ${props => props.left * 0.8}%;
+    }
+    
+ /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        width: ${props => props.size * 0.9}vw;
+        height: ${props => props.size * 0.9}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.7}%);
+        left: ${props => props.left * 0.8}%;
+    }
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 900px) {
+        width: ${props => props.size * 0.9}vw;
+        height: ${props => props.size * 0.9}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.83}%);
+        left: ${props => props.left * 0.85}%;
+    }
+    
+    /* --- 1025px+: 50% rozmiaru --- */
+    @media (min-width: 1025px) {
+        display: flex;
+        width: ${props => props.size * 0.8}vw;
+        height: ${props => props.size * 0.8}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.55}%);
+        left: ${props => props.left * 0.95}%;
+    }
+    
+    /* --- 1200px+: 65% rozmiaru --- */
+    @media (min-width: 1200px) {
+        width: ${props => props.size * 0.85}vw;
+        height: ${props => props.size * 0.85}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.65}%);
+        left: ${props => props.left * 0.9}%;
+    }
+    
+    /* --- 1400px+: 80% rozmiaru --- */
+    @media (min-width: 1400px) {
+        width: ${props => props.size * 0.85}vw;
+        height: ${props => props.size * 0.85}vw;
+        top: calc(50% + ${props => (props.top - 50) * 0.75}%);
+        left: ${props => props.left * 0.9}%;
+    }
+    
+    /* --- 1600px+: Pełny rozmiar --- */
+    @media (min-width: 1600px) {
+        width: ${props => props.size}vw;
+        height: ${props => props.size}vw;
+        top: calc(50% + ${props => (props.top - 50) * 1.1}%);
+        left: ${props => props.left * 0.9}%;
+    }
+        
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+`;
+
+const MobileGearWrapper = styled.div<{
+    size: number;
+    top: number;
+    left: number;
+}>`
+    position: absolute;
+    width: ${props => props.size}vw;
+    height: ${props => props.size}vw;
+    top: ${props => props.top}%;
+    left: ${props => props.left}%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+        
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 `;
 
 const LocationText = styled.p`
-position: absolute;
-bottom: 0px;
-right: 40px;
-font-size: 40px;
-font-weight: 500;
-span-lettering: 0.9px;
-color: #1e1e1e;
-text-align: right;
-margin: 0;
-line-height: 0.7;
-font-family: 'Alumni Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    color: #1e1e1e;
+    margin: 0;
+    font-family: 'Alumni Sans', sans-serif;
+    position: absolute;
+    text-align: right;
+    line-height: 0.7;
+    right: 10px;
+    bottom: 0px;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(0.7rem, 4.5vw, 2rem);
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+        right: 15px;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        right: 20px;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 40px;
+        right: 40px;
+    }
+`;
+
+const MobileLocationText = styled.div`
+    text-align: center;
+    margin-top: 2rem;
+    
+    /* Ukryte - LocationText jest teraz w widocznym HeroRightSection */
+    display: none;
 `;
 
 const AddressText = styled.p`
-    font-size: 30px;
     font-weight: 400;
     letter-spacing: 0.5px;
     color: #1e1e1e;
     margin: 8px 0 0 0;
     font-family: 'Alumni Sans', sans-serif;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(0.55rem, 3vw, 1.5rem);
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        font-size: clamp(0.7rem, 2vw, 1rem);
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.25rem, 2vw, 1.75rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 30px;
+    }
 `;
 
 const WhoContainer = styled.section`
-    padding: 80px 13vw;
     position: relative;
     overflow: hidden;
     background: #fff;
     display: flex;
+    text-align: justify;
+    
+    /* --- BASE: Mobile First --- */
+    flex-direction: row;
+    padding: 4rem 1.5rem 3rem;
     align-items: center;
     justify-content: space-between;
-    text-align: justify;
-`
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        padding: 5rem 2rem 4rem;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        padding: 8rem 5vw 6rem;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 200px 13vw 160px;
+    }
+`;
 
 const DecorativeGear = styled.img<{
     size: number;
@@ -220,11 +733,57 @@ const DecorativeGear = styled.img<{
     left: number;
 }>`
     position: absolute;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
     top: ${props => props.top}px;
     left: ${props => props.left}px;
-    opacity: 1;
+    
+    /* --- BASE: Ukryte poniżej 1025px --- */
+    display: none;
+    
+    /* --- 1025px+: 50% rozmiaru --- */
+    @media (min-width: 1025px) {
+        display: block;
+        opacity: 0.7;
+        width: ${props => props.size * 0.5}px;
+        height: ${props => props.size * 0.5}px;
+    }
+    
+    /* --- 1200px+: 65% rozmiaru --- */
+    @media (min-width: 1200px) {
+        opacity: 0.8;
+        width: ${props => props.size * 0.65}px;
+        height: ${props => props.size * 0.65}px;
+    }
+    
+    /* --- 1400px+: 80% rozmiaru --- */
+    @media (min-width: 1400px) {
+        opacity: 0.9;
+        width: ${props => props.size * 0.8}px;
+        height: ${props => props.size * 0.8}px;
+    }
+    
+    /* --- 1600px+: Pełny rozmiar --- */
+    @media (min-width: 1600px) {
+        opacity: 1;
+        width: ${props => props.size}px;
+        height: ${props => props.size}px;
+    }
+`;
+
+const MobileDecorativeGear = styled.img<{
+    size: number;
+    top: number;
+    left: number;
+}>`
+    position: absolute;
+    width: ${props => props.size}vw;
+    height: ${props => props.size}vw;
+    top: ${props => props.top}%;
+    left: ${props => props.left}%;
+    opacity: 0.12;
+    pointer-events: none;
+    
+    /* Ukryte - WhoRightSection jest teraz widoczny */
+    display: none;
 `;
 
 const WhoLeftSection = styled.div`
@@ -232,30 +791,88 @@ const WhoLeftSection = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: left;
+    
+    /* --- BASE: Mobile First --- */
+    width: 100%;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        width: auto;
+    }
 `;
 
 const WhoTitle = styled.h2`
-    font-size: 64px;
     font-weight: 500;
     color: #1e1e1e;
-    margin: 0 0 20px 0;
     font-family: 'Alumni Sans', sans-serif;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin: 0 0 0.75rem 0;
+    text-align: left;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        margin: 0 0 1.5rem 0;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 64px;
+        margin: 0 0 20px 0;
+    }
 `;
 
 const WhoContent = styled.p`
-    font-size: 20px;
     font-weight: 400;
     color: #1e1e1e;
     margin: 0;
     line-height: 1.3;
     font-family: 'Alumni Sans', sans-serif;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 20px;
+    }
 `;
 
 const WhoRightSection = styled.div`
     flex: 1;
     position: relative;
-    height: 600px;
-`
+    
+    /* --- BASE: Mobile First --- */
+    display: block;
+    height: 200px;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        height: 280px;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        height: 400px;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        height: 600px;
+    }
+`;
 
 
 const CounterContainer = styled.div`
@@ -263,71 +880,182 @@ const CounterContainer = styled.div`
     align-items: center;
     justify-content: center;
     background: #fff;
-    gap: 15vw;
-`
+    
+    /* --- BASE: Mobile First --- */
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 1rem;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        gap: 2.5rem;
+        padding: 4rem 1.5rem;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        flex-direction: row;
+        gap: 8vw;
+        padding: 5rem 2rem;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        gap: 15vw;
+        padding-top: 80px;
+    }
+`;
+
 const CounterSubContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:0px;
+    gap: 0px;
 `;
 
 const CounterNumber = styled.h3`
-    font-size: 80px;
     font-weight: 500;
     color: #f78f27;
     margin: 0;
     font-family: 'Alumni Sans', sans-serif;
-    padding:0;
-    `;
+    padding: 0;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(3rem, 15vw, 5rem);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(3.5rem, 8vw, 5rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 80px;
+    }
+`;
 
 const CounterLabel = styled.p`
-    font-size:35px;
     font-weight: 500;
     color: #1e1e1e;
     margin: 0;
     font-family: 'Alumni Sans', sans-serif;
-    padding:0;
+    padding: 0;
+    text-align: center;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.25rem, 3vw, 2rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 35px;
+    }
 `;
 
 const MapContainer = styled.section`
-    padding: 30vh 0;
     width: 100%;
-    height: 600px;
     background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0 60px;
+    /* --- BASE: Mobile First --- */
+    padding: 0 10% 3rem 5%;
+    min-height: auto;
+    width: 90%;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        padding: 0 0 5rem 1.5rem;
+        width: 95%;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        padding: 0 5% 10vh 5%;
+        height: 500px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 0 5% 20vh 5%;
+        height: 480px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 `;
+
 const MapTitle = styled.h1`
-    font-size: 64px;
     font-weight: 500;
     color: #1e1e1e;
-    margin: 0 0 20px 0;
+    margin: 30px 0 0 0;
+    text-align: center;
     font-family: 'Alumni Sans', sans-serif;
-`;
-
-const MapImage = styled.img`
-    width: 80%;
-    height: 100%;
-
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(2rem, 8vw, 3rem);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 64px;
+    }
 `;
 
 const CarouselTitle = styled.h3`
-    font-size: 38px;
     font-weight: 500;
     color: #1e1e1e;
-    margin:0;
+    margin: 0;
     font-family: 'Alumni Sans', sans-serif;
     text-align: center;
     background: #fff;
-
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    padding: 0 1rem;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        padding: 0;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 38px;
+    }
 `;
 
 function MainSite() {
     const gearRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [counter1, setCounter1] = useState(0);
+    const [counter2, setCounter2] = useState(0);
+    const [counter3, setCounter3] = useState(0);
+    const [hasAnimated, setHasAnimated] = useState(false);
+    const counterRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -347,34 +1075,126 @@ function MainSite() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        setHasAnimated(true);
+                        animateCounter(setCounter1, 30, 2000);
+                        animateCounter(setCounter2, 200, 2000);
+                        animateCounter(setCounter3, 60, 2000);
+
+                        if (counterRef.current) {
+                            observer.unobserve(counterRef.current);
+                        }
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        if (counterRef.current && !hasAnimated) {
+            observer.observe(counterRef.current);
+        }
+
+        return () => {
+            if (counterRef.current) {
+                observer.unobserve(counterRef.current);
+            }
+        };
+    }, [hasAnimated]);
+
+    const animateCounter = (setter: (value: number) => void, target: number, duration: number) => {
+        const startTime = Date.now();
+        const animate = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeOutQuad = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(easeOutQuad * target);
+            setter(current);
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                setter(target);
+            }
+        };
+        requestAnimationFrame(animate);
+    };
+
+    useEffect(() => {
+        const hash = window.location.hash;
+        if (hash) {
+            const id = hash.substring(1);
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
+    }, []);
+
     return (
         <>
             <HeroContainer>
+                <MobileGearsContainer>
+                    <MobileGearWrapper size={35} top={5} left={50}>
+                        <img src={Gear1} alt="gear" />
+                    </MobileGearWrapper>
+                    <MobileGearWrapper size={22} top={35} left={70}>
+                        <img src={Gear4} alt="gear" />
+                    </MobileGearWrapper>
+                    <MobileGearWrapper size={18} top={20} left={-5}>
+                        <img src={Gear3} alt="gear" />
+                    </MobileGearWrapper>
+                    <MobileGearWrapper size={12} top={55} left={5}>
+                        <img src={Gear2} alt="gear" />
+                    </MobileGearWrapper>
+                    <MobileGearWrapper size={14} top={60} left={80}>
+                        <img src={Gear5} alt="gear" />
+                    </MobileGearWrapper>
+                    <MobileGearWrapper size={10} top={75} left={25}>
+                        <img src={Gear6} alt="gear" />
+                    </MobileGearWrapper>
+                    <MobileGearWrapper size={8} top={80} left={60}>
+                        <img src={Gear7} alt="gear" />
+                    </MobileGearWrapper>
+                </MobileGearsContainer>
+
                 <HeroContent>
                     <HeroTitle>Inżynierskie<br />Targi Pracy</HeroTitle>
                     <SubtitleContainer><HeroSubtitle>11 MARCA 2026</HeroSubtitle><HeroSubtitleHour> 10:00-16:00</HeroSubtitleHour></SubtitleContainer>
                 </HeroContent>
 
+                <MobileLocationText>
+                    <LocationText>
+                        Stadion Miejski im. Henryka Reymana<br />
+                        <AddressText>ul. Reymonta 20, 30-059 Kraków</AddressText>
+                    </LocationText>
+                </MobileLocationText>
+
                 <HeroRightSection>
-                    <GearWrapper size={13.5} top={53} left={65} ref={(el) => { gearRefs.current[0] = el; }}>
+                    <GearWrapper size={13} top={46} left={65} ref={(el) => { gearRefs.current[0] = el; }}>
                         <img src={Gear4} alt="gear" />
                     </GearWrapper>
-                    <GearWrapper size={6.7} top={37} left={85} ref={(el) => { gearRefs.current[1] = el; }}>
+                    <GearWrapper size={6.7} top={30} left={85} ref={(el) => { gearRefs.current[1] = el; }}>
                         <img src={Gear2} alt="gear" />
                     </GearWrapper>
-                    <GearWrapper size={10.5} top={40} left={22} reverse ref={(el) => { gearRefs.current[2] = el; }}>
+                    <GearWrapper size={10.5} top={35} left={24} reverse ref={(el) => { gearRefs.current[2] = el; }}>
                         <img src={Gear3} alt="gear" />
                     </GearWrapper>
-                    <GearWrapper size={8.25} top={58} left={45} reverse ref={(el) => { gearRefs.current[3] = el; }}>
+                    <GearWrapper size={8.25} top={53} left={45} reverse ref={(el) => { gearRefs.current[3] = el; }}>
                         <img src={Gear5} alt="gear" />
                     </GearWrapper>
-                    <GearWrapper size={5.5} top={70} left={30} reverse ref={(el) => { gearRefs.current[4] = el; }}>
+                    <GearWrapper size={5.5} top={68} left={34} reverse ref={(el) => { gearRefs.current[4] = el; }}>
                         <img src={Gear6} alt="gear" />
                     </GearWrapper>
-                    <GearWrapper size={4.7} top={65} left={13} ref={(el) => { gearRefs.current[5] = el; }}>
+                    <GearWrapper size={4.7} top={60} left={15} ref={(el) => { gearRefs.current[5] = el; }}>
                         <img src={Gear7} alt="gear" />
                     </GearWrapper>
-                    <GearWrapper size={22.2} top={0} left={40} ref={(el) => { gearRefs.current[6] = el; }}>
+                    <GearWrapper size={22.2} top={-17} left={40} ref={(el) => { gearRefs.current[6] = el; }}>
                         <img src={Gear1} alt="gear" />
                     </GearWrapper>
 
@@ -386,9 +1206,21 @@ function MainSite() {
             </HeroContainer>
 
             <WhoContainer>
-                {/* <DecorativeGear src={Gear2} size={127} top={-40} left={80} alt="gear decoration" />
-                <DecorativeGear src={Gear4} size={260} top={150} left={-100} alt="gear decoration" />
-                <DecorativeGear src={Gear5} size={127} top={200} left={85} alt="gear decoration" /> */}
+                {/* Desktop decorative gears */}
+                <DecorativeGear src={Gear4} size={70} top={0} left={360} alt="gear decoration" />
+                <DecorativeGear src={Gear5} size={110} top={0} left={230} alt="gear decoration" />
+                <DecorativeGear src={Gear6} size={230} top={75} left={40} alt="gear decoration" />
+                <DecorativeGear src={Gear3} size={140} top={90} left={300} alt="gear decoration" />
+                <DecorativeGear src={Gear3} size={100} top={300} left={30} alt="gear decoration" />
+
+                {/* Mobile decorative gears */}
+                <MobileDecorativeGear src={Gear4} size={18} top={2} left={75} alt="gear decoration" />
+                <MobileDecorativeGear src={Gear5} size={25} top={0} left={-5} alt="gear decoration" />
+                <MobileDecorativeGear src={Gear6} size={30} top={25} left={70} alt="gear decoration" />
+                <MobileDecorativeGear src={Gear3} size={22} top={50} left={-8} alt="gear decoration" />
+                <MobileDecorativeGear src={Gear2} size={15} top={70} left={80} alt="gear decoration" />
+                <MobileDecorativeGear src={Gear7} size={12} top={85} left={5} alt="gear decoration" />
+
                 <WhoLeftSection>
                     <WhoTitle>Kim jesteśmy?</WhoTitle>
                     <WhoContent>Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów BEST AGH Kraków już od 28 lat łączą środowisko akademickiez biznesem. To wydarzenie, podczas którego studenci i absolwenci mają szansę poznać potencjalnych pracodawców, a firmy mogą dotrzeć do przyszłych specjalistów z różnych dziedzin inżynierii i technologii. <br /><br />
@@ -398,46 +1230,46 @@ function MainSite() {
                         Na naszej stronie internetowej znajdziecie informacje o wystawcach i ich aktualnych ofertach pracy oraz staży. Uczestnicy mogą również przesłać swoje CV do naszej bazy, co pozwoli pracodawcom lepiej poznać ich kompetencje i doświadczenie.</WhoContent>
                 </WhoLeftSection>
                 <WhoRightSection>
-                    <GearWrapper size={30} top={0} left={20}>
+                    <WhoGearWrapper size={30} top={0} left={20}>
                         <img src={GearWithPeople} alt="gear" />
-                    </GearWrapper>
-                    <GearWrapper size={12} top={70} left={70} reverse>
+                    </WhoGearWrapper>
+                    <WhoGearWrapper size={12} top={84} left={75} reverse>
                         <img src={GearWithBackground} alt="gear" />
-                    </GearWrapper>
-                    <GearWrapper size={9} top={50} left={90}>
+                    </WhoGearWrapper>
+                    <WhoGearWrapper size={9} top={55} left={103}>
                         <img src={Gear7} alt="gear" />
-                    </GearWrapper>
-                    <GearWrapper size={6} top={75} left={40}>
+                    </WhoGearWrapper>
+                    <WhoGearWrapper size={6} top={90} left={45}>
                         <img src={Gear3} alt="gear" />
-                    </GearWrapper>
-                    <GearWrapper size={4} top={85} left={30}>
+                    </WhoGearWrapper>
+                    <WhoGearWrapper size={4} top={103} left={28}>
                         <img src={Gear4} alt="gear" />
-                    </GearWrapper>
+                    </WhoGearWrapper>
                 </WhoRightSection>
-            </WhoContainer>
+            </WhoContainer >
 
-            <CounterContainer>
+            <CounterContainer ref={counterRef}>
                 <CounterSubContainer>
-                    <CounterNumber>30</CounterNumber>
+                    <CounterNumber>{counter1}</CounterNumber>
                     <CounterLabel>Liczba Firm</CounterLabel>
                 </CounterSubContainer>
                 <CounterSubContainer>
-                    <CounterNumber>200</CounterNumber>
+                    <CounterNumber>{counter2}</CounterNumber>
                     <CounterLabel>Liczba Odwiedzających</CounterLabel>
                 </CounterSubContainer>
                 <CounterSubContainer>
-                    <CounterNumber>60</CounterNumber>
+                    <CounterNumber>{counter3}</CounterNumber>
                     <CounterLabel>Liczba nwm czego</CounterLabel>
                 </CounterSubContainer>
             </CounterContainer>
+            <MapTitle>Mapa targów</MapTitle>
             <MapContainer>
-                {/* <MapTitle>Mapa Wydarzenia</MapTitle> */}
-                <MapImage src={ITPMap} alt="ITP Map" />
+                <img src={ITPMap} alt="Mapa targów" />
             </MapContainer>
             <CarouselTitle>Sprawdź kto zaufał nam we wcześniejszych edycjach:</CarouselTitle>
             <SponsorsCarousel slides={[WoodwardLogo, AptivLogo, AllInUJ, GEHealthcareLogo, IBMLogo]} />
 
-            <OrganizersContainer>
+            <OrganizersContainer id="kontakt">
                 <OrganizersTitle>Zaufaj nam i Ty!</OrganizersTitle>
                 <CardsContainer>
                     <OrganizerCard>

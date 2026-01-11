@@ -1,0 +1,52 @@
+{
+  "hash": "73f151cd",
+  "configHash": "708a0c53",
+  "lockfileHash": "60d0ee36",
+  "browserHash": "e2e7d1b5",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "ddbe96b2",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "e8622a3e",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "515f7566",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "d7c8782d",
+      "needsInterop": false
+    },
+    "styled-components": {
+      "src": "../../node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "file": "styled-components.js",
+      "fileHash": "4ba51f9e",
+      "needsInterop": false
+    },
+    "react-slick": {
+      "src": "../../node_modules/react-slick/lib/index.js",
+      "file": "react-slick.js",
+      "fileHash": "85377c53",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-BRDTLNCR": {
+      "file": "chunk-BRDTLNCR.js"
+    },
+    "chunk-OOF7LIVO": {
+      "file": "chunk-OOF7LIVO.js"
+    }
+  }
+}
