@@ -31,13 +31,18 @@ const HeroContainer = styled.section`
     box-sizing: border-box;
     
     /* --- BASE: Mobile First --- */
+    @media (max-width: 481px) {
     flex-direction: row;
-    padding: 2rem 1rem;
-    min-height: 100vh;
+    padding: 6rem 1rem;
+    min-height: 50vh;
+    align-items: flex-start;
+    }   
     
     /* --- 481px+: Większe telefony --- */
     @media (min-width: 481px) {
         padding: 3rem 1.5rem;
+        align-items: center;
+        min-height: 100vh;
     }
     
     /* --- 769px+: Tablety --- */
@@ -130,7 +135,7 @@ const OrganizersTitle = styled.h2`
     letter-spacing: 0.5px;
     
     /* --- BASE: Mobile First --- */
-    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-size: clamp(1.5rem, 10vw, 2.5rem);
     margin-bottom: 2rem;
     
     /* --- 769px+: Tablety --- */
@@ -447,10 +452,10 @@ const GearWrapper = styled.div<{
     transition: transform 0.1s ease-out;
     
     /* --- BASE: Mobile First --- */
-    width: ${props => props.size * 0.85}vw;
-    height: ${props => props.size * 0.85}vw;
-    top: calc(50% + ${props => (props.top - 50) * 0.55}%);
-    left: ${props => props.left * 1.05}%;
+    width: ${props => props.size * 1.1}vw;
+    height: ${props => props.size * 1.1}vw;
+    top: calc(50% + ${props => (props.top - 20) * 0.7}%);
+    left: ${props => props.left * 1.4 - 38}%;
     
     /* --- 481px+: Większe telefony --- */
     @media (min-width: 481px) {
@@ -531,10 +536,7 @@ const WhoGearWrapper = styled.div<{
     transition: transform 0.1s ease-out;
     
     /* --- BASE: Mobile First --- */
-    width: ${props => props.size * 1.2}vw;
-    height: ${props => props.size * 1.2}vw;
-    top: calc(50% + ${props => (props.top - 50) * 1.2}%);
-    left: ${props => props.left * 0.82}%;
+    display:none;
     
     /* --- 481px+: Większe telefony --- */
     @media (min-width: 481px) {
@@ -640,15 +642,28 @@ const LocationText = styled.p`
     text-align: right;
     line-height: 0.7;
     right: 10px;
-    bottom: 0px;
-    
+
+    @media (max-width: 401px) {
+        font-size: clamp(0.7rem, 10vw, 6rem);
+        bottom: -20px;
+    }
+
+    @media (min-width: 401px) {
+        font-size: clamp(0.7rem, 5vw, 3rem);
+        bottom: 100px;
+    }
+
     /* --- BASE: Mobile First --- */
-    font-size: clamp(0.7rem, 4.5vw, 2rem);
+    @media (max-width: 481px) {
+        font-size: clamp(0.7rem, 5vw, 3rem);
+        bottom: -80px;
+    }
     
     /* --- 481px+: Większe telefony --- */
     @media (min-width: 481px) {
-        font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+        font-size: clamp(0.9rem, 5vw, 1.4rem);
         right: 15px;
+        bottom: 0;
     }
     
     /* --- 769px+: Tablety --- */
@@ -680,11 +695,11 @@ const AddressText = styled.p`
     font-family: 'Alumni Sans', sans-serif;
     
     /* --- BASE: Mobile First --- */
-    font-size: clamp(0.55rem, 3vw, 1.5rem);
+    font-size: clamp(0.55rem, 4vw, 2.5rem);
     
     /* --- 481px+: Większe telefony --- */
     @media (min-width: 481px) {
-        font-size: clamp(0.7rem, 2vw, 1rem);
+        font-size: clamp(0.7rem, 3vw, 2rem);
     }
     
     /* --- 769px+: Tablety --- */
@@ -841,7 +856,7 @@ const WhoContent = styled.p`
     
     /* --- 769px+: Tablety --- */
     @media (min-width: 769px) {
-        font-size: clamp(1rem, 2vw, 1.25rem);
+        font-size: clamp(1rem, 3vw, 2rem);
     }
     
     /* --- 1025px+: Desktop --- */
@@ -857,6 +872,7 @@ const WhoRightSection = styled.div`
     /* --- BASE: Mobile First --- */
     display: block;
     height: 200px;
+    display:none;
     
     /* --- 481px+: Większe telefony --- */
     @media (min-width: 481px) {
@@ -968,11 +984,13 @@ const MapContainer = styled.section`
     /* --- BASE: Mobile First --- */
     min-height: auto;
     width: 90%;
-    margin: 10vh auto;
+    margin: 2vh auto 10vh;
+    padding: 0 10px 5rem 0.5rem;
+
     
     /* --- 481px+: Większe telefony --- */
     @media (min-width: 481px) {
-        padding: 0 0 5rem 1.5rem;
+        padding: 0 35px 5rem 1rem;
         width: 95%;
     }
     
@@ -1018,12 +1036,12 @@ const MapContainer = styled.section`
 const MapTitle = styled.h1`
     font-weight: 500;
     color: #1e1e1e;
-    margin: 30px 0 0.5vh 0;
+    margin: 30px 0 0vh 0;
     text-align: center;
     font-family: 'Alumni Sans', sans-serif;
     
     /* --- BASE: Mobile First --- */
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(1rem, 6vw, 3rem);
     
     /* --- 769px+: Tablety --- */
     @media (min-width: 769px) {
@@ -1045,7 +1063,7 @@ const CarouselTitle = styled.h3`
     background: #fff;
     
     /* --- BASE: Mobile First --- */
-    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-size: clamp(1rem, 8vw, 1.5rem);
     padding: 0 1rem;
     
     /* --- 481px+: Większe telefony --- */

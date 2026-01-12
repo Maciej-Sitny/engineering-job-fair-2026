@@ -16,11 +16,12 @@ import logo from './assets/ITP_logo_kolor_ai kopia 1.svg';
 const NavbarContainer = styled.header<{ $isScrolled: boolean; $isMobileMenuOpen: boolean }>`
     position: fixed;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     box-sizing: border-box;
     background: #fff;
     z-index: 40;
-    transition: padding 400ms ease, margin 400ms ease, width 400ms ease, border-radius 400ms ease, box-shadow 400ms ease, left 400ms ease, transform 400ms ease;
+    transition: padding 400ms ease, margin 400ms ease, width 400ms ease, border-radius 400ms ease, box-shadow 400ms ease;
     
     /* --- BASE: Mobile First --- */
     padding: 0.75rem 0;
@@ -41,8 +42,6 @@ const NavbarContainer = styled.header<{ $isScrolled: boolean; $isMobileMenuOpen:
         ${(props) =>
         props.$isScrolled
             ? `
-            left: 50%;
-            transform: translateX(-50%);
             margin-top: 10px;
             width: calc(100% - 10vw);
             max-width: 1400px;
@@ -50,8 +49,6 @@ const NavbarContainer = styled.header<{ $isScrolled: boolean; $isMobileMenuOpen:
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         `
             : `
-            left: 0;
-            transform: none;
             width: 100%;
             max-width: 100%;
         `}
@@ -356,7 +353,7 @@ function Navbar() {
                     if (element) {
                         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
-                }, 100);
+                }, 500);
             }
         }
         setIsMobileMenuOpen(false);

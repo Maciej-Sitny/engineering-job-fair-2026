@@ -152,15 +152,14 @@ const SponsorsCarousel: React.FC<SponsorsCarouselProps> = ({ slides, autoplay = 
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay,
     autoplaySpeed,
     arrows: false,
     responsive: [
+      { breakpoint: 769, settings: { slidesToShow: 2 } },
       { breakpoint: 1200, settings: { slidesToShow: 3 } },
-      { breakpoint: 900, settings: { slidesToShow: 2 } },
-      { breakpoint: 769, settings: { slidesToShow: 1 } },
     ],
     appendDots: (dots: React.ReactNode) => (
       <ul className="slick-dots custom-dots">{dots}</ul>
