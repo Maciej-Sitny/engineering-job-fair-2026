@@ -964,11 +964,11 @@ const MapContainer = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 60px;
+    padding: 3vh 60px;
     /* --- BASE: Mobile First --- */
-    padding: 0 10% 3rem 5%;
     min-height: auto;
     width: 90%;
+    margin: 10vh auto;
     
     /* --- 481px+: Większe telefony --- */
     @media (min-width: 481px) {
@@ -992,6 +992,22 @@ const MapContainer = styled.section`
         margin: 0 auto;
     }
 
+        /* --- 1025px+: Desktop --- */
+    @media (min-width: 1400px) {
+        padding: 0 5% 20vh 5%;
+        height: 480px;
+        max-width: 80%;
+        margin: 5vh auto;
+    }
+
+        /* --- 1025px+: Desktop --- */
+    @media (min-width: 1750px) {
+        padding: 0 5% 20vh 5%;
+        height: 480px;
+        max-width: 80%;
+        margin: 13vh auto;
+    }
+
     img {
         max-width: 100%;
         height: auto;
@@ -1002,7 +1018,7 @@ const MapContainer = styled.section`
 const MapTitle = styled.h1`
     font-weight: 500;
     color: #1e1e1e;
-    margin: 30px 0 0 0;
+    margin: 30px 0 0.5vh 0;
     text-align: center;
     font-family: 'Alumni Sans', sans-serif;
     
