@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 import Gear1 from '../assets/gears/Subtract.svg';
 import Gear2 from '../assets/gears/Subtract (1).svg';
 import Gear3 from '../assets/gears/Subtract (2).svg';
@@ -676,12 +677,13 @@ const LocationText = styled.p`
     @media (min-width: 1025px) {
         font-size: 40px;
         right: 40px;
+        bottom: 70px;
     }
 `;
 
 const MobileLocationText = styled.div`
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 0rem;
     
     /* Ukryte - LocationText jest teraz w widocznym HeroRightSection */
     display: none;
@@ -1172,28 +1174,33 @@ function MainSite() {
 
     return (
         <>
+            <SEO
+                title="Inżynierskie Targi Pracy 2026 | 11 marca | Kraków"
+                description="28. edycja Inżynierskich Targów Pracy w Krakowie. Poznaj pracodawców z branży IT, inżynierii i technologii. 11 marca 2026, Stadion Miejski im. Henryka Reymana. Wstęp wolny!"
+                canonicalUrl="https://itp.best.krakow.pl/"
+            />
             <HeroContainer>
                 <MobileGearsContainer>
                     <MobileGearWrapper size={35} top={5} left={50}>
-                        <img src={Gear1} alt="gear" />
+                        <img src={Gear1} alt="" aria-hidden="true" />
                     </MobileGearWrapper>
                     <MobileGearWrapper size={22} top={35} left={70}>
-                        <img src={Gear4} alt="gear" />
+                        <img src={Gear4} alt="" aria-hidden="true" />
                     </MobileGearWrapper>
                     <MobileGearWrapper size={18} top={20} left={-5}>
-                        <img src={Gear3} alt="gear" />
+                        <img src={Gear3} alt="" aria-hidden="true" />
                     </MobileGearWrapper>
                     <MobileGearWrapper size={12} top={55} left={5}>
-                        <img src={Gear2} alt="gear" />
+                        <img src={Gear2} alt="" aria-hidden="true" />
                     </MobileGearWrapper>
                     <MobileGearWrapper size={14} top={60} left={80}>
-                        <img src={Gear5} alt="gear" />
+                        <img src={Gear5} alt="" aria-hidden="true" />
                     </MobileGearWrapper>
                     <MobileGearWrapper size={10} top={75} left={25}>
-                        <img src={Gear6} alt="gear" />
+                        <img src={Gear6} alt="" aria-hidden="true" />
                     </MobileGearWrapper>
                     <MobileGearWrapper size={8} top={80} left={60}>
-                        <img src={Gear7} alt="gear" />
+                        <img src={Gear7} alt="" aria-hidden="true" />
                     </MobileGearWrapper>
                 </MobileGearsContainer>
 
@@ -1211,25 +1218,25 @@ function MainSite() {
 
                 <HeroRightSection>
                     <GearWrapper size={13} top={46} left={65} ref={(el) => { gearRefs.current[0] = el; }}>
-                        <img src={Gear4} alt="gear" />
+                        <img src={Gear4} alt="" aria-hidden="true" />
                     </GearWrapper>
                     <GearWrapper size={6.7} top={30} left={85} ref={(el) => { gearRefs.current[1] = el; }}>
-                        <img src={Gear2} alt="gear" />
+                        <img src={Gear2} alt="" aria-hidden="true" />
                     </GearWrapper>
                     <GearWrapper size={10.5} top={35} left={24} reverse ref={(el) => { gearRefs.current[2] = el; }}>
-                        <img src={Gear3} alt="gear" />
+                        <img src={Gear3} alt="" aria-hidden="true" />
                     </GearWrapper>
                     <GearWrapper size={8.25} top={53} left={45} reverse ref={(el) => { gearRefs.current[3] = el; }}>
-                        <img src={Gear5} alt="gear" />
+                        <img src={Gear5} alt="" aria-hidden="true" />
                     </GearWrapper>
                     <GearWrapper size={5.5} top={68} left={34} reverse ref={(el) => { gearRefs.current[4] = el; }}>
-                        <img src={Gear6} alt="gear" />
+                        <img src={Gear6} alt="" aria-hidden="true" />
                     </GearWrapper>
                     <GearWrapper size={4.7} top={60} left={15} ref={(el) => { gearRefs.current[5] = el; }}>
-                        <img src={Gear7} alt="gear" />
+                        <img src={Gear7} alt="" aria-hidden="true" />
                     </GearWrapper>
                     <GearWrapper size={22.2} top={-17} left={40} ref={(el) => { gearRefs.current[6] = el; }}>
-                        <img src={Gear1} alt="gear" />
+                        <img src={Gear1} alt="" aria-hidden="true" />
                     </GearWrapper>
 
                     <LocationText>
@@ -1241,19 +1248,19 @@ function MainSite() {
 
             <WhoContainer>
                 {/* Desktop decorative gears */}
-                <DecorativeGear src={Gear4} size={70} top={0} left={360} alt="gear decoration" />
-                <DecorativeGear src={Gear5} size={110} top={0} left={230} alt="gear decoration" />
-                <DecorativeGear src={Gear6} size={230} top={75} left={40} alt="gear decoration" />
-                <DecorativeGear src={Gear3} size={140} top={90} left={300} alt="gear decoration" />
-                <DecorativeGear src={Gear3} size={100} top={300} left={30} alt="gear decoration" />
+                <DecorativeGear src={Gear4} size={70} top={0} left={360} alt="" aria-hidden="true" />
+                <DecorativeGear src={Gear5} size={110} top={0} left={230} alt="" aria-hidden="true" />
+                <DecorativeGear src={Gear6} size={230} top={75} left={40} alt="" aria-hidden="true" />
+                <DecorativeGear src={Gear3} size={140} top={90} left={300} alt="" aria-hidden="true" />
+                <DecorativeGear src={Gear3} size={100} top={300} left={30} alt="" aria-hidden="true" />
 
                 {/* Mobile decorative gears */}
-                <MobileDecorativeGear src={Gear4} size={18} top={2} left={75} alt="gear decoration" />
-                <MobileDecorativeGear src={Gear5} size={25} top={0} left={-5} alt="gear decoration" />
-                <MobileDecorativeGear src={Gear6} size={30} top={25} left={70} alt="gear decoration" />
-                <MobileDecorativeGear src={Gear3} size={22} top={50} left={-8} alt="gear decoration" />
-                <MobileDecorativeGear src={Gear2} size={15} top={70} left={80} alt="gear decoration" />
-                <MobileDecorativeGear src={Gear7} size={12} top={85} left={5} alt="gear decoration" />
+                <MobileDecorativeGear src={Gear4} size={18} top={2} left={75} alt="" aria-hidden="true" />
+                <MobileDecorativeGear src={Gear5} size={25} top={0} left={-5} alt="" aria-hidden="true" />
+                <MobileDecorativeGear src={Gear6} size={30} top={25} left={70} alt="" aria-hidden="true" />
+                <MobileDecorativeGear src={Gear3} size={22} top={50} left={-8} alt="" aria-hidden="true" />
+                <MobileDecorativeGear src={Gear2} size={15} top={70} left={80} alt="" aria-hidden="true" />
+                <MobileDecorativeGear src={Gear7} size={12} top={85} left={5} alt="" aria-hidden="true" />
 
                 <WhoLeftSection>
                     <WhoTitle>Kim jesteśmy?</WhoTitle>
@@ -1265,19 +1272,19 @@ function MainSite() {
                 </WhoLeftSection>
                 <WhoRightSection>
                     <WhoGearWrapper size={30} top={0} left={20}>
-                        <img src={GearWithPeople} alt="gear" />
+                        <img src={GearWithPeople} alt="Zespół organizatorów Inżynierskich Targów Pracy" />
                     </WhoGearWrapper>
                     <WhoGearWrapper size={12} top={84} left={75} reverse>
-                        <img src={GearWithBackground} alt="gear" />
+                        <img src={GearWithBackground} alt="" aria-hidden="true" />
                     </WhoGearWrapper>
                     <WhoGearWrapper size={9} top={55} left={103}>
-                        <img src={Gear7} alt="gear" />
+                        <img src={Gear7} alt="" aria-hidden="true" />
                     </WhoGearWrapper>
                     <WhoGearWrapper size={6} top={90} left={45}>
-                        <img src={Gear3} alt="gear" />
+                        <img src={Gear3} alt="" aria-hidden="true" />
                     </WhoGearWrapper>
                     <WhoGearWrapper size={4} top={103} left={28}>
-                        <img src={Gear4} alt="gear" />
+                        <img src={Gear4} alt="" aria-hidden="true" />
                     </WhoGearWrapper>
                 </WhoRightSection>
             </WhoContainer >
@@ -1298,7 +1305,7 @@ function MainSite() {
             </CounterContainer>
             <MapTitle>Mapa targów</MapTitle>
             <MapContainer>
-                <img src={ITPMap} alt="Mapa targów" />
+                <img src={ITPMap} alt="Mapa Inżynierskich Targów Pracy 2026 na Stadionie Miejskim w Krakowie - rozmieszczenie stoisk firm" />
             </MapContainer>
             <CarouselTitle>Sprawdź kto zaufał nam we wcześniejszych edycjach:</CarouselTitle>
             <SponsorsCarousel slides={[WoodwardLogo, AptivLogo, AllInUJ, GEHealthcareLogo, IBMLogo]} />

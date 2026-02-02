@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 import Gear1 from '../assets/gears/Subtract.svg';
 import Gear2 from '../assets/gears/Subtract (1).svg';
 import Gear3 from '../assets/gears/Subtract (2).svg';
@@ -381,17 +382,17 @@ const InfoName = styled.h3`
 
 const InfoDescription = styled.p`
 	margin: 0;
-	line-height: 1.3;
+	line-height: 1.1;
 	color: #2a2a2a;
 	text-align: justify;
 	font-weight: 500;
 	
 	/* --- BASE: Responsywny font --- */
-	font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+	font-size: clamp(0.9rem, 2.2vw, 1.1rem);
 
 	/* --- 1025px+: Desktop --- */
 	@media (min-width: 1025px) {
-		font-size: 3vh;
+		font-size: 2.5vh;
 	}
 `;
 
@@ -549,7 +550,7 @@ const AboutUs = () => {
 			email: 'gabriel.iwaniuk@BEST.krakow.pl',
 			image: GabrielIwaniuk,
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
+				' Cześć, z tej strony Gabryś - tegoroczny koordynator główny do spraw kontaktu z firmami Targów Pracy. Jestem studentem II roku Energetyki, a w wolnym czasie dorabiam jako animator hotelowy, co jednocześnie jest moim hobby! Gdybym miał powiedzieć co najbardziej cenię w życiu, powiedziałbym że ludzi;)'
 		},
 		{
 			id: 'nikodem-szafran',
@@ -558,8 +559,7 @@ const AboutUs = () => {
 			phone: '730 259 633',
 			email: 'nikodem.szafran@BEST.krakow.pl',
 			image: NikodemSzafran,
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
+			description: 'Na co dzień jestem studentem Elektroniki, w której najbardziej fascynują mnie systemy wbudowane i programowanie mikrokontrolerów. Moją największą pasją jest jednak zarządzanie projektami - tworzenie wydarzeń od poziomu koncepcji do realizacji praktycznej, ale to przede wszystkim praca i obcowanie z ludźmi jest czymś co daje mi ogrom szczęścia oraz poczucia satysfakcji. W wolnych chwilach lubię pochłaniać materiały związane z psychologią oraz biologią lub grać w siatkówkę:)'
 		},
 		{
 			id: 'zofia-palarz',
@@ -568,8 +568,7 @@ const AboutUs = () => {
 			phone: '501 358 126',
 			email: 'zofia.palarz@BEST.krakow.pl',
 			image: ZofiaPalarz,
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
+			description: 'Jestem Zosia i od kiedy pamiętam chciałam być inżynierem,więc wylądowałam na Budownictwie w Krakowie. Jednak nie chcąc stracić humanistycznej części siebie, dołączyłam do stowarzyszenia studentów BEST AGH Kraków i mam przyjemność być częścią kolejnej edycji Inżynierskich Targów Pracy. Jestem logistykiem, więc moją rolą jest między innymi ogarnięcie miejscówki pod wydarzenie. Oprócz tego gram w tenisa, kocham czytać i przebywać z ludźmi. '
 		},
 		{
 			id: 'kamila-guzik',
@@ -579,7 +578,7 @@ const AboutUs = () => {
 			email: 'kamila.guzik@BEST.krakow.pl',
 			image: KamilaGuzik,
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
+				'Hejka! Studiuję Informatykę Społeczną na AGH. Na co dzień zajmuję się UX/UI Designem i grafiką. Do BESTu dołączyłam rok temu i dodatkowo udzielam się w kole naukowym UX Berries. W wolnym czasie uwielbiam czytać, chodzić na siłownie i jeść dobry ramen.. '
 		},
 		{
 			id: 'maciej-sitny',
@@ -589,7 +588,7 @@ const AboutUs = () => {
 			email: 'maciej.sitny@BEST.krakow.pl',
 			image: MaciejSitny,
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
+				'Hej, jestem studentem 3. roku Informatyki i w Targach zajmuję się wszystkim co związane z właśnie tą dziedziną. W czasie wolnym oglądam nerdowe filmiki na youtubie, czasami śledzę polską ligę siatkówki i w tym sezonie planuję wrócić do regularnego oglądania F1.'
 		},
 		{
 			id: 'patrycja-bodek',
@@ -599,7 +598,7 @@ const AboutUs = () => {
 			email: 'patrycja.bodek@BEST.krakow.pl',
 			image: PatrycjaBodek,
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
+				'Hej, jestem Patrycja i jestem studentką III roku Informatyki Technicznej. W tej edycji Targów Pracy jestem odpowiedzialna za PR, czyli robię wszystko żebyście dowiedzieli się o wydarzeniu i byli na bieżąco z informacjami. W wolnych chwilach bardzo lubię wszelkiego rodzaju sport - od spacerów po jazdę na rolkach czy nartach, a jeśli tylko nadarzy się okazja, uciekam w góry.'
 		},
 		{
 			id: 'maja-konopka',
@@ -609,7 +608,7 @@ const AboutUs = () => {
 			email: 'maja.konopka@BEST.krakow.pl',
 			image: MajaKonopka,
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
+				'Hejka, jestem Maja i w tegorocznej edycji targów zajmuję się kontaktem z firmami. Na co dzień studiuję Automatykę i Robotykę na III roku, a poza Stowarzyszeniem BEST jestem członkinią dwóch kół naukowych na AGH. W wolnym czasie robię wszystko, żeby się nie nudzić - czyli sport, planowanie podróży i nowe dziedziny nauki.'
 		},
 		{
 			id: 'agnieszka-pyka',
@@ -619,7 +618,7 @@ const AboutUs = () => {
 			email: 'agnieszka.pyka@BEST.krakow.pl',
 			image: AgnieszkaPyka,
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
+				'Hej! Mam na imię Aga, przy tegorocznej edycji Inżynierskich Targów Pracy zajmuję się kontaktem i współpracą z Firmami. Studiuję Inżynierię i Analizę Danych, choć bardzo też cenię dziedziny humanistyczne. Czas wolny lubię poświęcać między innymi na sport czy handmade projekty. Uwielbiam sprawdzać się w nowych sytuacjach - znajduję w tym wiele inspiracji i siły do działania.'
 		},
 		{
 			id: 'nikodem-wlodarczyk',
@@ -629,7 +628,7 @@ const AboutUs = () => {
 			email: 'nikodem.wlodarczyk@BEST.krakow.pl',
 			image: NikodemWlodarczyk,
 			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.',
+				'Hej, mam na imię Nikodem, na codzień studiuję Informatykę i Ekonometrię na AGH w Beście jestem niecały rok, a w tej edycji targów zajmuję się kontaktem i współpracą z firmami. W wolnym czasie lubię zajmować się rękodziełem oraz wszelkiego rodzaju aktywnościami fizycznymi. '
 		},
 	];
 
@@ -639,29 +638,34 @@ const AboutUs = () => {
 
 	return (
 		<Page>
+			<SEO
+				title="O nas | Inżynierskie Targi Pracy 2026"
+				description="Poznaj zespół organizatorów Inżynierskich Targów Pracy. Jesteśmy studentami z BEST AGH Kraków - organizacji, która od 28 lat łączy świat studentów z firmami."
+				canonicalUrl="https://itp.best.krakow.pl/o-nas"
+			/>
 			<GearWrapper size={30} top={5} left={68}>
-				<img src={Gear1} alt="Dekoracyjna zębatka" />
+				<img src={Gear1} alt="" aria-hidden="true" />
 			</GearWrapper>
 			<GearWrapper size={12} top={20} left={50} reverse>
-				<img src={Gear4} alt="Dekoracyjna zębatka" />
+				<img src={Gear4} alt="" aria-hidden="true" />
 			</GearWrapper>
 			<GearWrapper size={10} top={16} left={60}>
-				<img src={Gear2} alt="Dekoracyjna zębatka" />
+				<img src={Gear2} alt="" aria-hidden="true" />
 			</GearWrapper>
 			<GearWrapper size={7} top={20} left={90} reverse>
-				<img src={Gear5} alt="Dekoracyjna zębatka" />
+				<img src={Gear5} alt="" aria-hidden="true" />
 			</GearWrapper>
 			<GearWrapper size={12} top={22} left={37}>
-				<img src={Gear6} alt="Dekoracyjna zębatka" />
+				<img src={Gear6} alt="" aria-hidden="true" />
 			</GearWrapper>
 			<GearWrapper size={6} top={24} left={28} reverse>
-				<img src={Gear7} alt="Dekoracyjna zębatka" />
+				<img src={Gear7} alt="" aria-hidden="true" />
 			</GearWrapper>
 			<GearWrapper size={23} top={20} left={67}>
-				<img src={Gear3} alt="Dekoracyjna zębatka" />
+				<img src={Gear3} alt="" aria-hidden="true" />
 			</GearWrapper>
 			<GearWrapper size={6} top={25} left={60}>
-				<img src={Gear3} alt="Dekoracyjna zębatka" />
+				<img src={Gear3} alt="" aria-hidden="true" />
 			</GearWrapper>
 			<Content>
 				<TitleAndDescriptionWrapper>
