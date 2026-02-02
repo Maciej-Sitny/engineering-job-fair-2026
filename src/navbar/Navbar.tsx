@@ -232,7 +232,7 @@ const NavLink = styled.li`
     a {
         text-decoration: none;
         color: #1e1e1e;
-        font-size: clamp(0.9rem, 2vh, 1.1rem);
+        font-size: clamp(0.9rem, 3vh, 1.8rem);
         font-weight: 500;
         letter-spacing: 0.2px;
         opacity: 0.95;
@@ -281,6 +281,8 @@ const SecondaryButton = styled.button`
     /* --- 769px+: Pełny rozmiar --- */
     @media (min-width: 769px) {
         padding: 0.5rem 1.125rem;
+        font-size: clamp(0.75rem, 2.5vh, 2.5rem);
+
     }
 
     @media (hover: hover) {

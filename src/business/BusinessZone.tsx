@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useState, useEffect, useRef } from 'react';
+import SEO from '../components/SEO';
 import StrefahirmTlo from './assets/strefa-firm-tlo.svg';
 import Gear1 from '../assets/gears/Subtract (1).svg';
 import Gear2 from '../assets/gears/Subtract (2).svg';
@@ -14,6 +15,8 @@ import FRZdjecieGrupowe from './assets/FR-zdjecie-grupowe.svg';
 import FacebookIcon from '../footer/assets/Facebook.svg';
 import InstagramIcon from '../footer/assets/instagram.svg';
 import LinkedinIcon from '../footer/assets/linkedin.svg';
+import BusinessGears from './assets/business_gears.svg';
+
 
 /* ==========================================================================
    BUSINESS ZONE - RESPONSIVE STYLES (Mobile-First Approach)
@@ -320,7 +323,7 @@ const BecomeExhibitorContainer = styled.section`
     @media (min-width: 1025px) {
         padding: 5rem;
         margin: 5rem 6.25rem;
-        width: 70%;
+        width: 80%;
     }
 `;
 
@@ -354,7 +357,7 @@ const BecomeExhibitorTitle = styled.h2`
 
 const BecomeExhibitorDescription = styled.p`
     /* --- BASE: Responsywny font --- */
-    font-size: clamp(1.125rem, 3vw, 2rem);
+    font-size: clamp(1.125rem, 1.5vw, 2rem);
     font-weight: 400;
     color: #1e1e1e;
     margin: 0 0 1.5rem 0;
@@ -386,7 +389,7 @@ const StepsList = styled.ol`
 const StepItem = styled.li`
     /* --- BASE: Responsywny font --- */
     counter-increment: step-counter;
-    font-size: clamp(0.95rem, 2.5vw, 1.375rem);
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
     font-weight: 400;
     color: #1e1e1e;
     font-family: 'Alumni Sans', sans-serif;
@@ -881,6 +884,11 @@ export default function BusinessZone() {
 
     return (
         <Page>
+            <SEO
+                title="Strefa Firm | Inżynierskie Targi Pracy 2026"
+                description="Zostań wystawcą na 28. edycji Inżynierskich Targów Pracy. Dotrzyj do najlepszych studentów technicznych w Krakowie. Sprawdź dostępne pakiety i skontaktuj się z nami."
+                canonicalUrl="https://itp.best.krakow.pl/strefa-firm"
+            />
             <HeroContainer>
                 <EditionText>
                     <EditionNumber>28</EditionNumber>
@@ -913,31 +921,29 @@ export default function BusinessZone() {
                         Jak zostać Wystawcą - krok po kroku
                     </BecomeExhibitorTitle>
                     <BecomeExhibitorDescription>
-                        Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                        Chcesz dotrzeć do najlepszych studentów technicznych (i nie tylko!) w Krakowie? Oto prosta ścieżka do obecności Twojej Firmy na XXVIII Inżynierskich Targach Pracy 2026 organizowanych przez BEST AGH Kraków.
                     </BecomeExhibitorDescription>
                     <StepsList>
                         <StepItem>
-                            Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                            Jako pierwszy krok, skontaktuj się mailowo lub telefonicznie z koordynatorami ds. kontaktu z Firmami. Zgłoś zainteresowanie wydarzeniem i zapytaj o opcje współpracy.</StepItem>
+                        <StepItem>
+                            Otrzymasz od reprezentanta ofertę współpracy w tegorocznej edycji. Aktualnie dostępne są następujące pakiety: Sponsor oraz Wystawcy - 8, 6 lub 4 m2. Wybrałeś pakiet? Świetnie! Poinformuj koordynatora, z którym się kontaktowałeś, o swojej decyzji.
                         </StepItem>
                         <StepItem>
-                            Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+                            W kolejnym etapie zostanie wysłany link do oficjalnego formularza rejestracyjnego. Wypełnij go uważnie - podane dane posłużą do przygotowania umowy i promocji Firmy na stronie internetowej oraz na samym wydarzeniu.
                         </StepItem>
                         <StepItem>
-                            Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
-                        </StepItem>
-                        <StepItem>
-                            Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
-                        </StepItem>
+                            Po wysłaniu formularza zgłoszeniowego otrzymasz link do aplikacji z dostępnymi stoiskami - pozostaje jedynie wybrać wymarzone miejsce na Stadionie i gotowe!</StepItem>
                     </StepsList>
                 </BecomeExhibitorContent>
                 <GearsContainer>
-                    <GearImage src={Gear1} size={130} top="90%" left="64%" style={{ transform: 'translate(-50%, -50%)' }} />
+                    {/* <GearImage src={Gear1} size={130} top="90%" left="64%" style={{ transform: 'translate(-50%, -50%)' }} />
                     <GearImage src={Gear2} size={120} top="13%" left="84%" /> //
                     <GearImage src={Gear3} size={140} top="60%" left="25%" /> //
                     <GearImage src={Gear4} size={290} top="0%" left="38%" /> //
                     <GearImage src={Gear5} size={190} top="50%" left="76%" /> //
-                    <GearImage src={Gear1} size={100} top="95%" left="17%" style={{ transform: 'translate(-50%, -50%)' }} />
-
+                    <GearImage src={Gear1} size={100} top="95%" left="17%" style={{ transform: 'translate(-50%, -50%)' }} /> */}
+                    <img src={BusinessGears} alt="Ilustracja zębatek" style={{ width: '100%', height: 'auto' }} />
                 </GearsContainer>
             </BecomeExhibitorContainer>
             <OrganizersSection>
