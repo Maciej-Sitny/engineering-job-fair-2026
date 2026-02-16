@@ -3,6 +3,7 @@ import Navbar from './navbar/Navbar'
 import MainSite from './mainsite/MainSite'
 import AboutUs from './about/AboutUs'
 import BusinessZone from './business/BusinessZone'
+// import ExhibitionerSearch from './exhibitioner_search/ExhibitionerSearch'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Footer from './footer/Footer'
 import ScrollToTop from './ScrollToTop'
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<MainSite />} />
         <Route path="/o-nas" element={<AboutUs />} />
         <Route path="/strefa-firm" element={<BusinessZone />} />
+        {/* <Route path="/wystawcy" element={<ExhibitionerSearch />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>

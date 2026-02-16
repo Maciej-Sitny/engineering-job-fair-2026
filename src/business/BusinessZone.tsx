@@ -1,17 +1,12 @@
 import styled from 'styled-components';
 import { useState, useEffect, useRef } from 'react';
 import SEO from '../components/SEO';
-import StrefahirmTlo from './assets/strefa-firm-tlo.svg';
-import Gear1 from '../assets/gears/Subtract (1).svg';
-import Gear2 from '../assets/gears/Subtract (2).svg';
-import Gear3 from '../assets/gears/Subtract (3).svg';
-import Gear4 from '../assets/gears/Subtract (4).svg';
-import Gear5 from '../assets/gears/Subtract (5).svg';
-import GabrielIwaniuk from '../assets/organizers/Gabriel_Iwaniuk.svg';
-import MajaKonopka from '../assets/organizers/Maja_Konopka.svg';
-import AgnieszkaPyka from '../assets/organizers/Agnieszka_Pyka.svg';
-import NikodemWlodarczyk from '../assets/organizers/Nikodem_Wlodarczyk.svg';
-import FRZdjecieGrupowe from './assets/FR-zdjecie-grupowe.svg';
+import StrefahirmTlo from '../organizers/business-zone-background.png';
+import GabrielIwaniuk from '../organizers/FRgabrys-7f4a000848a6d36bd7462dca9c51a679 5.png';
+import MajaKonopka from '../organizers/fr-maja.png';
+import AgnieszkaPyka from '../organizers/fr-agnieszka.png';
+import NikodemWlodarczyk from '../organizers/fr-nikodem.png';
+import FRZdjecieGrupowe from '../organizers/fr-grupowe.png';
 import FacebookIcon from '../footer/assets/Facebook.svg';
 import InstagramIcon from '../footer/assets/instagram.svg';
 import LinkedinIcon from '../footer/assets/linkedin.svg';
@@ -433,27 +428,6 @@ const GearsContainer = styled.div`
     }
 `;
 
-const GearImage = styled.img<{ size: number; top: string; left: string }>`
-    position: absolute;
-    /* --- Responsywne rozmiary zębatek --- */
-    width: ${props => props.size * 0.5}px;
-    height: ${props => props.size * 0.5}px;
-    top: ${props => props.top};
-    left: ${props => props.left};
-    max-width: 100%;
-
-    /* --- 769px+: Większe zębatki --- */
-    @media (min-width: 769px) {
-        width: ${props => props.size * 0.7}px;
-        height: ${props => props.size * 0.7}px;
-    }
-
-    /* --- 1025px+: Pełny rozmiar --- */
-    @media (min-width: 1025px) {
-        width: ${props => props.size}px;
-        height: ${props => props.size}px;
-    }
-`;
 
 /* ==========================================================================
    ORGANIZERS SECTION
@@ -840,8 +814,8 @@ export default function BusinessZone() {
                     if (entry.isIntersecting && !hasAnimated) {
                         setHasAnimated(true);
                         animateCounter(setCounter1, 30, 2000);
-                        animateCounter(setCounter2, 200, 2000);
-                        animateCounter(setCounter3, 60, 2000);
+                        animateCounter(setCounter2, 5000, 2500);
+                        animateCounter(setCounter3, 28, 2000);
 
                         // Zatrzymaj obserwację po pierwszej animacji
                         if (counterRef.current) {
@@ -903,16 +877,16 @@ export default function BusinessZone() {
             </HeroContainer>
             <CounterContainer ref={counterRef}>
                 <CounterSubContainer>
-                    <CounterNumber>{counter1}</CounterNumber>
-                    <CounterLabel>Liczba Firm</CounterLabel>
+                    <CounterNumber>{counter1}+</CounterNumber>
+                    <CounterLabel>Firm</CounterLabel>
                 </CounterSubContainer>
                 <CounterSubContainer>
                     <CounterNumber>{counter2}</CounterNumber>
-                    <CounterLabel>Liczba Odwiedzających</CounterLabel>
+                    <CounterLabel>Uczestników</CounterLabel>
                 </CounterSubContainer>
                 <CounterSubContainer>
                     <CounterNumber>{counter3}</CounterNumber>
-                    <CounterLabel>Liczba nwm czego</CounterLabel>
+                    <CounterLabel>Lat doświadczenia</CounterLabel>
                 </CounterSubContainer>
             </CounterContainer>
             <BecomeExhibitorContainer>
@@ -925,9 +899,9 @@ export default function BusinessZone() {
                     </BecomeExhibitorDescription>
                     <StepsList>
                         <StepItem>
-                            Jako pierwszy krok, skontaktuj się mailowo lub telefonicznie z koordynatorami ds. kontaktu z Firmami. Zgłoś zainteresowanie wydarzeniem i zapytaj o opcje współpracy.</StepItem>
+                            Jako pierwszy krok, skontaktuj się mailowo lub telefonicznie z Koordynatorami ds. Kontaktu z Firmami. Zgłoś zainteresowanie wydarzeniem i zapytaj o opcje współpracy.</StepItem>
                         <StepItem>
-                            Otrzymasz od reprezentanta ofertę współpracy w tegorocznej edycji. Aktualnie dostępne są następujące pakiety: Sponsor oraz Wystawcy - 8, 6 lub 4 m2. Wybrałeś pakiet? Świetnie! Poinformuj koordynatora, z którym się kontaktowałeś, o swojej decyzji.
+                            Otrzymasz od reprezentanta ofertę współpracy w tegorocznej edycji. Aktualnie dostępne są następujące pakiety: Sponsor oraz Wystawcy - 8, 6 lub 4 m2. Wybrałeś pakiet? Świetnie! Poinformuj Koordynatora, z którym się kontaktowałeś, o swojej decyzji.
                         </StepItem>
                         <StepItem>
                             W kolejnym etapie zostanie wysłany link do oficjalnego formularza rejestracyjnego. Wypełnij go uważnie - podane dane posłużą do przygotowania umowy i promocji Firmy na stronie internetowej oraz na samym wydarzeniu.

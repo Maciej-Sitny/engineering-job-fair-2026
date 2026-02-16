@@ -17,9 +17,9 @@ import AllInUJ from './assets/sponsors/all_in_uj_logo.svg';
 import GEHealthcareLogo from './assets/sponsors/ge_healthcare_logo.svg';
 import IBMLogo from './assets/sponsors/ibm_logo.svg';
 import SponsorsCarousel from './SponsorsCarousel';
-import GabrielIwaniuk from '../assets/organizers/Gabriel_Iwaniuk.svg';
-import NikodemSzafran from '../assets/organizers/Nikodem_Szafran.svg';
-import ZofiaPalarz from '../assets/organizers/Zofia_Palarz.svg';
+import GabrielIwaniuk from '../organizers/FRgabrys-7f4a000848a6d36bd7462dca9c51a679 5.png';
+import NikodemSzafran from '../organizers/MOnikodem-812e297c7c8b379c94749d13c379cf6f 1.png';
+import ZofiaPalarz from '../organizers/LG-zosia.png';
 const HeroContainer = styled.section`
     display: flex;
     align-items: center;
@@ -1118,8 +1118,8 @@ function MainSite() {
                     if (entry.isIntersecting && !hasAnimated) {
                         setHasAnimated(true);
                         animateCounter(setCounter1, 30, 2000);
-                        animateCounter(setCounter2, 200, 2000);
-                        animateCounter(setCounter3, 60, 2000);
+                        animateCounter(setCounter2, 5000, 2500);
+                        animateCounter(setCounter3, 28, 2000);
 
                         if (counterRef.current) {
                             observer.unobserve(counterRef.current);
@@ -1291,16 +1291,16 @@ function MainSite() {
 
             <CounterContainer ref={counterRef}>
                 <CounterSubContainer>
-                    <CounterNumber>{counter1}</CounterNumber>
-                    <CounterLabel>Liczba Firm</CounterLabel>
+                    <CounterNumber>{counter1}+</CounterNumber>
+                    <CounterLabel>Firm</CounterLabel>
                 </CounterSubContainer>
                 <CounterSubContainer>
                     <CounterNumber>{counter2}</CounterNumber>
-                    <CounterLabel>Liczba Odwiedzających</CounterLabel>
+                    <CounterLabel>Uczestników</CounterLabel>
                 </CounterSubContainer>
                 <CounterSubContainer>
                     <CounterNumber>{counter3}</CounterNumber>
-                    <CounterLabel>Liczba nwm czego</CounterLabel>
+                    <CounterLabel>Lat doświadczenia</CounterLabel>
                 </CounterSubContainer>
             </CounterContainer>
             <MapTitle>Mapa targów</MapTitle>
