@@ -3,13 +3,7 @@
 
 User-agent: *
 Allow: /
+Disallow: /assets/
 
 # Sitemap location
 Sitemap: https://itp.best.krakow.pl/sitemap.xml
-
-# Crawl delay (optional, be nice to servers)
-Crawl-delay: 1
-
-# Disallow admin or private paths (add if needed)
-# Disallow: /admin/
-# Disallow: /private/

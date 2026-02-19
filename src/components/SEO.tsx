@@ -15,7 +15,7 @@ export default function SEO({
     title = 'Inżynierskie Targi Pracy 2026 | 11 marca | Kraków',
     description = '28. edycja Inżynierskich Targów Pracy w Krakowie. Poznaj pracodawców z branży IT, inżynierii i technologii. 11 marca 2026, Stadion Miejski im. Henryka Reymana. Wstęp wolny!',
     canonicalUrl = 'https://itp.best.krakow.pl/',
-    ogImage = 'https://itp.best.krakow.pl/og-image.jpg'
+    ogImage = 'https://itp.best.krakow.pl/itp-logo.svg'
 }: SEOProps) {
     useEffect(() => {
         // Update title
