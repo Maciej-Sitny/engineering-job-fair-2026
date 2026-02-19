@@ -8,15 +8,15 @@ import Gear4 from '../assets/gears/Subtract (3).svg';
 import Gear5 from '../assets/gears/Subtract (4).svg';
 import Gear6 from '../assets/gears/Subtract (5).svg';
 import Gear7 from '../assets/gears/Subtract (6).svg';
-import GabrielIwaniuk from '../assets/organizers/Gabriel_Iwaniuk.svg';
-import NikodemSzafran from '../assets/organizers/Nikodem_Szafran.svg';
-import ZofiaPalarz from '../assets/organizers/Zofia_Palarz.svg';
-import MaciejSitny from '../assets/organizers/Maciej_Sitny.svg';
-import KamilaGuzik from '../assets/organizers/Kamila_Guzik.svg';
-import PatrycjaBodek from '../assets/organizers/Patrycja_Bodek.svg';
-import AgnieszkaPyka from '../assets/organizers/Agnieszka_Pyka.svg';
-import MajaKonopka from '../assets/organizers/Maja_Konopka.svg';
-import NikodemWlodarczyk from '../assets/organizers/Nikodem_Wlodarczyk.svg';
+import GabrielIwaniuk from '../organizers/FRgabrys-7f4a000848a6d36bd7462dca9c51a679 5.png';
+import NikodemSzafran from '../organizers/MOnikodem-812e297c7c8b379c94749d13c379cf6f 1.png';
+import ZofiaPalarz from '../organizers/LG-zosia.png';
+import MaciejSitny from '../organizers/it-maciek.png';
+import KamilaGuzik from '../organizers/gd-kamila.png';
+import PatrycjaBodek from '../organizers/pr-patrycja.png';
+import AgnieszkaPyka from '../organizers/fr-agnieszka.png';
+import MajaKonopka from '../organizers/fr-maja.png';
+import NikodemWlodarczyk from '../organizers/fr-nikodem.png';
 
 /* ==========================================================================
    ABOUT US - RESPONSIVE STYLES (Mobile-First Approach)

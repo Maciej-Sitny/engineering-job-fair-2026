@@ -300,7 +300,8 @@ const MobileSecondaryButton = styled(SecondaryButton)`
 
 const links = [
     { label: 'O nas', to: '/o-nas' },
-    { label: 'Kontakt', to: '/#kontakt' }
+    { label: 'Kontakt', to: '/#kontakt' },
+    { label: 'Baza CV', to: 'https://forms.gle/u73LBm69dnfxjibV8', external: true }
 ];
 
 function Navbar() {
@@ -375,9 +376,15 @@ function Navbar() {
                         <NavLinks>
                             {links.map((link) => (
                                 <NavLink key={link.label}>
-                                    <Link to={link.to} onClick={(e) => handleLinkClick(e, link.to)}>
-                                        {link.label}
-                                    </Link>
+                                    {link.external ? (
+                                        <a href={link.to} target="_blank" rel="noopener noreferrer">
+                                            {link.label}
+                                        </a>
+                                    ) : (
+                                        <Link to={link.to} onClick={(e) => handleLinkClick(e, link.to)}>
+                                            {link.label}
+                                        </Link>
+                                    )}
                                 </NavLink>
                             ))}
                         </NavLinks>
@@ -406,9 +413,15 @@ function Navbar() {
                 <MobileNavLinks>
                     {links.map((link) => (
                         <MobileNavLink key={link.label}>
-                            <Link to={link.to} onClick={(e) => handleLinkClick(e, link.to)}>
-                                {link.label}
-                            </Link>
+                            {link.external ? (
+                                <a href={link.to} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+                                    {link.label}
+                                </a>
+                            ) : (
+                                <Link to={link.to} onClick={(e) => handleLinkClick(e, link.to)}>
+                                    {link.label}
+                                </Link>
+                            )}
                         </MobileNavLink>
                     ))}
                 </MobileNavLinks>
