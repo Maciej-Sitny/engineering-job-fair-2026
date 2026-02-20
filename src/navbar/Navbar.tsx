@@ -300,6 +300,7 @@ const MobileSecondaryButton = styled(SecondaryButton)`
 
 const links = [
     { label: 'O nas', to: '/o-nas' },
+    { label: 'Wystawcy', to: '/wystawcy' },
     { label: 'Kontakt', to: '/#kontakt' },
     { label: 'Baza CV', to: 'https://forms.gle/u73LBm69dnfxjibV8', external: true }
 ];
