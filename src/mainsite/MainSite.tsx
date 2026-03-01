@@ -10,16 +10,29 @@ import Gear6 from '../assets/gears/Subtract (5).svg';
 import Gear7 from '../assets/gears/Subtract (6).svg';
 import GearWithPeople from './assets/GearWithPeople.svg';
 import GearWithBackground from './assets/GearWithBackground.svg';
-import ITPMap from './assets/mapa_targow.svg';
+// import ITPMap from './assets/mapa_targow.svg';
 import WoodwardLogo from './assets/sponsors/woodward_logo.svg';
-import AptivLogo from './assets/sponsors/aptiv_logo.svg';
-import AllInUJ from './assets/sponsors/all_in_uj_logo.svg';
-import GEHealthcareLogo from './assets/sponsors/ge_healthcare_logo.svg';
-import IBMLogo from './assets/sponsors/ibm_logo.svg';
-import SponsorsCarousel from './SponsorsCarousel';
+import AllInUJ from './assets/patroni/logo_all_in_uj.jpg';
+// import SponsorsCarousel from './SponsorsCarousel';
 import GabrielIwaniuk from '../organizers/FRgabrys-7f4a000848a6d36bd7462dca9c51a679 5.png';
 import NikodemSzafran from '../organizers/MOnikodem-812e297c7c8b379c94749d13c379cf6f 1.png';
 import ZofiaPalarz from '../organizers/LG-zosia.png';
+import LogoMiastoKrakow from './assets/patroni/logo_miasto_krakow.svg';
+import LogoKrakowPl from './assets/patroni/logo_krakow_pl.jpg';
+import LogoTvpKrakow from './assets/patroni/logo_tvp_krakow.png';
+import LogoTvpInfo from './assets/patroni/logo_tvp_info.svg';
+import LogoPerspektywy from './assets/patroni/logo_perspektywy.jpg';
+import LogoEurostudent from './assets/patroni/logo_eurostudent.svg';
+import LogoRadio17 from './assets/patroni/logo_radio17.png';
+import LogoPlynPodPrad from './assets/patroni/logo_plyn_pod_prad.jpg';
+import LogoGlos24 from './assets/patroni/logo_glos24.svg';
+import LogoDlaStudenta from './assets/patroni/logo_dlastudenta.jpg';
+import LogoBIS from './assets/patroni/logo_bis.png';
+import LogoPega from './assets/sponsors/logo_pega.jpg';
+import LogoOrange from './assets/sponsors/logo_orange.svg';
+import LogoSabre from './assets/sponsors/logo_sabre.jpg';
+import CVPhoto from './assets/zdjecie_cv_gradient.png';
+
 const HeroContainer = styled.section`
     display: flex;
     align-items: center;
@@ -1085,6 +1098,647 @@ const CarouselTitle = styled.h3`
     }
 `;
 
+/* ===== SCHEDULE / KONKURSY SECTION ===== */
+
+const ScheduleSection = styled.section`
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    font-family: 'Alumni Sans', sans-serif;
+
+    /* --- BASE: Mobile First --- */
+    padding: 3rem 1.5rem 2rem;
+    flex-direction: column;
+
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        padding: 4rem 2rem 2.5rem;
+    }
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        flex-direction: row;
+        padding: 5rem 3vw 4rem;
+        gap: 2rem;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 80px 8vw 60px;
+        gap: 2rem;
+    }
+`;
+
+const ScheduleGearsCol = styled.div`
+    position: relative;
+    flex-shrink: 0;
+
+    /* --- BASE: Mobile First --- */
+    display: none;
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        display: block;
+        width: 80px;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        width: 140px;
+    }
+`;
+
+const ScheduleGearImg = styled.img<{ size: number; top: number; left: number }>`
+    position: absolute;
+    top: ${props => props.top}px;
+    left: ${props => props.left}px;
+    width: ${props => props.size}px;
+    height: ${props => props.size}px;
+    object-fit: contain;
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        width: ${props => props.size * 0.5}px;
+        height: ${props => props.size * 0.5}px;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        width: ${props => props.size * 0.75}px;
+        height: ${props => props.size * 0.75}px;
+    }
+
+    /* --- 1400px+: Pełny rozmiar --- */
+    @media (min-width: 1400px) {
+        width: ${props => props.size}px;
+        height: ${props => props.size}px;
+    }
+`;
+
+const ScheduleItemsList = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+`;
+
+const ScheduleItem = styled.div`
+    display: grid;
+    align-items: start;
+    border-bottom: 1px solid #e8c98a;
+
+    /* --- BASE: Mobile First --- */
+    grid-template-columns: auto 1fr;
+    gap: 1rem 1.5rem;
+    padding: 1.5rem 0;
+
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        gap: 1rem 2rem;
+        padding: 1.75rem 0;
+    }
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        grid-template-columns: 110px 1fr;
+        gap: 1rem 2.5rem;
+        padding: 2rem 0;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        grid-template-columns: 180px 1fr;
+        gap: 1.5rem 3rem;
+        padding: 2.5rem 0;
+    }
+
+    &:last-child {
+        border-bottom: 1px solid #e8c98a;
+    }
+`;
+
+const ScheduleTime = styled.span`
+    font-weight: 500;
+    color: #1e1e1e;
+    font-family: 'Alumni Sans', sans-serif;
+    line-height: 1;
+    align-self: center;
+
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(2.5rem, 10vw, 4rem);
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 60px;
+    }
+`;
+
+const ScheduleItemContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    align-self: center;
+`;
+
+const ScheduleItemName = styled.h3`
+    font-weight: 500;
+    color: #1e1e1e;
+    margin: 0 0 6px 0;
+    letter-spacing: 1.5px;
+    font-family: 'Alumni Sans', sans-serif;
+    text-transform: uppercase;
+
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(0.85rem, 3.5vw, 1.25rem);
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 35px;
+        margin-bottom: 8px;
+    }
+`;
+
+const ScheduleItemDescription = styled.p`
+    font-weight: 400;
+    color: #1e1e1e;
+    margin: 0;
+    line-height: 1.5;
+    font-family: 'Alumni Sans', sans-serif;
+
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(0.75rem, 3vw, 1rem);
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 16px;
+    }
+`;
+
+const ScheduleVerticalTitle = styled.h2`
+    font-weight: 500;
+    color: #1e1e1e;
+    font-family: 'Alumni Sans', sans-serif;
+    margin: 0;
+    line-height: 1;
+
+    /* --- BASE: Mobile First (horizontal at top) --- */
+    writing-mode: horizontal-tb;
+    transform: none;
+    order: -1;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    margin-bottom: 1.5rem;
+
+    /* --- 769px+: Tablety (vertical on right) --- */
+    @media (min-width: 769px) {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        order: 1;
+        font-size: clamp(4rem, 8vw, 7rem);
+        margin-bottom: 0;
+        padding-left: 1.5rem;
+        align-self: flex-start;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: clamp(6rem, 12vw, 160px);
+        padding-left: 2rem;
+    }
+`;
+
+/* ===== SPONSORZY I PATRONI SECTION ===== */
+
+const SponsorsSection = styled.section`
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    font-family: 'Alumni Sans', sans-serif;
+
+    /* --- BASE: Mobile First --- */
+    flex-direction: column;
+    padding: 3rem 1.5rem 2rem;
+
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        padding: 4rem 2rem 2.5rem;
+    }
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        flex-direction: row;
+        padding: 5rem 3vw 4rem;
+        gap: 2rem;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 80px 9vw 60px;
+        gap: 3rem;
+    }
+`;
+
+const SponsorsVerticalTitle = styled.h2`
+    font-weight: 500;
+    color: #1e1e1e;
+    font-family: 'Alumni Sans', sans-serif;
+    margin: 0;
+    line-height: 1;
+
+    /* --- BASE: Mobile First (horizontal at top) --- */
+    writing-mode: horizontal-tb;
+    transform: none;
+    order: -1;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    margin-bottom: 1.5rem;
+
+    /* --- 769px+: Tablety (vertical on left) --- */
+    @media (min-width: 769px) {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        order: -1;
+        font-size: clamp(4rem, 8vw, 7rem);
+        margin-bottom: 0;
+        padding-right: 1.5rem;
+        align-self: flex-start;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: clamp(6rem, 10vw, 150px);
+        padding-right: 1rem;
+    }
+`;
+
+const SponsorsContent = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    /* --- BASE: Mobile First --- */
+    gap: 2.5rem;
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        gap: 3rem;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        gap: 40px;
+    }
+`;
+
+const SponsorGroup = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    /* --- BASE: Mobile First --- */
+    gap: 0.75rem;
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        gap: 14px;
+    }
+`;
+
+const SponsorGroupLabel = styled.p`
+    font-weight: 500;
+    color: #1e1e1e;
+    letter-spacing: 0.5px;
+    margin: 0;
+    text-align: right;
+    font-family: 'Alumni Sans', sans-serif;
+
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(0.9rem, 4vw, 1.25rem);
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 35px;
+    }
+`;
+
+const SponsorLogoGrid = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+
+    /* --- BASE: Mobile First --- */
+    gap: 0.6rem;
+
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        gap: 0.75rem;
+    }
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        gap: 1rem;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        gap: 16px;
+    }
+`;
+
+const SponsorLogoCard = styled.div<{ large?: boolean }>`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    border: 1.5px solid #ebebeb;
+    background: #fff;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+    flex-shrink: 0;
+
+    /* --- BASE: Mobile First --- */
+    padding: ${props => props.large ? '1rem 2rem' : '0.75rem 1rem'};
+    height: ${props => props.large ? '80px' : '60px'};
+    width: ${props => props.large ? '220px' : '120px'};
+
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        height: ${props => props.large ? '90px' : '68px'};
+        width: ${props => props.large ? '260px' : '140px'};
+    }
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        border-radius: 18px;
+        padding: ${props => props.large ? '1.25rem 2.5rem' : '1rem 1.25rem'};
+        height: ${props => props.large ? '110px' : '80px'};
+        width: ${props => props.large ? '300px' : '160px'};
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        border-radius: 20px;
+        padding: ${props => props.large ? '1.5rem 3.5rem' : '1.25rem 1.5rem'};
+        height: ${props => props.large ? '130px' : '90px'};
+        width: ${props => props.large ? '380px' : '200px'};
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+        }
+    }
+`;
+
+const SponsorLogoImg = styled.img`
+    object-fit: contain;
+    max-width: 100%;
+
+    /* --- BASE: Mobile First --- */
+    max-height: 36px;
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        max-height: 44px;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        max-height: 120px;
+    }
+`;
+
+const SponsorMainLogoImg = styled(SponsorLogoImg)`
+    /* --- BASE: Mobile First --- */
+    max-height: 48px;
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        max-height: 60px;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        max-height: 80px;
+    }
+`;
+
+const SponsorMainCardWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+
+    /* --- BASE: Mobile First --- */
+    gap: 0.6rem;
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        gap: 1rem;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        gap: 16px;
+    }
+`;
+
+const SponsorLogoText = styled.span`
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: 500;
+    color: #1e1e1e;
+    text-align: center;
+    letter-spacing: 0.5px;
+
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(0.75rem, 3vw, 1rem);
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 16px;
+    }
+`;
+
+/* ===== CV BANNER SECTION ===== */
+
+const CVSection = styled.section`
+    position: relative;
+    overflow: hidden;
+    background: #f78f27;
+    font-family: 'Alumni Sans', sans-serif;
+
+    /* --- BASE: Mobile First --- */
+    min-height: 200px;
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        min-height: 260px;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        min-height: 320px;
+    }
+`;
+
+const CVContent = styled.div`
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* --- BASE: Mobile First --- */
+    padding: 3rem 1.5rem 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        padding: 3.5rem 4vw;
+        width: 55%;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 4rem 5vw 4rem 8vw;
+        width: 50%;
+    }
+`;
+
+const CVTitle = styled.h2`
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 1rem 0;
+    font-family: 'Alumni Sans', sans-serif;
+    line-height: 1.1;
+
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.6rem, 7vw, 2.5rem);
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+        margin-bottom: 1.25rem;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+`;
+
+const CVDescription = styled.p`
+    font-weight: 400;
+    color: #fff;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.4;
+    font-family: 'Alumni Sans', sans-serif;
+
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    text-align: justify;
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 20px;
+        margin-bottom: 28px;
+        max-width: 480px;
+    }
+`;
+
+const CVButton = styled.a`
+    display: inline-block;
+    border: 1.5px solid #fff;
+    color: #fff;
+    background: transparent;
+    font-family: 'Alumni Sans', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+    align-self: flex-start;
+    cursor: pointer;
+
+    /* --- BASE: Mobile First --- */
+    padding: 0.6rem 1.4rem;
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    border-radius: 8px;
+
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        padding: 0.7rem 1.6rem;
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        border-radius: 10px;
+    }
+
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 0.3rem 2rem;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: black;
+        }
+    }
+`;
+
+const CVImageWrapper = styled.div`
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right right;
+        display: block;
+
+        @media (min-width: 769px) {
+            object-position: center center;
+        }
+    }
+`;
+
 function MainSite() {
     const gearRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [counter1, setCounter1] = useState(0);
@@ -1303,12 +1957,132 @@ function MainSite() {
                     <CounterLabel>Lat doświadczenia</CounterLabel>
                 </CounterSubContainer>
             </CounterContainer>
-            <MapTitle>Mapa targów</MapTitle>
+
+            {/* <ScheduleSection id="konkursy">
+                <ScheduleGearsCol>
+                    <ScheduleGearImg src={Gear1} size={120} top={0} left={0} alt="" aria-hidden="true" />
+                    <ScheduleGearImg src={Gear4} size={80} top={-20} left={135} alt="" aria-hidden="true" />
+                    <ScheduleGearImg src={Gear3} size={70} top={130} left={10} alt="" aria-hidden="true" />
+                </ScheduleGearsCol>
+                <ScheduleItemsList>
+                    {[
+                        {
+                            time: '15:00',
+                            name: 'Konkurs I',
+                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque.',
+                        },
+                        {
+                            time: '15:30',
+                            name: 'Konkurs II',
+                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque.',
+                        },
+                        {
+                            time: '16:00',
+                            name: 'Konkurs III',
+                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque.',
+                        },
+                    ].map((item) => (
+                        <ScheduleItem key={item.time}>
+                            <ScheduleTime>{item.time}</ScheduleTime>
+                            <ScheduleItemContent>
+                                <ScheduleItemName>{item.name}</ScheduleItemName>
+                                <ScheduleItemDescription>{item.description}</ScheduleItemDescription>
+                            </ScheduleItemContent>
+                        </ScheduleItem>
+                    ))}
+                </ScheduleItemsList>
+                <ScheduleVerticalTitle>Konkursy</ScheduleVerticalTitle>
+            </ScheduleSection> */}
+
+            <SponsorsSection id="sponsorzy">
+                <SponsorsVerticalTitle>Sponsorzy i Patroni</SponsorsVerticalTitle>
+                <SponsorsContent>
+
+                    {/* Sponsor Główny */}
+                    <SponsorGroup>
+                        <SponsorGroupLabel>Sponsor Główny</SponsorGroupLabel>
+                        <SponsorMainCardWrapper>
+                            <SponsorLogoCard large>
+                                <SponsorMainLogoImg src={LogoSabre} alt="Sabre" />
+                            </SponsorLogoCard>
+                        </SponsorMainCardWrapper>
+                    </SponsorGroup>
+
+                    {/* Sponsorzy */}
+                    <SponsorGroup>
+                        <SponsorGroupLabel>Sponsorzy</SponsorGroupLabel>
+                        <SponsorLogoGrid>
+                            <SponsorLogoCard><SponsorLogoImg src={WoodwardLogo} alt="Woodward" /></SponsorLogoCard>
+                            <SponsorLogoCard><SponsorLogoImg src={LogoPega} alt="Pega" /></SponsorLogoCard>
+                            <SponsorLogoCard><SponsorLogoImg height={60} src={LogoOrange} alt="Orange" /></SponsorLogoCard>
+                        </SponsorLogoGrid>
+                    </SponsorGroup>
+
+                    {/* Patron honorowy */}
+                    <SponsorGroup>
+                        <SponsorGroupLabel>Patron honorowy</SponsorGroupLabel>
+                        <SponsorMainCardWrapper>
+                            <SponsorLogoCard large>
+                                <SponsorMainLogoImg src={LogoMiastoKrakow} alt="Miasto Kraków" />
+                            </SponsorLogoCard>
+                        </SponsorMainCardWrapper>
+                    </SponsorGroup>
+
+                    {/* Patroni */}
+                    <SponsorGroup>
+                        <SponsorGroupLabel>Patroni</SponsorGroupLabel>
+                        <SponsorLogoGrid>
+                            <SponsorLogoCard><SponsorLogoImg src={LogoKrakowPl} alt="krakow.pl" /></SponsorLogoCard>
+                            <SponsorLogoCard><SponsorLogoImg src={LogoTvpKrakow} alt="TVP Kraków" /></SponsorLogoCard>
+                            <SponsorLogoCard><SponsorLogoImg src={LogoTvpInfo} alt="TVP Info" /></SponsorLogoCard>
+                            <SponsorLogoCard><SponsorLogoImg src={LogoPerspektywy} alt="Perspektywy" /></SponsorLogoCard>
+                            <SponsorLogoCard><SponsorLogoImg src={LogoEurostudent} alt="Eurostudent" /></SponsorLogoCard>
+                            <SponsorLogoCard><SponsorLogoImg src={LogoDlaStudenta} alt="Dla Studenta" /></SponsorLogoCard>
+                            <SponsorLogoCard><SponsorLogoImg src={LogoRadio17} alt="Radio 1.7" /></SponsorLogoCard>
+                        </SponsorLogoGrid>
+                    </SponsorGroup>
+
+                    {/* Partnerzy */}
+                    <SponsorGroup>
+                        <SponsorGroupLabel>Partnerzy</SponsorGroupLabel>
+                        <SponsorLogoGrid>
+                            <SponsorLogoCard><SponsorLogoImg src={LogoPlynPodPrad} alt="PłyńPodPrąd" /></SponsorLogoCard>
+                            <SponsorLogoCard><SponsorLogoImg height={100} src={AllInUJ} alt="All In UJ" /></SponsorLogoCard>
+                            {/* <SponsorLogoCard><SponsorLogoText>infopraca</SponsorLogoText></SponsorLogoCard> */}
+                            {/* <SponsorLogoCard><SponsorLogoText>KrakowDlaWas</SponsorLogoText></SponsorLogoCard> */}
+                            <SponsorLogoCard><SponsorLogoImg height={60} src={LogoGlos24} alt="Głos24" /></SponsorLogoCard>
+                            {/* <SponsorLogoCard><SponsorLogoText>Inzynieria.com</SponsorLogoText></SponsorLogoCard> */}
+                            <SponsorLogoCard><SponsorLogoImg src={LogoBIS} alt="BIS" /></SponsorLogoCard>
+                            {/* <SponsorLogoCard><SponsorLogoText>Crossweb</SponsorLogoText></SponsorLogoCard> */}
+                        </SponsorLogoGrid>
+                    </SponsorGroup>
+
+                </SponsorsContent>
+            </SponsorsSection>
+
+            <CVSection>
+                <CVContent>
+                    <CVTitle>Dodaj swoje CV i daj się znaleźć!</CVTitle>
+                    <CVDescription>
+                        Prześlij swoje CV i pozwól firmom odkryć Twoje umiejętności. To prosty krok
+                        do nowych możliwości&nbsp;– dzięki naszej bazie Twoje CV trafi bezpośrednio do
+                        pracodawców, którzy szukają kandydatów takich jak Ty.
+                    </CVDescription>
+                    <CVButton href="https://forms.gle/u73LBm69dnfxjibV8" target="_blank" rel="noopener noreferrer">
+                        Chcę dodać moje CV!
+                    </CVButton>
+                </CVContent>
+                <CVImageWrapper>
+                    <img src={CVPhoto} alt="" aria-hidden="true" />
+                </CVImageWrapper>
+            </CVSection>
+
+            {/* <MapTitle>Mapa targów</MapTitle>
             <MapContainer>
                 <img src={ITPMap} alt="Mapa Inżynierskich Targów Pracy 2026 na Stadionie Miejskim w Krakowie - rozmieszczenie stoisk firm" />
-            </MapContainer>
-            <CarouselTitle>Sprawdź kto zaufał nam we wcześniejszych edycjach:</CarouselTitle>
-            <SponsorsCarousel slides={[WoodwardLogo, AptivLogo, AllInUJ, GEHealthcareLogo, IBMLogo]} />
+            </MapContainer> */}
+            {/* <CarouselTitle>Sprawdź kto zaufał nam we wcześniejszych edycjach:</CarouselTitle>
+            <SponsorsCarousel slides={[WoodwardLogo, AptivLogo, AllInUJ, GEHealthcareLogo, IBMLogo]} /> */}
 
             <OrganizersContainer id="kontakt">
                 <OrganizersTitle>Zaufaj nam i Ty!</OrganizersTitle>
