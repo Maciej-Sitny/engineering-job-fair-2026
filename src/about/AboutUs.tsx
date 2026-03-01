@@ -12,11 +12,13 @@ import GabrielIwaniuk from '../organizers/FRgabrys-7f4a000848a6d36bd7462dca9c51a
 import NikodemSzafran from '../organizers/MOnikodem-812e297c7c8b379c94749d13c379cf6f 1.png';
 import ZofiaPalarz from '../organizers/LG-zosia.png';
 import MaciejSitny from '../organizers/it-maciek.png';
-import KamilaGuzik from '../organizers/gd-kamila.png';
+import KamilaGuzik from '../organizers/gd-kamila3.jpg';
 import PatrycjaBodek from '../organizers/pr-patrycja.png';
 import AgnieszkaPyka from '../organizers/fr-agnieszka.png';
 import MajaKonopka from '../organizers/fr-maja.png';
 import NikodemWlodarczyk from '../organizers/fr-nikodem.png';
+import KrzysztofOpyd from '../organizers/lgdni-krzysztof.jpg';
+import TomaszWylupek from '../organizers/hr-tomek.jpg';
 
 /* ==========================================================================
    ABOUT US - RESPONSIVE STYLES (Mobile-First Approach)
@@ -307,6 +309,7 @@ const OrganizerVisual = styled.div`
 	overflow: hidden;
 	cursor: pointer;
 	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
 	
 	/* --- BASE: Aspect ratio na mobile --- */
 	aspect-ratio: 3/4;
@@ -323,6 +326,50 @@ const OrganizerVisual = styled.div`
 	@media (min-width: 1025px) {
 		height: 60vh;
 		aspect-ratio: unset;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			transform: scale(1.025);
+			box-shadow: 0 22px 52px rgba(0, 0, 0, 0.22);
+		}
+
+		&:hover > .hover-overlay {
+			opacity: 1;
+			letter-spacing: 0.18em;
+		}
+	}
+`;
+
+const HoverOverlay = styled.div`
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, transparent 50%);
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	padding-bottom: 1.5rem;
+	opacity: 0;
+	transition: opacity 0.25s ease;
+	pointer-events: none;
+	z-index: 2;
+
+	span {
+		color: #fff;
+		font-family: 'Alumni Sans', sans-serif;
+		font-size: clamp(1.2rem, 3vh, 1.6rem);
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+		transition: transform 0.25s ease, letter-spacing 0.25s ease;
+	}
+
+	@media (hover: hover) {
+		&:hover span,
+		*:hover > & span {
+			letter-spacing: 0.18em;
+		}
 	}
 `;
 
@@ -630,6 +677,24 @@ const AboutUs = () => {
 			description:
 				'Hej, mam na imię Nikodem, na codzień studiuję Informatykę i Ekonometrię na AGH w Beście jestem niecały rok, a w tej edycji targów zajmuję się kontaktem i współpracą z firmami. W wolnym czasie lubię zajmować się rękodziełem oraz wszelkiego rodzaju aktywnościami fizycznymi. '
 		},
+		{
+			id: 'krzysztof-opyd',
+			name: 'Krzysztof Opyd',
+			role: 'Koordynator ds. Logistyki',
+			phone: '502 724 542',
+			email: 'krzysztof.opyd@BEST.krakow.pl',
+			image: KrzysztofOpyd,
+			description: 'Siemka, jestem Krzysiek od niedawna jestem w BEST’cie i studiuje Zarządzanie i Inżynierie Produkcji na III roku, ale nie zaniedbuje też nauk humanistycznych. Na tej edycji targów pracy pełnię funkcje logistyka dni, czyli między innymi zajmuje się sprzętem na wydarzeniu. W wolnym czasie lubię pogłębiać wiedzę w wielu dziedzinach, rozwijać umiejętności w rysunku i obcować z ludźmi bo jest to najlepsza okazja do nauki.'
+		},
+		{
+			id: 'tomasz-wylupek',
+			name: 'Tomasz Wylupek',
+			role: 'Koordynator ds. Zasobów Ludzkich',
+			phone: '506 636 310',
+			email: 'tomasz.wylupek@BEST.krakow.pl',
+			image: TomaszWylupek,
+			description: 'Hej, z tej strony Tomek, student Automatyki i Robotyki II. roku. W życiu najbardziej cenię rozwój poprzez praktyczne doświadczenia oraz rozmowy z ludźmi, którzy inspirują mnie do patrzenia na świat z nowych perspektyw. Właśnie z tego powodu w projekcie pełnię rolę w obszarze HR.'
+		},
 	];
 
 	const handleToggleCard = (id: string) => {
@@ -704,6 +769,11 @@ const AboutUs = () => {
 											alt={organizer.name}
 											$hidden={isOpen}
 										/>
+										{!isOpen && (
+											<HoverOverlay className="hover-overlay">
+												<span>O mnie →</span>
+											</HoverOverlay>
+										)}
 										{isOpen && (
 											<InfoCard>
 												<GearCorner src={Gear1} alt="" aria-hidden $top $right />
