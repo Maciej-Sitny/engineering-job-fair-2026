@@ -6,6 +6,7 @@ import BusinessZone from './business/BusinessZone'
 import PrivacyPolicy from './privacy/PrivacyPolicy'
 import ExhibitionerSearch from './exhibitioners/ExhibitionerSearch'
 import ExhibitionerDetail from './exhibitioners/ExhibitionerDetail'
+import JobOffers from './joboffers/JobOffers'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Footer from './footer/Footer'
 import ScrollToTop from './ScrollToTop'
@@ -22,6 +23,7 @@ function App() {
         <Route path="/klauzula-cv" element={<PrivacyPolicy />} />
         <Route path="/wystawcy" element={<ExhibitionerSearch />} />
         <Route path="/wystawcy/:id" element={<ExhibitionerDetail />} />
+        <Route path="/oferty-pracy" element={<JobOffers />} />
       </Routes>
       <Footer />
     </BrowserRouter>

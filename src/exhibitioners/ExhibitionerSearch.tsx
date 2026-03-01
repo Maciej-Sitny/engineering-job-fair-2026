@@ -121,10 +121,38 @@ const Body = styled.div`
 `;
 
 /* ==========================================================================
+   MOBILE FILTER TOGGLE
+   ========================================================================== */
+
+const FilterToggleButton = styled.button`
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f78f27;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background 0.2s;
+
+    &:hover {
+        background: #e07a18;
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+    }
+`;
+
+/* ==========================================================================
    CATEGORIES SIDEBAR
    ========================================================================== */
 
-const Sidebar = styled.aside`
+const Sidebar = styled.aside<{ $open?: boolean }>`
     background: #fff;
     border: 1.5px solid #e8e8e8;
     border-radius: 16px;
@@ -132,6 +160,14 @@ const Sidebar = styled.aside`
     position: sticky;
     top: 100px;
     width: 250px;
+
+    @media (max-width: 768px) {
+        display: ${(p) => (p.$open ? 'block' : 'none')};
+        position: static;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 0.5rem;
+    }
 `;
 
 const SidebarTitle = styled.h2`
@@ -225,6 +261,12 @@ const CardLink = styled(Link)`
     }
 `;
 
+const DisabledCardWrap = styled.div`
+    display: block;
+    border-radius: 16px;
+    cursor: default;
+`;
+
 const RegularCard = styled.div`
     border: 1.5px solid #e8e8e8;
     border-radius: 40px;
@@ -267,7 +309,7 @@ const SponsorBadge = styled.span`
 `;
 
 /* Decorative gears */
-const ClusterWrap = styled.div<{ $top?: string; $right?: string; $bottom?: string; $left?: string }>`
+const ClusterWrap = styled.div<{ $top?: string; $right?: string; $bottom?: string; $left?: string; $hideOnMobile?: boolean }>`
     position: absolute;
     top: ${(p) => p.$top ?? 'auto'};
     right: ${(p) => p.$right ?? 'auto'};
@@ -275,6 +317,10 @@ const ClusterWrap = styled.div<{ $top?: string; $right?: string; $bottom?: strin
     left: ${(p) => p.$left ?? 'auto'};
     opacity: 0.3;
     pointer-events: none;
+
+    @media (max-width: 600px) {
+        display: ${(p) => (p.$hideOnMobile ? 'none' : 'block')};
+    }
 `;
 
 /* ==========================================================================
@@ -285,6 +331,7 @@ export default function ExhibitionerSearch() {
     const [query, setQuery] = useState('');
     const [inputValue, setInputValue] = useState('');
     const [selectedCategories, setSelectedCategories] = useState<Set<Category>>(new Set());
+    const [filtersOpen, setFiltersOpen] = useState(false);
 
     const toggleCategory = (cat: Category) => {
         setSelectedCategories((prev) => {
@@ -342,7 +389,11 @@ export default function ExhibitionerSearch() {
                 {/* ── Body ───────────────────────────────────────────── */}
                 <Body>
                     {/* Sidebar */}
-                    <Sidebar>
+                    <div>
+                    <FilterToggleButton type="button" onClick={() => setFiltersOpen((v) => !v)}>
+                        &#9776; {filtersOpen ? 'Ukryj filtry' : 'Filtry'}
+                    </FilterToggleButton>
+                    <Sidebar $open={filtersOpen}>
                         <SidebarTitle>Kategorie</SidebarTitle>
                         <CategoryList>
                             {ALL_CATEGORIES.map((cat) => (
@@ -360,37 +411,40 @@ export default function ExhibitionerSearch() {
                             ))}
                         </CategoryList>
                     </Sidebar>
+                    </div>
 
                     {/* Company list */}
                     <CompanyList>
                         {filtered.length === 0 && (
                             <NoResults>Brak wystawców spełniających podane kryteria.</NoResults>
                         )}
-                        {filtered.map((ex) =>
-                            ex.sponsorLabel ? (
-                                <CardLink to={`/wystawcy/${ex.id}`} key={ex.id}>
-                                    <SponsorCard>
-                                        <ClusterWrap $top="-17px" $right="50px">
-                                            <GearsCluster size={35} color="orange" rotate={0} />
-                                        </ClusterWrap>
-                                        <ClusterWrap $bottom="-20px" $right="160px">
-                                            <GearsCluster size={35} color="orange" rotate={200} />
-                                        </ClusterWrap>
-                                        <ClusterWrap $top="-10px" $right="300px">
-                                            <GearsCluster size={35} color="orange" rotate={0} />
-                                        </ClusterWrap>
-                                        <CompanyName $sponsor>{ex.name}</CompanyName>
-                                        {(ex.sponsorLabel == "SPONSOR GŁÓWNY") && <SponsorBadge>{ex.sponsorLabel}</SponsorBadge>}
-                                    </SponsorCard>
-                                </CardLink>
+                        {filtered.map((ex) => {
+                            const inner = ex.sponsorLabel ? (
+                                <SponsorCard>
+                                    <ClusterWrap $top="-17px" $right="50px">
+                                        <GearsCluster size={35} color="orange" rotate={0} />
+                                    </ClusterWrap>
+                                    <ClusterWrap $bottom="-20px" $right="160px">
+                                        <GearsCluster size={35} color="orange" rotate={200} />
+                                    </ClusterWrap>
+                                    <ClusterWrap $top="-10px" $right="300px" $hideOnMobile>
+                                        <GearsCluster size={35} color="orange" rotate={0} />
+                                    </ClusterWrap>
+                                    <CompanyName $sponsor>{ex.name}</CompanyName>
+                                    {ex.sponsorLabel === 'SPONSOR GŁÓWNY' && <SponsorBadge>{ex.sponsorLabel}</SponsorBadge>}
+                                </SponsorCard>
                             ) : (
-                                <CardLink to={`/wystawcy/${ex.id}`} key={ex.id}>
-                                    <RegularCard>
-                                        <CompanyName>{ex.name}</CompanyName>
-                                    </RegularCard>
-                                </CardLink>
-                            )
-                        )}
+                                <RegularCard>
+                                    <CompanyName>{ex.name}</CompanyName>
+                                </RegularCard>
+                            );
+
+                            return ex.detailDisabled ? (
+                                <DisabledCardWrap key={ex.id}>{inner}</DisabledCardWrap>
+                            ) : (
+                                <CardLink to={`/wystawcy/${ex.id}`} key={ex.id}>{inner}</CardLink>
+                            );
+                        })}
                     </CompanyList>
                 </Body>
             </Inner>

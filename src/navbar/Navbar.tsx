@@ -298,9 +298,55 @@ const MobileSecondaryButton = styled(SecondaryButton)`
     font-size: 1.25rem;
 `;
 
+const PrimaryButton = styled.button`
+    background: #f78f27;
+    color: #fff;
+    border: 2px solid #f78f27;
+    padding: 0.4rem 0.875rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: clamp(0.75rem, 1.8vh, 1rem);
+    transition: all 150ms ease;
+    white-space: nowrap;
+
+    @media (min-width: 481px) {
+        padding: 0.5rem 1rem;
+        font-size: clamp(0.85rem, 2vh, 1rem);
+    }
+
+    @media (min-width: 769px) {
+        padding: 0.5rem 1.125rem;
+        font-size: clamp(0.75rem, 2.5vh, 2.5rem);
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background: #e07d18;
+            border-color: #e07d18;
+        }
+    }
+`;
+
+const MobilePrimaryButton = styled(PrimaryButton)`
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+`;
+
+const DesktopButtons = styled.div`
+    display: none;
+    align-items: center;
+    gap: 1rem;
+
+    @media (min-width: 769px) {
+        display: flex;
+        gap: 1.75rem;
+    }
+`;
+
 const links = [
     { label: 'O nas', to: '/o-nas' },
-    { label: 'Wystawcy', to: '/wystawcy' },
+    // { label: 'Oferty pracy', to: '/oferty-pracy' },
     { label: 'Kontakt', to: '/#kontakt' },
     { label: 'Baza CV', to: 'https://forms.gle/u73LBm69dnfxjibV8', external: true }
 ];
@@ -389,10 +435,14 @@ function Navbar() {
                                 </NavLink>
                             ))}
                         </NavLinks>
-                        {/* <PrimaryButton>Wyszukiwarka Wystawców</PrimaryButton> */}
-                        <Link to="/strefa-firm">
-                            <SecondaryButton>Strefa firm</SecondaryButton>
-                        </Link>
+                        <DesktopButtons>
+                            <Link to="/wystawcy">
+                                <PrimaryButton>Wyszukiwarka Wystawców</PrimaryButton>
+                            </Link>
+                            <Link to="/strefa-firm">
+                                <SecondaryButton>Strefa firm</SecondaryButton>
+                            </Link>
+                        </DesktopButtons>
                         <HamburgerButton
                             $isOpen={isMobileMenuOpen}
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -426,6 +476,9 @@ function Navbar() {
                         </MobileNavLink>
                     ))}
                 </MobileNavLinks>
+                <Link to="/wystawcy" onClick={() => setIsMobileMenuOpen(false)}>
+                    <MobilePrimaryButton>Wyszukiwarka Wystawców</MobilePrimaryButton>
+                </Link>
                 <Link to="/strefa-firm" onClick={() => setIsMobileMenuOpen(false)}>
                     <MobileSecondaryButton>Strefa firm</MobileSecondaryButton>
                 </Link>
