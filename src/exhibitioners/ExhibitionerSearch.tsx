@@ -390,27 +390,27 @@ export default function ExhibitionerSearch() {
                 <Body>
                     {/* Sidebar */}
                     <div>
-                    <FilterToggleButton type="button" onClick={() => setFiltersOpen((v) => !v)}>
-                        &#9776; {filtersOpen ? 'Ukryj filtry' : 'Filtry'}
-                    </FilterToggleButton>
-                    <Sidebar $open={filtersOpen}>
-                        <SidebarTitle>Kategorie</SidebarTitle>
-                        <CategoryList>
-                            {ALL_CATEGORIES.map((cat) => (
-                                <CategoryItem key={cat} onClick={() => toggleCategory(cat)}>
-                                    <Checkbox
-                                        type="checkbox"
-                                        checked={selectedCategories.has(cat)}
-                                        onChange={() => toggleCategory(cat)}
-                                        id={`cat-${cat}`}
-                                    />
-                                    <label htmlFor={`cat-${cat}`} style={{ cursor: 'pointer' }}>
-                                        {cat}
-                                    </label>
-                                </CategoryItem>
-                            ))}
-                        </CategoryList>
-                    </Sidebar>
+                        <FilterToggleButton type="button" onClick={() => setFiltersOpen((v) => !v)}>
+                            &#9776; {filtersOpen ? 'Ukryj filtry' : 'Filtry'}
+                        </FilterToggleButton>
+                        <Sidebar $open={filtersOpen}>
+                            <SidebarTitle>Kategorie</SidebarTitle>
+                            <CategoryList>
+                                {ALL_CATEGORIES.map((cat) => (
+                                    <CategoryItem key={cat} onClick={() => toggleCategory(cat)}>
+                                        <Checkbox
+                                            type="checkbox"
+                                            checked={selectedCategories.has(cat)}
+                                            onChange={() => toggleCategory(cat)}
+                                            id={`cat-${cat}`}
+                                        />
+                                        <label htmlFor={`cat-${cat}`} style={{ cursor: 'pointer' }}>
+                                            {cat}
+                                        </label>
+                                    </CategoryItem>
+                                ))}
+                            </CategoryList>
+                        </Sidebar>
                     </div>
 
                     {/* Company list */}
