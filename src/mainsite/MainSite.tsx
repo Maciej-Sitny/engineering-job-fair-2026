@@ -30,7 +30,7 @@ import LogoDlaStudenta from './assets/patroni/logo_dlastudenta.jpg';
 import LogoBIS from './assets/patroni/logo_bis.png';
 import LogoPega from './assets/sponsors/logo_pega.jpg';
 import LogoOrange from './assets/sponsors/logo_orange.svg';
-import LogoSabre from './assets/sponsors/logo_sabre.jpg';
+import LogoSabre from './assets/sponsors/logo_sabre.png';
 import CVPhoto from './assets/zdjecie_cv_gradient.png';
 
 const HeroContainer = styled.section`
@@ -988,339 +988,339 @@ const CounterLabel = styled.p`
     }
 `;
 
-const MapContainer = styled.section`
-    width: 100%;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3vh 60px;
-    /* --- BASE: Mobile First --- */
-    min-height: auto;
-    width: 90%;
-    margin: 2vh auto 10vh;
-    padding: 0 10px 5rem 0.5rem;
+// const MapContainer = styled.section`
+//     width: 100%;
+//     background: #fff;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 3vh 60px;
+//     /* --- BASE: Mobile First --- */
+//     min-height: auto;
+//     width: 90%;
+//     margin: 2vh auto 10vh;
+//     padding: 0 10px 5rem 0.5rem;
 
     
-    /* --- 481px+: Większe telefony --- */
-    @media (min-width: 481px) {
-        padding: 0 35px 5rem 1rem;
-        width: 95%;
-    }
+//     /* --- 481px+: Większe telefony --- */
+//     @media (min-width: 481px) {
+//         padding: 0 35px 5rem 1rem;
+//         width: 95%;
+//     }
     
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        padding: 0 5% 10vh 5%;
-        height: 500px;
-        max-width: 90%;
-        margin: 0 auto;
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         padding: 0 5% 10vh 5%;
+//         height: 500px;
+//         max-width: 90%;
+//         margin: 0 auto;
+//     }
     
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        padding: 0 5% 20vh 5%;
-        height: 480px;
-        max-width: 80%;
-        margin: 0 auto;
-    }
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         padding: 0 5% 20vh 5%;
+//         height: 480px;
+//         max-width: 80%;
+//         margin: 0 auto;
+//     }
 
-        /* --- 1025px+: Desktop --- */
-    @media (min-width: 1400px) {
-        padding: 0 5% 20vh 5%;
-        height: 480px;
-        max-width: 80%;
-        margin: 5vh auto;
-    }
+//         /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1400px) {
+//         padding: 0 5% 20vh 5%;
+//         height: 480px;
+//         max-width: 80%;
+//         margin: 5vh auto;
+//     }
 
-        /* --- 1025px+: Desktop --- */
-    @media (min-width: 1750px) {
-        padding: 0 5% 20vh 5%;
-        height: 480px;
-        max-width: 80%;
-        margin: 13vh auto;
-    }
+//         /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1750px) {
+//         padding: 0 5% 20vh 5%;
+//         height: 480px;
+//         max-width: 80%;
+//         margin: 13vh auto;
+//     }
 
-    img {
-        max-width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-`;
+//     img {
+//         max-width: 100%;
+//         height: auto;
+//         object-fit: contain;
+//     }
+// `;
 
-const MapTitle = styled.h1`
-    font-weight: 500;
-    color: #1e1e1e;
-    margin: 30px 0 0vh 0;
-    text-align: center;
-    font-family: 'Alumni Sans', sans-serif;
+// const MapTitle = styled.h1`
+//     font-weight: 500;
+//     color: #1e1e1e;
+//     margin: 30px 0 0vh 0;
+//     text-align: center;
+//     font-family: 'Alumni Sans', sans-serif;
     
-    /* --- BASE: Mobile First --- */
-    font-size: clamp(1rem, 6vw, 3rem);
+//     /* --- BASE: Mobile First --- */
+//     font-size: clamp(1rem, 6vw, 3rem);
     
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         font-size: clamp(2.5rem, 5vw, 4rem);
+//     }
     
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        font-size: 64px;
-    }
-`;
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         font-size: 64px;
+//     }
+// `;
 
-const CarouselTitle = styled.h3`
-    font-weight: 500;
-    color: #1e1e1e;
-    margin: 0;
-    font-family: 'Alumni Sans', sans-serif;
-    text-align: center;
-    background: #fff;
+// const CarouselTitle = styled.h3`
+//     font-weight: 500;
+//     color: #1e1e1e;
+//     margin: 0;
+//     font-family: 'Alumni Sans', sans-serif;
+//     text-align: center;
+//     background: #fff;
     
-    /* --- BASE: Mobile First --- */
-    font-size: clamp(1rem, 8vw, 1.5rem);
-    padding: 0 1rem;
+//     /* --- BASE: Mobile First --- */
+//     font-size: clamp(1rem, 8vw, 1.5rem);
+//     padding: 0 1rem;
     
-    /* --- 481px+: Większe telefony --- */
-    @media (min-width: 481px) {
-        font-size: clamp(1.25rem, 3.5vw, 1.75rem);
-    }
+//     /* --- 481px+: Większe telefony --- */
+//     @media (min-width: 481px) {
+//         font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+//     }
     
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        font-size: clamp(1.5rem, 3vw, 2.25rem);
-        padding: 0;
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         font-size: clamp(1.5rem, 3vw, 2.25rem);
+//         padding: 0;
+//     }
     
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        font-size: 38px;
-    }
-`;
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         font-size: 38px;
+//     }
+// `;
 
-/* ===== SCHEDULE / KONKURSY SECTION ===== */
+// /* ===== SCHEDULE / KONKURSY SECTION ===== */
 
-const ScheduleSection = styled.section`
-    background: #fff;
-    position: relative;
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
-    font-family: 'Alumni Sans', sans-serif;
+// const ScheduleSection = styled.section`
+//     background: #fff;
+//     position: relative;
+//     display: flex;
+//     align-items: stretch;
+//     justify-content: flex-start;
+//     font-family: 'Alumni Sans', sans-serif;
 
-    /* --- BASE: Mobile First --- */
-    padding: 3rem 1.5rem 2rem;
-    flex-direction: column;
+//     /* --- BASE: Mobile First --- */
+//     padding: 3rem 1.5rem 2rem;
+//     flex-direction: column;
 
-    /* --- 481px+: Większe telefony --- */
-    @media (min-width: 481px) {
-        padding: 4rem 2rem 2.5rem;
-    }
+//     /* --- 481px+: Większe telefony --- */
+//     @media (min-width: 481px) {
+//         padding: 4rem 2rem 2.5rem;
+//     }
 
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        flex-direction: row;
-        padding: 5rem 3vw 4rem;
-        gap: 2rem;
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         flex-direction: row;
+//         padding: 5rem 3vw 4rem;
+//         gap: 2rem;
+//     }
 
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        padding: 80px 8vw 60px;
-        gap: 2rem;
-    }
-`;
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         padding: 80px 8vw 60px;
+//         gap: 2rem;
+//     }
+// `;
 
-const ScheduleGearsCol = styled.div`
-    position: relative;
-    flex-shrink: 0;
+// const ScheduleGearsCol = styled.div`
+//     position: relative;
+//     flex-shrink: 0;
 
-    /* --- BASE: Mobile First --- */
-    display: none;
+//     /* --- BASE: Mobile First --- */
+//     display: none;
 
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        display: block;
-        width: 80px;
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         display: block;
+//         width: 80px;
+//     }
 
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        width: 140px;
-    }
-`;
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         width: 140px;
+//     }
+// `;
 
-const ScheduleGearImg = styled.img<{ size: number; top: number; left: number }>`
-    position: absolute;
-    top: ${props => props.top}px;
-    left: ${props => props.left}px;
-    width: ${props => props.size}px;
-    height: ${props => props.size}px;
-    object-fit: contain;
+// const ScheduleGearImg = styled.img<{ size: number; top: number; left: number }>`
+//     position: absolute;
+//     top: ${props => props.top}px;
+//     left: ${props => props.left}px;
+//     width: ${props => props.size}px;
+//     height: ${props => props.size}px;
+//     object-fit: contain;
 
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        width: ${props => props.size * 0.5}px;
-        height: ${props => props.size * 0.5}px;
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         width: ${props => props.size * 0.5}px;
+//         height: ${props => props.size * 0.5}px;
+//     }
 
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        width: ${props => props.size * 0.75}px;
-        height: ${props => props.size * 0.75}px;
-    }
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         width: ${props => props.size * 0.75}px;
+//         height: ${props => props.size * 0.75}px;
+//     }
 
-    /* --- 1400px+: Pełny rozmiar --- */
-    @media (min-width: 1400px) {
-        width: ${props => props.size}px;
-        height: ${props => props.size}px;
-    }
-`;
+//     /* --- 1400px+: Pełny rozmiar --- */
+//     @media (min-width: 1400px) {
+//         width: ${props => props.size}px;
+//         height: ${props => props.size}px;
+//     }
+// `;
 
-const ScheduleItemsList = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-`;
+// const ScheduleItemsList = styled.div`
+//     flex: 1;
+//     display: flex;
+//     flex-direction: column;
+// `;
 
-const ScheduleItem = styled.div`
-    display: grid;
-    align-items: start;
-    border-bottom: 1px solid #e8c98a;
+// const ScheduleItem = styled.div`
+//     display: grid;
+//     align-items: start;
+//     border-bottom: 1px solid #e8c98a;
 
-    /* --- BASE: Mobile First --- */
-    grid-template-columns: auto 1fr;
-    gap: 1rem 1.5rem;
-    padding: 1.5rem 0;
+//     /* --- BASE: Mobile First --- */
+//     grid-template-columns: auto 1fr;
+//     gap: 1rem 1.5rem;
+//     padding: 1.5rem 0;
 
-    /* --- 481px+: Większe telefony --- */
-    @media (min-width: 481px) {
-        gap: 1rem 2rem;
-        padding: 1.75rem 0;
-    }
+//     /* --- 481px+: Większe telefony --- */
+//     @media (min-width: 481px) {
+//         gap: 1rem 2rem;
+//         padding: 1.75rem 0;
+//     }
 
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        grid-template-columns: 110px 1fr;
-        gap: 1rem 2.5rem;
-        padding: 2rem 0;
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         grid-template-columns: 110px 1fr;
+//         gap: 1rem 2.5rem;
+//         padding: 2rem 0;
+//     }
 
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        grid-template-columns: 180px 1fr;
-        gap: 1.5rem 3rem;
-        padding: 2.5rem 0;
-    }
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         grid-template-columns: 180px 1fr;
+//         gap: 1.5rem 3rem;
+//         padding: 2.5rem 0;
+//     }
 
-    &:last-child {
-        border-bottom: 1px solid #e8c98a;
-    }
-`;
+//     &:last-child {
+//         border-bottom: 1px solid #e8c98a;
+//     }
+// `;
 
-const ScheduleTime = styled.span`
-    font-weight: 500;
-    color: #1e1e1e;
-    font-family: 'Alumni Sans', sans-serif;
-    line-height: 1;
-    align-self: center;
+// const ScheduleTime = styled.span`
+//     font-weight: 500;
+//     color: #1e1e1e;
+//     font-family: 'Alumni Sans', sans-serif;
+//     line-height: 1;
+//     align-self: center;
 
-    /* --- BASE: Mobile First --- */
-    font-size: clamp(2.5rem, 10vw, 4rem);
+//     /* --- BASE: Mobile First --- */
+//     font-size: clamp(2.5rem, 10vw, 4rem);
 
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         font-size: clamp(2.5rem, 5vw, 4rem);
+//     }
 
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        font-size: 60px;
-    }
-`;
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         font-size: 60px;
+//     }
+// `;
 
-const ScheduleItemContent = styled.div`
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    align-self: center;
-`;
+// const ScheduleItemContent = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//     text-align: right;
+//     align-self: center;
+// `;
 
-const ScheduleItemName = styled.h3`
-    font-weight: 500;
-    color: #1e1e1e;
-    margin: 0 0 6px 0;
-    letter-spacing: 1.5px;
-    font-family: 'Alumni Sans', sans-serif;
-    text-transform: uppercase;
+// const ScheduleItemName = styled.h3`
+//     font-weight: 500;
+//     color: #1e1e1e;
+//     margin: 0 0 6px 0;
+//     letter-spacing: 1.5px;
+//     font-family: 'Alumni Sans', sans-serif;
+//     text-transform: uppercase;
 
-    /* --- BASE: Mobile First --- */
-    font-size: clamp(0.85rem, 3.5vw, 1.25rem);
+//     /* --- BASE: Mobile First --- */
+//     font-size: clamp(0.85rem, 3.5vw, 1.25rem);
 
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        font-size: clamp(0.85rem, 1.8vw, 1.1rem);
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+//     }
 
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        font-size: 35px;
-        margin-bottom: 8px;
-    }
-`;
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         font-size: 35px;
+//         margin-bottom: 8px;
+//     }
+// `;
 
-const ScheduleItemDescription = styled.p`
-    font-weight: 400;
-    color: #1e1e1e;
-    margin: 0;
-    line-height: 1.5;
-    font-family: 'Alumni Sans', sans-serif;
+// const ScheduleItemDescription = styled.p`
+//     font-weight: 400;
+//     color: #1e1e1e;
+//     margin: 0;
+//     line-height: 1.5;
+//     font-family: 'Alumni Sans', sans-serif;
 
-    /* --- BASE: Mobile First --- */
-    font-size: clamp(0.75rem, 3vw, 1rem);
+//     /* --- BASE: Mobile First --- */
+//     font-size: clamp(0.75rem, 3vw, 1rem);
 
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        font-size: clamp(0.75rem, 1.5vw, 0.95rem);
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+//     }
 
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        font-size: 16px;
-    }
-`;
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         font-size: 16px;
+//     }
+// `;
 
-const ScheduleVerticalTitle = styled.h2`
-    font-weight: 500;
-    color: #1e1e1e;
-    font-family: 'Alumni Sans', sans-serif;
-    margin: 0;
-    line-height: 1;
+// const ScheduleVerticalTitle = styled.h2`
+//     font-weight: 500;
+//     color: #1e1e1e;
+//     font-family: 'Alumni Sans', sans-serif;
+//     margin: 0;
+//     line-height: 1;
 
-    /* --- BASE: Mobile First (horizontal at top) --- */
-    writing-mode: horizontal-tb;
-    transform: none;
-    order: -1;
-    font-size: clamp(2.5rem, 12vw, 4rem);
-    margin-bottom: 1.5rem;
+//     /* --- BASE: Mobile First (horizontal at top) --- */
+//     writing-mode: horizontal-tb;
+//     transform: none;
+//     order: -1;
+//     font-size: clamp(2.5rem, 12vw, 4rem);
+//     margin-bottom: 1.5rem;
 
-    /* --- 769px+: Tablety (vertical on right) --- */
-    @media (min-width: 769px) {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        order: 1;
-        font-size: clamp(4rem, 8vw, 7rem);
-        margin-bottom: 0;
-        padding-left: 1.5rem;
-        align-self: flex-start;
-    }
+//     /* --- 769px+: Tablety (vertical on right) --- */
+//     @media (min-width: 769px) {
+//         writing-mode: vertical-rl;
+//         transform: rotate(180deg);
+//         order: 1;
+//         font-size: clamp(4rem, 8vw, 7rem);
+//         margin-bottom: 0;
+//         padding-left: 1.5rem;
+//         align-self: flex-start;
+//     }
 
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        font-size: clamp(6rem, 12vw, 160px);
-        padding-left: 2rem;
-    }
-`;
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         font-size: clamp(6rem, 12vw, 160px);
+//         padding-left: 2rem;
+//     }
+// `;
 
 /* ===== SPONSORZY I PATRONI SECTION ===== */
 
@@ -1568,26 +1568,26 @@ const SponsorLink = styled.a`
     cursor: pointer;
 `;
 
-const SponsorLogoText = styled.span`
-    font-family: 'Alumni Sans', sans-serif;
-    font-weight: 500;
-    color: #1e1e1e;
-    text-align: center;
-    letter-spacing: 0.5px;
+// const SponsorLogoText = styled.span`
+//     font-family: 'Alumni Sans', sans-serif;
+//     font-weight: 500;
+//     color: #1e1e1e;
+//     text-align: center;
+//     letter-spacing: 0.5px;
 
-    /* --- BASE: Mobile First --- */
-    font-size: clamp(0.75rem, 3vw, 1rem);
+//     /* --- BASE: Mobile First --- */
+//     font-size: clamp(0.75rem, 3vw, 1rem);
 
-    /* --- 769px+: Tablety --- */
-    @media (min-width: 769px) {
-        font-size: clamp(0.75rem, 1.5vw, 0.95rem);
-    }
+//     /* --- 769px+: Tablety --- */
+//     @media (min-width: 769px) {
+//         font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+//     }
 
-    /* --- 1025px+: Desktop --- */
-    @media (min-width: 1025px) {
-        font-size: 16px;
-    }
-`;
+//     /* --- 1025px+: Desktop --- */
+//     @media (min-width: 1025px) {
+//         font-size: 16px;
+//     }
+// `;
 
 /* ===== CV BANNER SECTION ===== */
 

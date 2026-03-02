@@ -218,7 +218,7 @@ const scheduleItems = [
     {
         time: '10:05',
         title: 'Przemówienie',
-        description: 'Przemówienie głównego koordynatora XXVIII edycji Inżynierskich Targów Pracy.',
+        description: 'Przemówienie Głównego Koordynatora XXVIII edycji Inżynierskich Targów Pracy.',
     },
     {
         time: '10:30',
@@ -260,6 +260,7 @@ function Schedule() {
             <SEO
                 title="Harmonogram – Inżynierskie Targi Pracy 2026"
                 description="Harmonogram XXVIII edycji Inżynierskich Targów Pracy. Sprawdź plan wydarzeń na dzień targów."
+                canonicalUrl="https://itp.best.krakow.pl/harmonogram"
             />
             <Wrapper>
                 <SideTitle>Harmonogram</SideTitle>

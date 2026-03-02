@@ -70,9 +70,9 @@ import logoKZA from './logos/logo_kza.jpg';
 import logoIv from './logos/logo_iv.jpg';
 import logoCodibly from './logos/logo_codibly.jpg';
 import logoKoleje from './logos/logo_koleje_malopolskie.jpg';
-import logoSabre from './logos/logo_sabre.jpg';
+import logoSabre from './logos/logo_sabre.png';
 import logoOrange from './logos/logo_orange.svg';
-import logoPega from './logos/logo_pega.jpg';
+// import logoPega from './logos/logo_pega.jpg';
 import logoWoodward from './logos/woodward_logo.svg';
 
 

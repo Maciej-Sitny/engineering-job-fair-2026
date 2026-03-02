@@ -6,7 +6,7 @@ import BusinessZone from './business/BusinessZone'
 import PrivacyPolicy from './privacy/PrivacyPolicy'
 import ExhibitionerSearch from './exhibitioners/ExhibitionerSearch'
 import ExhibitionerDetail from './exhibitioners/ExhibitionerDetail'
-import JobOffers from './joboffers/JobOffers'
+// import JobOffers from './joboffers/JobOffers'
 import Schedule from './schedule/Schedule'
 // import ExhibitionerSearch from './exhibitioner_search/ExhibitionerSearch'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -24,7 +24,8 @@ function App() {
         <Route path="/strefa-firm" element={<BusinessZone />} />
         <Route path="/klauzula-cv" element={<PrivacyPolicy />} />
         <Route path="/harmonogram" element={<Schedule />} />
-        {/* <Route path="/wystawcy" element={<ExhibitionerSearch />} /> */}
+        <Route path="/wystawcy" element={<ExhibitionerSearch />} />
+        <Route path="/wystawcy/:id" element={<ExhibitionerDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>
