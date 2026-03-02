@@ -1563,6 +1563,11 @@ const SponsorMainCardWrapper = styled.div`
     }
 `;
 
+const SponsorLink = styled.a`
+    display: contents;
+    cursor: pointer;
+`;
+
 const SponsorLogoText = styled.span`
     font-family: 'Alumni Sans', sans-serif;
     font-weight: 500;
@@ -2002,9 +2007,11 @@ function MainSite() {
                     <SponsorGroup>
                         <SponsorGroupLabel>Sponsor Główny</SponsorGroupLabel>
                         <SponsorMainCardWrapper>
-                            <SponsorLogoCard large>
-                                <SponsorMainLogoImg src={LogoSabre} alt="Sabre" />
-                            </SponsorLogoCard>
+                            <SponsorLink href="/wystawcy/sabre">
+                                <SponsorLogoCard large>
+                                    <SponsorMainLogoImg src={LogoSabre} alt="Sabre" />
+                                </SponsorLogoCard>
+                            </SponsorLink>
                         </SponsorMainCardWrapper>
                     </SponsorGroup>
 
@@ -2012,9 +2019,9 @@ function MainSite() {
                     <SponsorGroup>
                         <SponsorGroupLabel>Sponsorzy</SponsorGroupLabel>
                         <SponsorLogoGrid>
-                            <SponsorLogoCard><SponsorLogoImg src={WoodwardLogo} alt="Woodward" /></SponsorLogoCard>
-                            <SponsorLogoCard><SponsorLogoImg src={LogoPega} alt="Pega" /></SponsorLogoCard>
-                            <SponsorLogoCard><SponsorLogoImg height={60} src={LogoOrange} alt="Orange" /></SponsorLogoCard>
+                            <SponsorLink href="/wystawcy/woodward-poland"><SponsorLogoCard><SponsorLogoImg src={WoodwardLogo} alt="Woodward" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="/wystawcy/pega"><SponsorLogoCard><SponsorLogoImg src={LogoPega} alt="Pega" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="/wystawcy/orange-polska"><SponsorLogoCard><SponsorLogoImg height={60} src={LogoOrange} alt="Orange" /></SponsorLogoCard></SponsorLink>
                         </SponsorLogoGrid>
                     </SponsorGroup>
 
@@ -2022,9 +2029,11 @@ function MainSite() {
                     <SponsorGroup>
                         <SponsorGroupLabel>Patron honorowy</SponsorGroupLabel>
                         <SponsorMainCardWrapper>
-                            <SponsorLogoCard large>
-                                <SponsorMainLogoImg src={LogoMiastoKrakow} alt="Miasto Kraków" />
-                            </SponsorLogoCard>
+                            <SponsorLink href="https://www.krakow.pl/" target="_blank" rel="noopener noreferrer">
+                                <SponsorLogoCard large>
+                                    <SponsorMainLogoImg src={LogoMiastoKrakow} alt="Miasto Kraków" />
+                                </SponsorLogoCard>
+                            </SponsorLink>
                         </SponsorMainCardWrapper>
                     </SponsorGroup>
 
@@ -2032,13 +2041,13 @@ function MainSite() {
                     <SponsorGroup>
                         <SponsorGroupLabel>Patroni</SponsorGroupLabel>
                         <SponsorLogoGrid>
-                            <SponsorLogoCard><SponsorLogoImg src={LogoKrakowPl} alt="krakow.pl" /></SponsorLogoCard>
-                            <SponsorLogoCard><SponsorLogoImg src={LogoTvpKrakow} alt="TVP Kraków" /></SponsorLogoCard>
-                            <SponsorLogoCard><SponsorLogoImg src={LogoTvpInfo} alt="TVP Info" /></SponsorLogoCard>
-                            <SponsorLogoCard><SponsorLogoImg src={LogoPerspektywy} alt="Perspektywy" /></SponsorLogoCard>
-                            <SponsorLogoCard><SponsorLogoImg src={LogoEurostudent} alt="Eurostudent" /></SponsorLogoCard>
-                            <SponsorLogoCard><SponsorLogoImg src={LogoDlaStudenta} alt="Dla Studenta" /></SponsorLogoCard>
-                            <SponsorLogoCard><SponsorLogoImg src={LogoRadio17} alt="Radio 1.7" /></SponsorLogoCard>
+                            <SponsorLink href="https://www.krakow.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoKrakowPl} alt="krakow.pl" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="https://krakow.tvp.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoTvpKrakow} alt="TVP Kraków" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="https://www.tvp.info/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoTvpInfo} alt="TVP Info" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="https://perspektywy.pl/portal/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoPerspektywy} alt="Perspektywy" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="https://www.eurostudent.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoEurostudent} alt="Eurostudent" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="https://www.dlastudenta.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoDlaStudenta} alt="Dla Studenta" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="https://radio17.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoRadio17} alt="Radio 1.7" /></SponsorLogoCard></SponsorLink>
                         </SponsorLogoGrid>
                     </SponsorGroup>
 
@@ -2046,13 +2055,13 @@ function MainSite() {
                     <SponsorGroup>
                         <SponsorGroupLabel>Partnerzy</SponsorGroupLabel>
                         <SponsorLogoGrid>
-                            <SponsorLogoCard><SponsorLogoImg src={LogoPlynPodPrad} alt="PłyńPodPrąd" /></SponsorLogoCard>
-                            <SponsorLogoCard><SponsorLogoImg height={100} src={AllInUJ} alt="All In UJ" /></SponsorLogoCard>
+                            <SponsorLink href="https://podprad.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoPlynPodPrad} alt="PłyńPodPrąd" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="https://allinuj.com/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={100} src={AllInUJ} alt="All In UJ" /></SponsorLogoCard></SponsorLink>
                             {/* <SponsorLogoCard><SponsorLogoText>infopraca</SponsorLogoText></SponsorLogoCard> */}
                             {/* <SponsorLogoCard><SponsorLogoText>KrakowDlaWas</SponsorLogoText></SponsorLogoCard> */}
-                            <SponsorLogoCard><SponsorLogoImg height={60} src={LogoGlos24} alt="Głos24" /></SponsorLogoCard>
+                            <SponsorLink href="https://glos24.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={60} src={LogoGlos24} alt="Głos24" /></SponsorLogoCard></SponsorLink>
                             {/* <SponsorLogoCard><SponsorLogoText>Inzynieria.com</SponsorLogoText></SponsorLogoCard> */}
-                            <SponsorLogoCard><SponsorLogoImg src={LogoBIS} alt="BIS" /></SponsorLogoCard>
+                            <SponsorLink href="https://www.facebook.com/magazyn.bisagh/?locale=pl_PL" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoBIS} alt="BIS" /></SponsorLogoCard></SponsorLink>
                             {/* <SponsorLogoCard><SponsorLogoText>Crossweb</SponsorLogoText></SponsorLogoCard> */}
                         </SponsorLogoGrid>
                     </SponsorGroup>

@@ -149,7 +149,8 @@ export const EXHIBITIONERS: Exhibitioner[] = [
         name: 'Pega',
         categories: ['Informatyka', 'Informatyka i Systemy Inteligentne'],
         sponsorLabel: 'SPONSOR',
-        logo: logoPega,
+        // logo: logoPega,
+        detailDisabled: true,
         shortDescription: 'Pega – oprogramowanie do automatyzacji procesów biznesowych.',
     },
     {
