@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 import Gear1 from '../assets/gears/Subtract.svg';
@@ -1002,13 +1003,13 @@ const CounterLabel = styled.p`
 //     margin: 2vh auto 10vh;
 //     padding: 0 10px 5rem 0.5rem;
 
-    
+
 //     /* --- 481px+: Większe telefony --- */
 //     @media (min-width: 481px) {
 //         padding: 0 35px 5rem 1rem;
 //         width: 95%;
 //     }
-    
+
 //     /* --- 769px+: Tablety --- */
 //     @media (min-width: 769px) {
 //         padding: 0 5% 10vh 5%;
@@ -1016,7 +1017,7 @@ const CounterLabel = styled.p`
 //         max-width: 90%;
 //         margin: 0 auto;
 //     }
-    
+
 //     /* --- 1025px+: Desktop --- */
 //     @media (min-width: 1025px) {
 //         padding: 0 5% 20vh 5%;
@@ -1054,15 +1055,15 @@ const CounterLabel = styled.p`
 //     margin: 30px 0 0vh 0;
 //     text-align: center;
 //     font-family: 'Alumni Sans', sans-serif;
-    
+
 //     /* --- BASE: Mobile First --- */
 //     font-size: clamp(1rem, 6vw, 3rem);
-    
+
 //     /* --- 769px+: Tablety --- */
 //     @media (min-width: 769px) {
 //         font-size: clamp(2.5rem, 5vw, 4rem);
 //     }
-    
+
 //     /* --- 1025px+: Desktop --- */
 //     @media (min-width: 1025px) {
 //         font-size: 64px;
@@ -1076,22 +1077,22 @@ const CounterLabel = styled.p`
 //     font-family: 'Alumni Sans', sans-serif;
 //     text-align: center;
 //     background: #fff;
-    
+
 //     /* --- BASE: Mobile First --- */
 //     font-size: clamp(1rem, 8vw, 1.5rem);
 //     padding: 0 1rem;
-    
+
 //     /* --- 481px+: Większe telefony --- */
 //     @media (min-width: 481px) {
 //         font-size: clamp(1.25rem, 3.5vw, 1.75rem);
 //     }
-    
+
 //     /* --- 769px+: Tablety --- */
 //     @media (min-width: 769px) {
 //         font-size: clamp(1.5rem, 3vw, 2.25rem);
 //         padding: 0;
 //     }
-    
+
 //     /* --- 1025px+: Desktop --- */
 //     @media (min-width: 1025px) {
 //         font-size: 38px;
@@ -1568,6 +1569,11 @@ const SponsorLink = styled.a`
     cursor: pointer;
 `;
 
+const SponsorLinkInternal = styled(Link)`
+    display: contents;
+    cursor: pointer;
+`;
+
 // const SponsorLogoText = styled.span`
 //     font-family: 'Alumni Sans', sans-serif;
 //     font-weight: 500;
@@ -2007,11 +2013,11 @@ function MainSite() {
                     <SponsorGroup>
                         <SponsorGroupLabel>Sponsor Główny</SponsorGroupLabel>
                         <SponsorMainCardWrapper>
-                            <SponsorLink href="/wystawcy/sabre">
+                            <SponsorLinkInternal to="/wystawcy/sabre">
                                 <SponsorLogoCard large>
                                     <SponsorMainLogoImg src={LogoSabre} alt="Sabre" />
                                 </SponsorLogoCard>
-                            </SponsorLink>
+                            </SponsorLinkInternal>
                         </SponsorMainCardWrapper>
                     </SponsorGroup>
 
@@ -2019,9 +2025,9 @@ function MainSite() {
                     <SponsorGroup>
                         <SponsorGroupLabel>Sponsorzy</SponsorGroupLabel>
                         <SponsorLogoGrid>
-                            <SponsorLink href="/wystawcy/woodward-poland"><SponsorLogoCard><SponsorLogoImg src={WoodwardLogo} alt="Woodward" /></SponsorLogoCard></SponsorLink>
-                            <SponsorLink href="/wystawcy/pega"><SponsorLogoCard><SponsorLogoImg src={LogoPega} alt="Pega" /></SponsorLogoCard></SponsorLink>
-                            <SponsorLink href="/wystawcy/orange-polska"><SponsorLogoCard><SponsorLogoImg height={60} src={LogoOrange} alt="Orange" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLinkInternal to="/wystawcy/woodward-poland"><SponsorLogoCard><SponsorLogoImg src={WoodwardLogo} alt="Woodward" /></SponsorLogoCard></SponsorLinkInternal>
+                            <SponsorLinkInternal to="/wystawcy/pega"><SponsorLogoCard><SponsorLogoImg src={LogoPega} alt="Pega" /></SponsorLogoCard></SponsorLinkInternal>
+                            <SponsorLinkInternal to="/wystawcy/orange-polska"><SponsorLogoCard><SponsorLogoImg height={60} src={LogoOrange} alt="Orange" /></SponsorLogoCard></SponsorLinkInternal>
                         </SponsorLogoGrid>
                     </SponsorGroup>
 
