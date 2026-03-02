@@ -221,27 +221,20 @@ const scheduleItems = [
         description: 'Przemówienie głównego koordynatora XXVIII edycji Inżynierskich Targów Pracy.',
     },
     {
-        time: '10:10',
-        title: 'Przemówienie',
-        description: 'Przemówienie głównego koordynatora XXVIII edycji Inżynierskich Targów Pracy.',
-    },
-    {
         time: '10:30',
         title: 'Ankietowanie',
         description:
-            'Rozpoczęcie ankietowania pozwalającego na wzięcie udziału w konkursach oraz rozpoczęcie konkursu na najlepszą relację na social mediach.',
+            'Rozpoczęcie ankietowania pozwalającego na wzięcie udziału w konkursach.',
     },
     {
         time: '11:00',
-        title: 'Konkurs',
-        description:
-            'Ogłoszenie pierwszego zwycięzcy konkursu na rozwinięcie skrótu #ITP. Zwycięzcy będą wybierani w trzydziesto minutowych odstępach aż do godziny 15:30. Rozpoczęcie konkursu na najlepszą relację na instagramie – zdjęcie z wydarzenia z oznaczeniem @BESTkrk @itp_BEST.',
+        title: 'Konkurs 1',
+        description: 'Ogłoszenie pierwszego zwycięzcy konkursu 1. Zwycięzcy będą wybierani w trzydziesto minutowych odstępach aż do godziny 15:30.'
     },
     {
         time: '11:30',
-        title: 'Ogłoszenie zwycięzców',
-        description:
-            'Ogłoszenie pierwszego zwycięzcy konkursu na najlepszą relację na instagramie. Zwycięzcy będą wybierani w trzydziesto minutowych odstępach aż do godziny 15:30.',
+        title: 'Konkurs 2',
+        description: 'Ogłoszenie pierwszego zwycięzcy konkursu 2. Zwycięzcy będą wybierani w trzydziesto minutowych odstępach aż do godziny 15:30.'
     },
     {
         time: '15:00',
