@@ -353,6 +353,10 @@ export default function ExhibitionerSearch() {
                 ex.categories.some((c) => selectedCategories.has(c));
 
             return matchesQuery && matchesCategory;
+        }).sort((a, b) => {
+            if (a.sponsorLabel === 'SPONSOR GŁÓWNY') return -1;
+            if (b.sponsorLabel === 'SPONSOR GŁÓWNY') return 1;
+            return a.name.localeCompare(b.name, 'pl');
         });
     }, [query, selectedCategories]);
 

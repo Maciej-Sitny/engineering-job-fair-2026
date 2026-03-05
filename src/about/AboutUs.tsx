@@ -705,7 +705,7 @@ const AboutUs = () => {
 		<Page>
 			<SEO
 				title="O nas | Inżynierskie Targi Pracy 2026"
-				description="Poznaj zespół organizatorów Inżynierskich Targów Pracy. Jesteśmy studentami z BEST AGH Kraków - organizacji, która od 28 lat łączy świat studentów z firmami."
+				description="Poznaj zespół organizatorów 28. edycji Inżynierskich Targów Pracy. Dowiedziecie się więcej o BEST AGH Kraków – organizacji łączącej studentów AGH z pracodawcami z branży IT i inżynierii."
 				canonicalUrl="https://itp.best.krakow.pl/o-nas"
 			/>
 			<GearWrapper size={30} top={5} left={68}>

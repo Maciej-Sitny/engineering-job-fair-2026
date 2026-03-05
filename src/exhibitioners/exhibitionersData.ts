@@ -72,9 +72,19 @@ import logoCodibly from './logos/logo_codibly.jpg';
 import logoKoleje from './logos/logo_koleje_malopolskie.jpg';
 import logoSabre from './logos/logo_sabre.png';
 import logoOrange from './logos/logo_orange.svg';
-// import logoPega from './logos/logo_pega.jpg';
-import logoWoodward from './logos/woodward_logo.svg';
-
+import logoHavi from './logos/logo_havi.svg';
+import logoPega from './logos/logo_pega.jpg';
+import logoWoodward from './logos/logo_woodward.jpg';
+import logoAirLiquide from './logos/logo_air_liquide.jpg';
+import logoAccenture from './logos/logo_accenture.svg';
+import logoValeo from './logos/logo_valeo.jpg';
+import logoKirchoff from './logos/logo_kirchoff.jpg';
+import logoDuna from './logos/logo_duna.svg';
+// import logoSatlab from './logos/logo_satlab.svg';
+// import logoTalenCheck from './logos/logo_talentcheck.png';
+import logoVelvet from './logos/logo_velvet.jpg';
+import logoVinci from './logos/logo_vinci.svg';
+import logoSpie from './logos/logo_spie.jpg';
 
 export const EXHIBITIONERS: Exhibitioner[] = [
 
@@ -149,9 +159,18 @@ export const EXHIBITIONERS: Exhibitioner[] = [
         name: 'Pega',
         categories: ['Informatyka', 'Informatyka i Systemy Inteligentne'],
         sponsorLabel: 'SPONSOR',
-        // logo: logoPega,
-        detailDisabled: true,
+        logo: logoPega,
         shortDescription: 'Pega – oprogramowanie do automatyzacji procesów biznesowych.',
+        obszaryPrezentacji: {
+            'Informacja o firmie': 'Pega provides the leading AI-powered platform for enterprise transformation. The world’s most influential organizations trust our technology to reimagine how work gets done by automating workflows, personalizing customer experiences, and modernizing legacy systems. Since 1983, our scalable, flexible architecture has fueled continuous innovation, helping clients accelerate their path to the autonomous enterprise.',
+            'Lokalizacja stoiska': null,
+            'Dołącz do nas': "We're on the lookout for bright-minds who want to develop within software development/AI in a product company. ",
+            'Dlaczego my?': null,
+            'FAQ': null,
+            'Linki i kontakt': "https://www.pega.com/about/careers/interns\nhttps://www.pega.com/",
+            'Statystyki firmy': null,
+            'Multimedia': [],
+        },
     },
     {
         id: 'cfe-polska',
@@ -263,7 +282,7 @@ export const EXHIBITIONERS: Exhibitioner[] = [
         name: 'Flightscape – Powered by CAE',
         categories: ['Informatyka'],
         sponsorLabel: null,
-        detailDisabled: true,
+        logo: logoCAE,
         shortDescription:
             'Flightscape – platforma decyzyjna dla centrów operacyjnych linii lotniczych, rozwijana przez CAE.',
         obszaryPrezentacji: {
@@ -284,7 +303,8 @@ export const EXHIBITIONERS: Exhibitioner[] = [
         name: 'HAVI Global Business Services',
         categories: ['Inna', 'Informatyka'],
         sponsorLabel: null,
-        detailDisabled: true,
+        // detailDisabled: true,
+        logo: logoHavi,
         shortDescription:
             'HAVI keeps the world\'s biggest food brands moving – upraszczamy łańcuchy dostaw dla klientów w ponad 30 krajach.',
         obszaryPrezentacji: {
@@ -472,47 +492,67 @@ export const EXHIBITIONERS: Exhibitioner[] = [
         name: 'Duna Polska S.A.',
         categories: ['Inna'],
         sponsorLabel: null,
-        detailDisabled: true,
         shortDescription: 'Duna Polska S.A.',
-    },
-    {
-        id: 'ndi-sa',
-        name: 'NDI SA',
-        categories: ['Inna'],
-        sponsorLabel: null,
-        detailDisabled: true,
-        shortDescription: 'NDI SA',
-    },
-    {
-        id: 'cae',
-        name: 'CAE',
-        categories: ['Informatyka'],
-        sponsorLabel: null,
-        logo: logoCAE,
-        detailDisabled: true,
-        shortDescription: 'CAE – lider w symulacji lotniczej i szkoleniach dla pilotów.',
+        logo: logoDuna,
+        obszaryPrezentacji: {
+            'Dlaczego my?': null,
+            'Informacja o firmie':
+                'Generalny Wykonawca Robót Budowlanych. Jako Duna Polska (dawniej Mota-Engil CE) specjalizujemy się w realizacji projektów drogowo-mostowych, kubaturowych oraz elektroenergetycznych. Posiadamy szeroki wachlarz usług budowlanych, wyróżniających się wysoką jakością.',
+            'Lokalizacja stoiska': null,
+            'Dołącz do nas':
+                'Studentów lub absolwentów studiów budowlanych, inżynierii środowiska, elektroniki.',
+            'Linki i kontakt': null,
+            'FAQ': null,
+            'Statystyki firmy': null,
+            'Multimedia': [],
+        },
     },
     {
         id: 'air-liquide',
         name: 'Air Liquide Global E&C Solutions Poland S.A.',
         categories: ['Energetyka', 'Inna'],
         sponsorLabel: null,
-        detailDisabled: true,
+        logo: logoAirLiquide,
         shortDescription: 'Air Liquide Global E&C Solutions Poland S.A.',
+        obszaryPrezentacji: {
+            'Dlaczego my?': null,
+            'Informacja o firmie':
+                'Air Liquide Engineering & Construction to część międzynarodowej Grupy Air Liquide, która buduje instalacje produkcyjne Grupy Air Liquide - głównie instalacje rozdziału powietrza oraz instalacje do produkcji wodoru ze źródeł odnawialnych i niskoemisyjnych. Dostarczamy również klientom zewnętrznym wydajne, zrównoważone, dostosowane do potrzeb rozwiązania technologiczne i procesowe.',
+            'Lokalizacja stoiska': null,
+            'Dołącz do nas':
+                'Absolwenci lub studenci kierunków: Automatyka i Robotyka, Budownictwo, Elektrotechnika, Inżynieria Chemiczna i Procesowa, Energetyka, Mechanika i Budowa Maszyn, Zarządzanie i Inżynieria Produkcji i pokrewnych.\nWymagana dobra znajomość MS Office, języka angielskiego, umiejętność pracy zespołowej i analitycznego myślenia.',
+            'Linki i kontakt': null,
+            'FAQ': null,
+            'Statystyki firmy': null,
+            'Multimedia': [],
+        },
     },
     {
         id: 'valeo',
         name: 'VALEO',
         categories: ['Elektronika', 'Inżynieria Mechaniczna', 'Automatyka i Robotyka'],
         sponsorLabel: null,
-        detailDisabled: true,
+        logo: logoValeo,
         shortDescription: 'VALEO – innowacyjne rozwiązania dla przemysłu motoryzacyjnego.',
+        obszaryPrezentacji: {
+            'Dlaczego my?': null,
+            'Informacja o firmie':
+                'Valeo to globalna firma technologiczna i partner największych producentów samochodów. Projektuje rozwiązania zwiększające bezpieczeństwo i ekologiczność mobilności. W Polsce posiada 5 zakładów produkcyjnych i centra wsparcia.',
+            'Lokalizacja stoiska': null,
+            'Dołącz do nas':
+                'Inżynierowie jakości, procesu, R&D, automatycy, robotycy, specjaliści logistyki, finansów, HR, IT oraz studenci kierunków technicznych na programy stażowe.',
+            'Linki i kontakt': null,
+            'FAQ': null,
+            'Statystyki firmy': null,
+            'Multimedia': [],
+        },
     },
     {
         id: 'vinci-construction',
         name: 'VINCI Construction Usługi Wsparcia Sp. z o.o.',
         categories: ['Inna'],
         sponsorLabel: null,
+        logo: logoVinci,
         detailDisabled: true,
         shortDescription: 'VINCI Construction Usługi Wsparcia Sp. z o.o.',
     },
@@ -521,14 +561,27 @@ export const EXHIBITIONERS: Exhibitioner[] = [
         name: 'KIRCHHOFF Automotive',
         categories: ['Inżynieria Mechaniczna', 'Automatyka i Robotyka'],
         sponsorLabel: null,
-        detailDisabled: true,
+        logo: logoKirchoff,
         shortDescription: 'KIRCHHOFF Automotive – producent podzespołów dla branży motoryzacyjnej.',
+        obszaryPrezentacji: {
+            'Dlaczego my?': null,
+            'Informacja o firmie':
+                'KIRCHHOFF Automotive jest partnerem w rozwoju dla branży motoryzacyjnej, produkującym metalowe i hybrydowe złożone zespoły szkieletów strukturalnych nadwozi i podwozi z uwzględnieniem nowoczesnych systemów zabezpieczeń przed skutkami kolizji. Zatrudniając przeszło 9 000 Pracowników działamy jako prężna organizacja na całym świecie. W Polsce oddział gliwicki liczy ponad 950 pracowników i pracownic, mielecki ponad 840, a gnieźnieński ponad 140 oferując swoim pracownikom stabilność i bezpieczeństwo zatrudnienia. Nasze Wartości to: uczciwość i rzetelność; zaufanie i szacunek; odpowiedzialność społeczna, środowiskowa i kulturowa.',
+            'Lokalizacja stoiska': null,
+            'Dołącz do nas':
+                'Poszukujemy osób zmotywowanych, otwartych na zdobywanie nowych doświadczeń oraz chętnych do rozwoju w dynamicznym środowisku pracy. Mile widziani są absolwenci lub studenci kierunków technicznych, ekonomicznych lub pokrewnych, którzy chcą wykorzystać zdobytą wiedzę w praktyce.\nOd kandydatów oczekujemy:\nWykształcenia wyższego (preferowane techniczne lub ekonomiczne).\nDobrej znajomości pakietu MS Office.\nDobrej znajomości języka angielskiego.\nSamodzielności, doskonałych umiejętności organizacyjnych i analitycznych.\nKomunikatywności oraz rozwiniętych umiejętności interpersonalnych.\nJeśli cechuje Cię inicjatywa, chęć nauki i pozytywne nastawienie do nowych wyzwań — będziesz świetnie pasować do naszej firmy.',
+            'Linki i kontakt': null,
+            'FAQ': null,
+            'Statystyki firmy': null,
+            'Multimedia': [],
+        },
     },
     {
         id: 'spie-energy',
         name: 'SPIE Energy Poland S.A.',
         categories: ['Energetyka', 'Elektronika'],
         sponsorLabel: null,
+        logo: logoSpie,
         detailDisabled: true,
         shortDescription: 'SPIE Energy Poland S.A.',
     },
@@ -537,15 +590,39 @@ export const EXHIBITIONERS: Exhibitioner[] = [
         name: 'Accenture',
         categories: ['Informatyka', 'Informatyka i Systemy Inteligentne'],
         sponsorLabel: null,
-        detailDisabled: true,
+        logo: logoAccenture,
         shortDescription: 'Accenture – globalna firma konsultingowa i technologiczna.',
+        obszaryPrezentacji: {
+            'Dlaczego my?': null,
+            'Informacja o firmie':
+                'Accenture is a leading solutions and services company that helps the world\'s leading enterprises reinvent by building their digital core and unleashing the power of AI. The company employs about 784,000 people worldwide. In Poland, Accenture offices are located in Warsaw, Krakow, Lodz, Katowice, Gdansk, Szczecin and Wroclaw.',
+            'Lokalizacja stoiska': null,
+            'Dołącz do nas':
+                'studenci i absolwenci kierunków informatycznych, ekonomicznych, ogólno-inżynierskich i innych',
+            'Linki i kontakt': null,
+            'FAQ': null,
+            'Statystyki firmy': null,
+            'Multimedia': [],
+        },
     },
     {
         id: 'velvet-care',
         name: 'Velvet CARE',
         categories: ['Inna', 'Inżynieria i Zarządzanie Procesami Przemysłowymi'],
         sponsorLabel: null,
-        detailDisabled: true,
         shortDescription: 'Velvet CARE – wiodący producent papierowych produktów higienicznych.',
+        logo: logoVelvet,
+        obszaryPrezentacji: {
+            'Dlaczego my?': null,
+            'Informacja o firmie':
+                'Velvet CARE jest jednym z największych producentów wyrobów higienicznych takich jak: papier toaletowy, papier toaletowy nawilżany, chusteczki higieniczne, chusteczki uniwersalne, ręczniki papierowe.\nSpołeczność Velvet CARE tworzy obecnie 900 Pracowników zatrudnionych w biurze w Warszawie oraz w zakładzie produkcyjnym w Kluczach, nieopodal Pustyni Błędowskiej.',
+            'Lokalizacja stoiska': null,
+            'Dołącz do nas':
+                'WAKACYJNE PŁATNE STAŻE: Absolwenci lub studenci studiów kierunków związanych z obszarami: Utrzymanie Ruchu, Produkcja, IT, BHP, Logistyka, Projekty, Technologia, Zakupy Strategiczne, Kontrola Jakości (Laboratorium), Finanse.\nPRACA: Absolwenci studiów kierunków związanych z obszarami: Utrzymanie Ruchu, Produkcja.',
+            'Linki i kontakt': null,
+            'FAQ': null,
+            'Statystyki firmy': null,
+            'Multimedia': [],
+        },
     },
 ];

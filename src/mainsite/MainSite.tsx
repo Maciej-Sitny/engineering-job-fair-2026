@@ -12,7 +12,7 @@ import Gear7 from '../assets/gears/Subtract (6).svg';
 import GearWithPeople from './assets/GearWithPeople.svg';
 import GearWithBackground from './assets/GearWithBackground.svg';
 // import ITPMap from './assets/mapa_targow.svg';
-import WoodwardLogo from './assets/sponsors/woodward_logo.svg';
+import WoodwardLogo from './assets/sponsors/logo_woodward.jpg';
 import AllInUJ from './assets/patroni/logo_all_in_uj.jpg';
 // import SponsorsCarousel from './SponsorsCarousel';
 import GabrielIwaniuk from '../organizers/FRgabrys-7f4a000848a6d36bd7462dca9c51a679 5.png';
@@ -29,6 +29,8 @@ import LogoPlynPodPrad from './assets/patroni/logo_plyn_pod_prad.jpg';
 import LogoGlos24 from './assets/patroni/logo_glos24.svg';
 import LogoDlaStudenta from './assets/patroni/logo_dlastudenta.jpg';
 import LogoBIS from './assets/patroni/logo_bis.png';
+import LogoInfoPraca from './assets/patroni/logo_infopraca.svg';
+import LogoCrossweb from './assets/patroni/logo_crossweb.jpg';
 import LogoPega from './assets/sponsors/logo_pega.jpg';
 import LogoOrange from './assets/sponsors/logo_orange.svg';
 import LogoSabre from './assets/sponsors/logo_sabre.png';
@@ -551,9 +553,14 @@ const WhoGearWrapper = styled.div<{
     transition: transform 0.1s ease-out;
     
     /* --- BASE: Mobile First --- */
-    display:none;
+    display: none;
     
-    /* --- 481px+: Większe telefony --- */
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        display: flex;
+    }
+
+    /* --- 481px+: Większe telefony (unused, kept for reference) --- */
     @media (min-width: 481px) {
         width: ${props => props.size * 1}vw;
         height: ${props => props.size * 1}vw;
@@ -829,7 +836,13 @@ const WhoLeftSection = styled.div`
     /* --- 769px+: Tablety --- */
     @media (min-width: 769px) {
         width: auto;
+        max-width: 50%;
     }
+`;
+
+const WhoHighlight = styled.span`
+    color: #f78f27;
+    font-weight: 500;
 `;
 
 const WhoTitle = styled.h2`
@@ -886,17 +899,11 @@ const WhoRightSection = styled.div`
     position: relative;
     
     /* --- BASE: Mobile First --- */
-    display: block;
-    height: 200px;
-    display:none;
-    
-    /* --- 481px+: Większe telefony --- */
-    @media (min-width: 481px) {
-        height: 280px;
-    }
+    display: none;
     
     /* --- 769px+: Tablety --- */
     @media (min-width: 769px) {
+        display: block;
         height: 400px;
     }
     
@@ -1929,11 +1936,13 @@ function MainSite() {
 
                 <WhoLeftSection>
                     <WhoTitle>Kim jesteśmy?</WhoTitle>
-                    <WhoContent>Inżynierskie Targi Pracy organizowane przez Stowarzyszenie Studentów BEST AGH Kraków już od 28 lat łączą środowisko akademickiez biznesem. To wydarzenie, podczas którego studenci i absolwenci mają szansę poznać potencjalnych pracodawców, a firmy mogą dotrzeć do przyszłych specjalistów z różnych dziedzin inżynierii i technologii. <br /><br />
-
-                        Tegoroczna edycja odbędzie się 11 marca i stanie się miejscem spotkań, inspiracji oraz wymiany doświadczeń pomiędzy młodymi talentamia przedstawicielami firm. <br /><br />
-
-                        Na naszej stronie internetowej znajdziecie informacje o wystawcach i ich aktualnych ofertach pracy oraz staży. Uczestnicy mogą również przesłać swoje CV do naszej bazy, co pozwoli pracodawcom lepiej poznać ich kompetencje i doświadczenie.</WhoContent>
+                    <WhoContent>
+                        <WhoHighlight>Inżynierskie Targi Pracy</WhoHighlight> organizowane przez <strong>Stowarzyszenie Studentów BEST AGH Kraków</strong> już od 28 lat łączą środowisko akademickie z biznesem. To wydarzenie, podczas którego studenci i absolwenci mają szansę poznać potencjalnych pracodawców, a firmy mogą dotrzeć do przyszłych specjalistów z różnych dziedzin inżynierii i technologii.
+                        <br /><br />
+                        Tegoroczna edycja odbędzie się <WhoHighlight>11 marca</WhoHighlight> i stanie się miejscem spotkań, inspiracji oraz wymiany doświadczeń pomiędzy <strong>młodymi talentami a przedstawicielami firm.</strong>
+                        <br /><br />
+                        Na naszej stronie internetowej znajdziecie informacje o wystawcach i ich aktualnych <strong>ofertach pracy oraz staży</strong>. Uczestnicy mogą również przesłać <strong>swoje CV</strong> do naszej bazy, co pozwoli pracodawcom lepiej poznać ich kompetencje i doświadczenie.
+                    </WhoContent>
                 </WhoLeftSection>
                 <WhoRightSection>
                     <WhoGearWrapper size={30} top={0} left={20}>
@@ -2049,9 +2058,9 @@ function MainSite() {
                         <SponsorLogoGrid>
                             <SponsorLink href="https://www.krakow.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoKrakowPl} alt="krakow.pl" /></SponsorLogoCard></SponsorLink>
                             <SponsorLink href="https://krakow.tvp.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoTvpKrakow} alt="TVP Kraków" /></SponsorLogoCard></SponsorLink>
-                            <SponsorLink href="https://www.tvp.info/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoTvpInfo} alt="TVP Info" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="https://www.tvp.info/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={100} src={LogoTvpInfo} alt="TVP Info" /></SponsorLogoCard></SponsorLink>
                             <SponsorLink href="https://perspektywy.pl/portal/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoPerspektywy} alt="Perspektywy" /></SponsorLogoCard></SponsorLink>
-                            <SponsorLink href="https://www.eurostudent.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoEurostudent} alt="Eurostudent" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="https://www.eurostudent.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={100} src={LogoEurostudent} alt="Eurostudent" /></SponsorLogoCard></SponsorLink>
                             <SponsorLink href="https://www.dlastudenta.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoDlaStudenta} alt="Dla Studenta" /></SponsorLogoCard></SponsorLink>
                             <SponsorLink href="https://radio17.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoRadio17} alt="Radio 1.7" /></SponsorLogoCard></SponsorLink>
                         </SponsorLogoGrid>
@@ -2063,12 +2072,12 @@ function MainSite() {
                         <SponsorLogoGrid>
                             <SponsorLink href="https://podprad.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoPlynPodPrad} alt="PłyńPodPrąd" /></SponsorLogoCard></SponsorLink>
                             <SponsorLink href="https://allinuj.com/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={100} src={AllInUJ} alt="All In UJ" /></SponsorLogoCard></SponsorLink>
-                            {/* <SponsorLogoCard><SponsorLogoText>infopraca</SponsorLogoText></SponsorLogoCard> */}
+                            <SponsorLink href="https://www.infopraca.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={100} src={LogoInfoPraca} alt="InfoPraca" /></SponsorLogoCard></SponsorLink>
                             {/* <SponsorLogoCard><SponsorLogoText>KrakowDlaWas</SponsorLogoText></SponsorLogoCard> */}
                             <SponsorLink href="https://glos24.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={60} src={LogoGlos24} alt="Głos24" /></SponsorLogoCard></SponsorLink>
                             {/* <SponsorLogoCard><SponsorLogoText>Inzynieria.com</SponsorLogoText></SponsorLogoCard> */}
                             <SponsorLink href="https://www.facebook.com/magazyn.bisagh/?locale=pl_PL" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoBIS} alt="BIS" /></SponsorLogoCard></SponsorLink>
-                            {/* <SponsorLogoCard><SponsorLogoText>Crossweb</SponsorLogoText></SponsorLogoCard> */}
+                            <SponsorLink href="https://crossweb.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={100} src={LogoCrossweb} alt="Crossweb" /></SponsorLogoCard></SponsorLink>
                         </SponsorLogoGrid>
                     </SponsorGroup>
 

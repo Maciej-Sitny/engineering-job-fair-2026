@@ -13,7 +13,7 @@ import logo from './assets/ITP_logo_kolor_ai kopia 1.svg';
    - 1025px+: duże ekrany / desktop
    ========================================================================== */
 
-const NavbarContainer = styled.header<{ $isScrolled: boolean; $isMobileMenuOpen: boolean }>`
+const NavbarContainer = styled.header<{ $isScrolled: boolean }>`
     position: fixed;
     top: 0;
     left: 50%;
@@ -396,14 +396,8 @@ function Navbar() {
                 }
             } else {
                 // Jesteśmy na innej podstronie, nawiguj do głównej z hashem
-                navigate('/');
-                // Po nawigacji przewiń do sekcji
-                setTimeout(() => {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }, 500);
+                // MainSite.tsx odczyta location.hash przy montowaniu i przewinie do sekcji
+                navigate('/#' + id);
             }
         }
         setIsMobileMenuOpen(false);
@@ -411,7 +405,7 @@ function Navbar() {
 
     return (
         <>
-            <NavbarContainer $isScrolled={isScrolled} $isMobileMenuOpen={isMobileMenuOpen}>
+            <NavbarContainer $isScrolled={isScrolled}>
                 <Content $isScrolled={isScrolled}>
                     <Left>
                         <Link to="/">
