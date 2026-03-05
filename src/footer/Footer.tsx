@@ -236,8 +236,12 @@ const Footer = () => {
       <FooterContent>
         {/* Left Section - Logos */}
         <LogosSection>
-          <FooterLogo src={itpLogo} alt="Inżynierskie Targi Pracy" />
-          <FooterLogo src={bestLogo} alt="BEST AGH Kraków" />
+          <Link to="/" aria-label="Inżynierskie Targi Pracy - strona główna">
+            <FooterLogo src={itpLogo} alt="Inżynierskie Targi Pracy" />
+          </Link>
+          <a href="https://best.krakow.pl/" target="_blank" rel="noopener noreferrer" aria-label="BEST AGH Kraków">
+            <FooterLogo src={bestLogo} alt="BEST AGH Kraków" />
+          </a>
         </LogosSection>
 
         {/* Middle Section - Menu */}
@@ -255,9 +259,9 @@ const Footer = () => {
 
         {/* Right Section - Contact Info */}
         <ContactSection>
-          <ContactTitle>Stowarzyszenie studentów<br />BEST AGH Kraków</ContactTitle>
+          <ContactTitle>Stowarzyszenie Studentów<br />BEST AGH Kraków</ContactTitle>
           <ContactText>I DS. "Alfa" Blok II</ContactText>
-          <ContactText>ul. Reymonta 17/3a</ContactText>
+          <ContactText>ul. Reymonta 17/E14</ContactText>
           <ContactText>30-059 Kraków</ContactText>
           <SocialIcons>
             <SocialLink href="https://www.facebook.com/BEST.AGH.Krakow" target="_blank" rel="noopener noreferrer">

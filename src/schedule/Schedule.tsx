@@ -259,7 +259,7 @@ function Schedule() {
         <Page>
             <SEO
                 title="Harmonogram – Inżynierskie Targi Pracy 2026"
-                description="Harmonogram XXVIII edycji Inżynierskich Targów Pracy. Sprawdź plan wydarzeń na dzień targów."
+                description="Harmonogram 28. edycji Inżynierskich Targów Pracy – 11 marca 2026, Kraków. Sprawdź szczegółowy plan wydarzeń na dzień targów."
                 canonicalUrl="https://itp.best.krakow.pl/harmonogram"
             />
             <Wrapper>
