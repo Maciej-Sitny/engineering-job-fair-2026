@@ -228,7 +228,7 @@ const OrganizersContainer = styled.section`
 	/* --- 1025px+: Desktop --- */
 	@media (min-width: 1025px) {
 		padding: 0 3.75rem;
-		margin-top: 77vh;
+		margin-top: 110vh;
 	}
 `;
 

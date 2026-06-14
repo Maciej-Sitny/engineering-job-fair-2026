@@ -232,7 +232,7 @@ const scheduleItems = [
         description: 'Ogłoszenie pierwszego zwycięzcy konkursu 1. Zwycięzcy będą wybierani w trzydziesto minutowych odstępach aż do godziny 15:30.'
     },
     {
-        time: '11:30',
+        time: '11:00',
         title: 'Konkurs 2',
         description: 'Ogłoszenie pierwszego zwycięzcy konkursu 2. Zwycięzcy będą wybierani w trzydziesto minutowych odstępach aż do godziny 15:30.'
     },

@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import {
     JOB_OFFERS,
@@ -192,7 +193,7 @@ const NoResults = styled.p`
    CARD
    ========================================================================== */
 
-const Card = styled.div`
+const Card = styled(Link)`
     background: #fff;
     border: 1.5px solid #e8e8e8;
     border-radius: 20px;
@@ -202,6 +203,8 @@ const Card = styled.div`
     min-height: 180px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
     transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+    color: inherit;
 
     &:hover {
         transform: translateY(-2px);
@@ -241,7 +244,7 @@ const LocationText = styled.span`
     color: #666;
 `;
 
-const ApplyButton = styled.a`
+const ApplyButton = styled.span`
     display: inline-block;
     background: #f78f27;
     color: #fff;
@@ -255,9 +258,8 @@ const ApplyButton = styled.a`
     transition: background 0.2s;
     cursor: pointer;
 
-    &:hover {
+    ${Card}:hover & {
         background: #e07a18;
-        color: #1a1a1a;
     }
 `;
 
@@ -356,19 +358,15 @@ export default function JobOffers() {
                         <NoResults>Brak ofert spełniających podane kryteria.</NoResults>
                     )}
                     {filtered.map((offer) => (
-                        <Card key={offer.id}>
-                            <CardTitle>Stanowisko: {offer.title}</CardTitle>
+                        <Card key={offer.id} to={`/oferty-pracy/${offer.id}`}>
+                            <CardTitle>{offer.title}</CardTitle>
                             <CardFooter>
                                 <CompanyInfo>
                                     <CompanyName>{offer.companyName}</CompanyName>
-                                    <LocationText>{offer.location}</LocationText>
+                                    <LocationText>{offer.location || 'Lokalizacja nieokreślona'}</LocationText>
                                 </CompanyInfo>
-                                <ApplyButton
-                                    href={offer.applyUrl ?? '#'}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Aplikuj
+                                <ApplyButton>
+                                    Więcej
                                 </ApplyButton>
                             </CardFooter>
                         </Card>

@@ -269,6 +269,30 @@ const BoothImg = styled.img`
     display: block;
 `;
 
+const MultimediaGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 100%;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+`;
+
+const VideoWrapper = styled.div`
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    
+    video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+`;
+
 const NotFoundContainer = styled.div`
     text-align: center;
     padding: 4rem 1rem;
@@ -332,11 +356,16 @@ export default function ExhibitionerDetail() {
         if (activeTab === 'Multimedia') {
             if (!value || !Array.isArray(value) || value.length === 0) return null;
             return (
-                <>
+                <MultimediaGrid>
                     {(value as string[]).map((item, i) => (
-                        <Description key={i}>{item}</Description>
+                        <VideoWrapper key={i}>
+                            <video controls>
+                                <source src={item} type="video/mp4" />
+                                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                            </video>
+                        </VideoWrapper>
                     ))}
-                </>
+                </MultimediaGrid>
             );
         }
 
