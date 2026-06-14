@@ -80,11 +80,11 @@ import logoVelvet from './logos/logo_velvet.jpg';
 import logoVinci from './logos/logo_vinci.svg';
 import logoSpie from './logos/logo_spie.jpg';
 
-// Videos
-import video1 from './media/osoba_1_16x9_30s.mp4';
-import video2 from './media/osoba_2_16x9_30s.mp4';
-import video3 from './media/osoba_3_16x9_30s.mp4';
-import video4 from './media/osoba_4_16x9_30s.mp4';
+// // Videos
+// import video1 from './media/osoba_1_16x9_30s.mp4';
+// import video2 from './media/osoba_2_16x9_30s.mp4';
+// import video3 from './media/osoba_3_16x9_30s.mp4';
+// import video4 from './media/osoba_4_16x9_30s.mp4';
 
 export const EXHIBITIONERS: Exhibitioner[] = [
 
@@ -130,7 +130,8 @@ export const EXHIBITIONERS: Exhibitioner[] = [
             'Dlaczego my?': null,
             'FAQ': null,
             'Statystyki firmy': null,
-            'Multimedia': [video1, video2, video3, video4],
+            // 'Multimedia': [video1, video2, video3, video4],
+            'Multimedia': null
         },
     },
     {
