@@ -347,6 +347,7 @@ const DesktopButtons = styled.div`
 const links = [
     { label: 'O nas', to: '/o-nas' },
     { label: 'Harmonogram', to: '/harmonogram' },
+    { label: 'Oferty pracy', to: '/oferty-pracy' },
     { label: 'Kontakt', to: '/#kontakt' },
     { label: 'Baza CV', to: 'https://forms.gle/u73LBm69dnfxjibV8', external: true }
 ];

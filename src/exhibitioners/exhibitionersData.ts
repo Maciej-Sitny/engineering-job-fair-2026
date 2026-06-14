@@ -2,25 +2,19 @@ export type Category =
     | 'Informatyka'
     | 'Elektronika'
     | 'Inżynieria i Zarządzanie Procesami Przemysłowymi'
-    | 'Zarządzanie i Inżynieria Produkcji'
     | 'Inżynieria Mechaniczna'
     | 'Informatyka i Systemy Inteligentne'
     | 'Automatyka i Robotyka'
-    | 'Inżynieria Biomedyczna'
-    | 'Energetyka'
-    | 'Inna';
+    | 'Energetyka';
 
 export const ALL_CATEGORIES: Category[] = [
     'Informatyka',
     'Elektronika',
     'Inżynieria i Zarządzanie Procesami Przemysłowymi',
-    'Zarządzanie i Inżynieria Produkcji',
     'Inżynieria Mechaniczna',
     'Informatyka i Systemy Inteligentne',
     'Automatyka i Robotyka',
-    'Inżynieria Biomedyczna',
     'Energetyka',
-    'Inna',
 ];
 
 /** Keyed content areas for a company's detail page.
@@ -86,6 +80,12 @@ import logoVelvet from './logos/logo_velvet.jpg';
 import logoVinci from './logos/logo_vinci.svg';
 import logoSpie from './logos/logo_spie.jpg';
 
+// Videos
+import video1 from './media/osoba_1_16x9_30s.mp4';
+import video2 from './media/osoba_2_16x9_30s.mp4';
+import video3 from './media/osoba_3_16x9_30s.mp4';
+import video4 from './media/osoba_4_16x9_30s.mp4';
+
 export const EXHIBITIONERS: Exhibitioner[] = [
 
 
@@ -130,7 +130,7 @@ export const EXHIBITIONERS: Exhibitioner[] = [
             'Dlaczego my?': null,
             'FAQ': null,
             'Statystyki firmy': null,
-            'Multimedia': [],
+            'Multimedia': [video1, video2, video3, video4],
         },
     },
     {
@@ -175,7 +175,7 @@ export const EXHIBITIONERS: Exhibitioner[] = [
     {
         id: 'cfe-polska',
         name: 'CFE Polska',
-        categories: ['Inna'],
+        categories: ['Elektronika', 'Energetyka'],
         sponsorLabel: null,
         logo: logoCFE,
         shortDescription:
@@ -301,7 +301,7 @@ export const EXHIBITIONERS: Exhibitioner[] = [
     {
         id: 'havi',
         name: 'HAVI Global Business Services',
-        categories: ['Inna', 'Informatyka'],
+        categories: ['Informatyka'],
         sponsorLabel: null,
         // detailDisabled: true,
         logo: logoHavi,
@@ -323,14 +323,14 @@ export const EXHIBITIONERS: Exhibitioner[] = [
     {
         id: 'coca-cola-hbc',
         name: 'Coca-Cola HBC Polska i Kraje Bałtyckie',
-        categories: ['Inna', 'Inżynieria i Zarządzanie Procesami Przemysłowymi'],
+        categories: ['Inżynieria i Zarządzanie Procesami Przemysłowymi'],
         sponsorLabel: null,
         logo: logoCocaCola,
         shortDescription:
             'Strategiczny partner rozlewniczy The Coca‑Cola Company działający w Polsce, Litwie, Łotwie i Estonii.',
         obszaryPrezentacji: {
             'Informacja o firmie':
-                'Coca‑Cola HBC Polska i Kraje Bałtyckie jest częścią globalnej grupy Coca‑Cola HBC AG i działa jako jeden obszar biznesowy obejmujący Polskę, Litwę, Łotwę i Estonię.\nFirma jest strategicznym partnerem rozlewniczym The Coca‑Cola Company, odpowiadając za produkcję, pakowanie, dystrybucję oraz sprzedaż szerokiego portfolio napojów. Oferta obejmuje m.in. marki Coca‑Cola, Coca‑Cola Zero, Fanta, Sprite, Costa Coffee, Monster, a także wody, soki, herbaty i inne napoje niegazowane.\nOrganizacja działa w oparciu o rozbudowaną infrastrukturę produkcyjną i logistyczną, która w Polsce obejmuje trzy zakłady produkcyjne oraz sieć centrów dystrybucyjnych, zatrudniając łącznie tysiące pracowników w regionie.\nCoca‑Cola HBC Polska i Kraje Bałtyckie realizuje strategię opartą na zrównoważonym rozwoju, efektywności operacyjnej i odpowiedzialnym zarządzaniu zasobami, co przekłada się na wielokrotne wyróżnienia w międzynarodowych rankingach odpowiedzialnego biznesu.',
+                'Coca-Cola HBC Polska i kraje bałtyckie działa na terenie Estonii, Litwy, Łotwy i Polski. Jesteśmy strategicznym partnerem The Coca-Cola Company. Łączymy wiedzę, doświadczenie i rozpoznawalność marek The Coca-Cola Company z naszą przewagą na rynku, infrastrukturą i doświadczeniem  w produkcji i sprzedaży, aby wspólnie tworzyć wartość dla naszych klientów i partnerów biznesowych.  \n\nNasze portfolio budowane jest zgodnie ze strategią 24/7, aby oferować napoje na każdą okazję i porę dnia. Produkujemy, sprzedajemy i dystrybuujemy napoje gazowane marek, takich jak: Coca-Cola, Coca-Cola Zero, Sprite, Fanta czy Kinley. W naszej ofercie znajdują się też wody, soki, gotowe do spożycia herbaty, napoje energetyzujące, kawy, piwa oraz wysokiej jakości alkohole.',
             'Lokalizacja stoiska': null,
             'Dołącz do nas':
                 'Poszukujemy studentów oraz absolwentów kierunków biologicznych i inżynierskich. Oczekujemy kandydatów, którzy chcą rozwijać się w środowisku nowoczesnej firmy produkcyjnej i są gotowi do wsparcia naszych zespołów w obszarach: zapewnienia jakości, gdzie wymagana jest podstawowa wiedza z zakresu mikrobiologii lub fizyko-chemii, dokładność i umiejętność pracy zgodnie z procedurami; produkcji, gdzie cenimy zaangażowanie, odpowiedzialność oraz zainteresowanie procesami wytwarzania i kontrolą jakości; oraz zarządzania surowcami i koncentratami, gdzie istotna jest skrupulatność, dobra organizacja pracy oraz zainteresowanie obszarem bezpieczeństwa żywności i łańcucha dostaw. Od wszystkich kandydatów oczekujemy motywacji, gotowości do pracy w okresie letnim, chęci zdobywania nowej wiedzy, podstawowej znajomości narzędzi MS Office i języka angielskiego na poziomie komunikatywnym.',
@@ -449,7 +449,7 @@ export const EXHIBITIONERS: Exhibitioner[] = [
     {
         id: 'koleje-malopolskie',
         name: 'Koleje Małopolskie',
-        categories: ['Inna', 'Informatyka'],
+        categories: ['Informatyka', 'Elektronika', 'Inżynieria Mechaniczna'],
         sponsorLabel: null,
         logo: logoKoleje,
         shortDescription:
@@ -474,7 +474,7 @@ export const EXHIBITIONERS: Exhibitioner[] = [
     {
         id: 'philip-morris',
         name: 'Philip Morris Polska Distribution Sp. z o.o.',
-        categories: ['Inna'],
+        categories: ['Informatyka'],
         sponsorLabel: null,
         detailDisabled: true,
         shortDescription: 'Philip Morris Polska Distribution Sp. z o.o.',
@@ -490,7 +490,7 @@ export const EXHIBITIONERS: Exhibitioner[] = [
     {
         id: 'duna-polska',
         name: 'Duna Polska S.A.',
-        categories: ['Inna'],
+        categories: ['Inżynieria Mechaniczna'],
         sponsorLabel: null,
         shortDescription: 'Duna Polska S.A.',
         logo: logoDuna,
@@ -510,7 +510,7 @@ export const EXHIBITIONERS: Exhibitioner[] = [
     {
         id: 'air-liquide',
         name: 'Air Liquide Global E&C Solutions Poland S.A.',
-        categories: ['Energetyka', 'Inna'],
+        categories: ['Energetyka', 'Automatyka i Robotyka', 'Elektronika', 'Inżynieria Mechaniczna', 'Inżynieria i Zarządzanie Procesami Przemysłowymi'],
         sponsorLabel: null,
         logo: logoAirLiquide,
         shortDescription: 'Air Liquide Global E&C Solutions Poland S.A.',
@@ -550,7 +550,7 @@ export const EXHIBITIONERS: Exhibitioner[] = [
     {
         id: 'vinci-construction',
         name: 'VINCI Construction Usługi Wsparcia Sp. z o.o.',
-        categories: ['Inna'],
+        categories: ['Inżynieria Mechaniczna'],
         sponsorLabel: null,
         logo: logoVinci,
         detailDisabled: true,
@@ -608,7 +608,7 @@ export const EXHIBITIONERS: Exhibitioner[] = [
     {
         id: 'velvet-care',
         name: 'Velvet CARE',
-        categories: ['Inna', 'Inżynieria i Zarządzanie Procesami Przemysłowymi'],
+        categories: ['Inżynieria i Zarządzanie Procesami Przemysłowymi'],
         sponsorLabel: null,
         shortDescription: 'Velvet CARE – wiodący producent papierowych produktów higienicznych.',
         logo: logoVelvet,

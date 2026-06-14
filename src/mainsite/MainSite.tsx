@@ -11,7 +11,8 @@ import Gear6 from '../assets/gears/Subtract (5).svg';
 import Gear7 from '../assets/gears/Subtract (6).svg';
 import GearWithPeople from './assets/GearWithPeople.svg';
 import GearWithBackground from './assets/GearWithBackground.svg';
-// import ITPMap from './assets/mapa_targow.svg';
+import ITPMap from './assets/mapa_targow.png';
+import PolandMap from './assets/mapa_targow_best.svg';
 import WoodwardLogo from './assets/sponsors/logo_woodward.jpg';
 import AllInUJ from './assets/patroni/logo_all_in_uj.jpg';
 // import SponsorsCarousel from './SponsorsCarousel';
@@ -34,7 +35,15 @@ import LogoCrossweb from './assets/patroni/logo_crossweb.jpg';
 import LogoPega from './assets/sponsors/logo_pega.jpg';
 import LogoOrange from './assets/sponsors/logo_orange.svg';
 import LogoSabre from './assets/sponsors/logo_sabre.png';
+import LogoInzynieria from './assets/patroni/logo_inzynieria.svg';
 import CVPhoto from './assets/zdjecie_cv_gradient.png';
+import LogoAltenberg from './assets/konkurs_logo/logo_altenberg.svg';
+import LogoHelion from './assets/konkurs_logo/logo_helion.svg';
+import LogoInterskills from './assets/konkurs_logo/logo_interskills.jpg';
+import LogoVRStudio from './assets/konkurs_logo/logo_vr_studio.png';
+import LogoWawel from './assets/konkurs_logo/logo_wawel.png';
+import LogoPraca from './assets/patroni/logo_praca_pl.png';
+
 
 const HeroContainer = styled.section`
     display: flex;
@@ -339,6 +348,182 @@ const OrganizerEmail = styled.p`
     @media (min-width: 1025px) {
         font-size: 3.6vh;
     }
+`;
+
+const MapSection = styled.section`
+    background: #fff;
+    font-family: 'Alumni Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    
+    /* --- BASE: Mobile First --- */
+    flex-direction: column;
+    padding: 3rem 2rem;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        padding: 4rem 3rem;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        flex-direction: row;
+        padding: 5rem 5rem;
+        gap: 3rem;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 80px 100px;
+        gap: 5rem;
+    }
+    
+    /* --- 1400px+: Szersze ekrany --- */
+    @media (min-width: 1400px) {
+        padding: 80px 150px;
+    }
+`;
+
+const MapLeftSection = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* --- BASE: Mobile First --- */
+    width: 100%;
+    margin-bottom: 2rem;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        width: auto;
+        margin-bottom: 0;
+        max-width: 45%;
+    }
+`;
+
+const MapTitle = styled.h2`
+    font-weight: 500;
+    color: #1e1e1e;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: 0.5px;
+    text-align: left;
+    line-height: 1.1;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.5rem, 8vw, 2rem);
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        font-size: clamp(1.75rem, 6vw, 2.25rem);
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1rem;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 40px;
+        // margin-bottom: 1.5rem;
+    }
+`;
+
+const MapDescription = styled.p`
+    font-weight: 400;
+    color: #1e1e1e;
+    margin: 0 0 2rem 0;
+    line-height: 1.4;
+    text-align: justify;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.95rem, 2vw, 1.15rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 16px;
+        margin-bottom: 2.5rem;
+    }
+`;
+
+const SocialMediaList = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+`;
+
+const SocialMediaItem = styled.a`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: #1e1e1e;
+    transition: color 0.3s ease;
+    
+    &:hover {
+        color: #f78f27;
+    }
+    
+    svg {
+        width: 40px;
+        height: 40px;
+        fill: currentColor;
+    }
+`;
+
+const SocialMediaText = styled.span`
+    font-weight: 400;
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: 18px;
+    }
+`;
+
+const MapRightSection = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        max-width: 55%;
+    }
+`;
+
+const MapImageWrapper = styled.div`
+    width: 80%;
+    margin: 0 auto;
+    align-self: center;
+    justify-self: center;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        width: 80%;
+        margin: 0;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        width: 70%;
+    }
+`;
+
+const MapImage = styled.img`
+    width: 120%;
+    height: auto;
+    display: block;
 `;
 
 const HeroSubtitle = styled.p`
@@ -996,65 +1181,65 @@ const CounterLabel = styled.p`
     }
 `;
 
-// const MapContainer = styled.section`
-//     width: 100%;
-//     background: #fff;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     padding: 3vh 60px;
-//     /* --- BASE: Mobile First --- */
-//     min-height: auto;
-//     width: 90%;
-//     margin: 2vh auto 10vh;
-//     padding: 0 10px 5rem 0.5rem;
+const MapContainer = styled.section`
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh 60px;
+    /* --- BASE: Mobile First --- */
+    min-height: auto;
+    width: 90%;
+    margin: 10vh auto 3vh;
+    padding: 0 10px 5rem 0.5rem;
 
 
-//     /* --- 481px+: Większe telefony --- */
-//     @media (min-width: 481px) {
-//         padding: 0 35px 5rem 1rem;
-//         width: 95%;
-//     }
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        padding: 0 35px 5rem 1rem;
+        width: 95%;
+    }
 
-//     /* --- 769px+: Tablety --- */
-//     @media (min-width: 769px) {
-//         padding: 0 5% 10vh 5%;
-//         height: 500px;
-//         max-width: 90%;
-//         margin: 0 auto;
-//     }
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        padding: 0 5% 10vh 5%;
+        height: 500px;
+        max-width: 90%;
+        margin: 10vh auto 0 auto;
+    }
 
-//     /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1025px) {
-//         padding: 0 5% 20vh 5%;
-//         height: 480px;
-//         max-width: 80%;
-//         margin: 0 auto;
-//     }
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 0 5% 20vh 5%;
+        height: 480px;
+        max-width: 80%;
+        margin: 10vh auto 0 auto;
+    }
 
-//         /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1400px) {
-//         padding: 0 5% 20vh 5%;
-//         height: 480px;
-//         max-width: 80%;
-//         margin: 5vh auto;
-//     }
+        /* --- 1025px+: Desktop --- */
+    @media (min-width: 1400px) {
+        padding: 0 5% 20vh 5%;
+        height: 480px;
+        max-width: 80%;
+        margin: 35vh auto 10vh auto;
+    }
 
-//         /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1750px) {
-//         padding: 0 5% 20vh 5%;
-//         height: 480px;
-//         max-width: 80%;
-//         margin: 13vh auto;
-//     }
+        /* --- 1025px+: Desktop --- */
+    @media (min-width: 1750px) {
+        padding: 0 5% 20vh 5%;
+        height: 480px;
+        max-width: 80%;
+        margin: 13vh auto;
+    }
 
-//     img {
-//         max-width: 100%;
-//         height: auto;
-//         object-fit: contain;
-//     }
-// `;
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+`;
 
 // const MapTitle = styled.h1`
 //     font-weight: 500;
@@ -1106,229 +1291,327 @@ const CounterLabel = styled.p`
 //     }
 // `;
 
+// /* ===== KONKURSY PARTNERS SECTION ===== */
+
+const KonkursyPartnersSection = styled.section`
+    background: #fff;
+    text-align: center;
+    font-family: 'Alumni Sans', sans-serif;
+    margin-bottom: 8vh;
+    
+    /* --- BASE: Mobile First --- */
+    padding: 3rem 1rem 2rem;
+    
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        padding: 4rem 1.5rem 2.5rem;
+    }
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        padding: 4rem 2rem 3rem;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 0px 60px 40px;
+    }
+`;
+
+const KonkursyPartnersTitle = styled.h3`
+    font-weight: 400;
+    color: #1e1e1e;
+    margin: 0 0 2rem 0;
+    letter-spacing: 0.5px;
+    
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+`;
+
+const KonkursyPartnersGrid = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        gap: 2rem;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        gap: 40px;
+    }
+`;
+
+const KonkursyPartnerLink = styled.a`
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+`;
+
+const KonkursyPartnerLogo = styled.img`
+    object-fit: contain;
+    display: block;
+    
+    /* --- BASE: Mobile First --- */
+    height: 60px;
+    
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        height: 70px;
+    }
+    
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        height: 80px;
+    }
+`;
+
 // /* ===== SCHEDULE / KONKURSY SECTION ===== */
 
-// const ScheduleSection = styled.section`
-//     background: #fff;
-//     position: relative;
-//     display: flex;
-//     align-items: stretch;
-//     justify-content: flex-start;
-//     font-family: 'Alumni Sans', sans-serif;
+const ScheduleSection = styled.section`
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    font-family: 'Alumni Sans', sans-serif;
 
-//     /* --- BASE: Mobile First --- */
-//     padding: 3rem 1.5rem 2rem;
-//     flex-direction: column;
+    /* --- BASE: Mobile First --- */
+    padding: 3rem 1.5rem 2rem;
+    flex-direction: column;
 
-//     /* --- 481px+: Większe telefony --- */
-//     @media (min-width: 481px) {
-//         padding: 4rem 2rem 2.5rem;
-//     }
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        padding: 4rem 2rem 2.5rem;
+    }
 
-//     /* --- 769px+: Tablety --- */
-//     @media (min-width: 769px) {
-//         flex-direction: row;
-//         padding: 5rem 3vw 4rem;
-//         gap: 2rem;
-//     }
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        flex-direction: row;
+        padding: 5rem 3vw 4rem;
+        gap: 2rem;
+    }
 
-//     /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1025px) {
-//         padding: 80px 8vw 60px;
-//         gap: 2rem;
-//     }
-// `;
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        padding: 80px 8vw 60px;
+        gap: 2rem;
+    }
+`;
 
-// const ScheduleGearsCol = styled.div`
-//     position: relative;
-//     flex-shrink: 0;
+const ScheduleGearsCol = styled.div`
+    position: relative;
+    flex-shrink: 0;
 
-//     /* --- BASE: Mobile First --- */
-//     display: none;
+    /* --- BASE: Mobile First --- */
+    display: none;
 
-//     /* --- 769px+: Tablety --- */
-//     @media (min-width: 769px) {
-//         display: block;
-//         width: 80px;
-//     }
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        display: block;
+        width: 80px;
+    }
 
-//     /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1025px) {
-//         width: 140px;
-//     }
-// `;
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        width: 140px;
+    }
+`;
 
-// const ScheduleGearImg = styled.img<{ size: number; top: number; left: number }>`
-//     position: absolute;
-//     top: ${props => props.top}px;
-//     left: ${props => props.left}px;
-//     width: ${props => props.size}px;
-//     height: ${props => props.size}px;
-//     object-fit: contain;
+const ScheduleGearImg = styled.img<{ size: number; top: number; left: number }>`
+    position: absolute;
+    top: ${props => props.top}px;
+    left: ${props => props.left}px;
+    width: ${props => props.size}px;
+    height: ${props => props.size}px;
+    object-fit: contain;
 
-//     /* --- 769px+: Tablety --- */
-//     @media (min-width: 769px) {
-//         width: ${props => props.size * 0.5}px;
-//         height: ${props => props.size * 0.5}px;
-//     }
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        width: ${props => props.size * 0.5}px;
+        height: ${props => props.size * 0.5}px;
+    }
 
-//     /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1025px) {
-//         width: ${props => props.size * 0.75}px;
-//         height: ${props => props.size * 0.75}px;
-//     }
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        width: ${props => props.size * 0.75}px;
+        height: ${props => props.size * 0.75}px;
+    }
 
-//     /* --- 1400px+: Pełny rozmiar --- */
-//     @media (min-width: 1400px) {
-//         width: ${props => props.size}px;
-//         height: ${props => props.size}px;
-//     }
-// `;
+    /* --- 1400px+: Pełny rozmiar --- */
+    @media (min-width: 1400px) {
+        width: ${props => props.size}px;
+        height: ${props => props.size}px;
+    }
+`;
 
-// const ScheduleItemsList = styled.div`
-//     flex: 1;
-//     display: flex;
-//     flex-direction: column;
-// `;
+const ScheduleItemsList = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+`;
 
-// const ScheduleItem = styled.div`
-//     display: grid;
-//     align-items: start;
-//     border-bottom: 1px solid #e8c98a;
+const ScheduleItem = styled.div`
+    display: grid;
+    align-items: start;
+    border-bottom: 1px solid #e8c98a;
 
-//     /* --- BASE: Mobile First --- */
-//     grid-template-columns: auto 1fr;
-//     gap: 1rem 1.5rem;
-//     padding: 1.5rem 0;
+    /* --- BASE: Mobile First --- */
+    grid-template-columns: auto 1fr;
+    gap: 1rem 1.5rem;
+    padding: 1.5rem 0;
 
-//     /* --- 481px+: Większe telefony --- */
-//     @media (min-width: 481px) {
-//         gap: 1rem 2rem;
-//         padding: 1.75rem 0;
-//     }
+    /* --- 481px+: Większe telefony --- */
+    @media (min-width: 481px) {
+        gap: 1rem 2rem;
+        padding: 1.75rem 0;
+    }
 
-//     /* --- 769px+: Tablety --- */
-//     @media (min-width: 769px) {
-//         grid-template-columns: 110px 1fr;
-//         gap: 1rem 2.5rem;
-//         padding: 2rem 0;
-//     }
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        grid-template-columns: 110px 1fr;
+        gap: 1rem 2.5rem;
+        padding: 2rem 0;
+    }
 
-//     /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1025px) {
-//         grid-template-columns: 180px 1fr;
-//         gap: 1.5rem 3rem;
-//         padding: 2.5rem 0;
-//     }
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        grid-template-columns: 180px 1fr;
+        gap: 1.5rem 3rem;
+        padding: 2.5rem 0;
+    }
 
-//     &:last-child {
-//         border-bottom: 1px solid #e8c98a;
-//     }
-// `;
+    &:last-child {
+        border-bottom: 1px solid #e8c98a;
+    }
+`;
 
-// const ScheduleTime = styled.span`
-//     font-weight: 500;
-//     color: #1e1e1e;
-//     font-family: 'Alumni Sans', sans-serif;
-//     line-height: 1;
-//     align-self: center;
+const ScheduleTime = styled.span`
+    font-weight: 500;
+    color: #1e1e1e;
+    font-family: 'Alumni Sans', sans-serif;
+    line-height: 1;
+    align-self: center;
 
-//     /* --- BASE: Mobile First --- */
-//     font-size: clamp(2.5rem, 10vw, 4rem);
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(2.5rem, 10vw, 4rem);
 
-//     /* --- 769px+: Tablety --- */
-//     @media (min-width: 769px) {
-//         font-size: clamp(2.5rem, 5vw, 4rem);
-//     }
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
 
-//     /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1025px) {
-//         font-size: 60px;
-//     }
-// `;
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 60px;
+    }
+`;
 
-// const ScheduleItemContent = styled.div`
-//     display: flex;
-//     flex-direction: column;
-//     text-align: right;
-//     align-self: center;
-// `;
+const ScheduleItemContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    align-self: center;
+`;
 
-// const ScheduleItemName = styled.h3`
-//     font-weight: 500;
-//     color: #1e1e1e;
-//     margin: 0 0 6px 0;
-//     letter-spacing: 1.5px;
-//     font-family: 'Alumni Sans', sans-serif;
-//     text-transform: uppercase;
+const ScheduleItemName = styled.h3`
+    font-weight: 500;
+    color: #1e1e1e;
+    margin: 0 0 6px 0;
+    letter-spacing: 1.5px;
+    font-family: 'Alumni Sans', sans-serif;
+    text-transform: uppercase;
 
-//     /* --- BASE: Mobile First --- */
-//     font-size: clamp(0.85rem, 3.5vw, 1.25rem);
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(0.85rem, 3.5vw, 1.25rem);
 
-//     /* --- 769px+: Tablety --- */
-//     @media (min-width: 769px) {
-//         font-size: clamp(0.85rem, 1.8vw, 1.1rem);
-//     }
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    }
 
-//     /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1025px) {
-//         font-size: 35px;
-//         margin-bottom: 8px;
-//     }
-// `;
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 35px;
+        margin-bottom: 8px;
+    }
+`;
 
-// const ScheduleItemDescription = styled.p`
-//     font-weight: 400;
-//     color: #1e1e1e;
-//     margin: 0;
-//     line-height: 1.5;
-//     font-family: 'Alumni Sans', sans-serif;
+const ScheduleItemDescription = styled.p`
+    font-weight: 400;
+    color: #1e1e1e;
+    margin: 0;
+    line-height: 1.5;
+    font-family: 'Alumni Sans', sans-serif;
 
-//     /* --- BASE: Mobile First --- */
-//     font-size: clamp(0.75rem, 3vw, 1rem);
+    /* --- BASE: Mobile First --- */
+    font-size: clamp(0.75rem, 3vw, 1rem);
 
-//     /* --- 769px+: Tablety --- */
-//     @media (min-width: 769px) {
-//         font-size: clamp(0.75rem, 1.5vw, 0.95rem);
-//     }
+    /* --- 769px+: Tablety --- */
+    @media (min-width: 769px) {
+        font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+    }
 
-//     /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1025px) {
-//         font-size: 16px;
-//     }
-// `;
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: 16px;
+    }
+`;
 
-// const ScheduleVerticalTitle = styled.h2`
-//     font-weight: 500;
-//     color: #1e1e1e;
-//     font-family: 'Alumni Sans', sans-serif;
-//     margin: 0;
-//     line-height: 1;
+const ScheduleVerticalTitle = styled.h2`
+    font-weight: 500;
+    color: #1e1e1e;
+    font-family: 'Alumni Sans', sans-serif;
+    margin: 0;
+    line-height: 1;
 
-//     /* --- BASE: Mobile First (horizontal at top) --- */
-//     writing-mode: horizontal-tb;
-//     transform: none;
-//     order: -1;
-//     font-size: clamp(2.5rem, 12vw, 4rem);
-//     margin-bottom: 1.5rem;
+    /* --- BASE: Mobile First (horizontal at top) --- */
+    writing-mode: horizontal-tb;
+    transform: none;
+    order: -1;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    margin-bottom: 1.5rem;
 
-//     /* --- 769px+: Tablety (vertical on right) --- */
-//     @media (min-width: 769px) {
-//         writing-mode: vertical-rl;
-//         transform: rotate(180deg);
-//         order: 1;
-//         font-size: clamp(4rem, 8vw, 7rem);
-//         margin-bottom: 0;
-//         padding-left: 1.5rem;
-//         align-self: flex-start;
-//     }
+    /* --- 769px+: Tablety (vertical on right) --- */
+    @media (min-width: 769px) {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        order: 1;
+        font-size: clamp(4rem, 8vw, 7rem);
+        margin-bottom: 0;
+        padding-left: 1.5rem;
+        align-self: flex-start;
+    }
 
-//     /* --- 1025px+: Desktop --- */
-//     @media (min-width: 1025px) {
-//         font-size: clamp(6rem, 12vw, 160px);
-//         padding-left: 2rem;
-//     }
-// `;
+    /* --- 1025px+: Desktop --- */
+    @media (min-width: 1025px) {
+        font-size: clamp(6rem, 12vw, 160px);
+        padding-left: 2rem;
+    }
+`;
 
 /* ===== SPONSORZY I PATRONI SECTION ===== */
 
@@ -1435,11 +1718,11 @@ const SponsorGroupLabel = styled.p`
     font-family: 'Alumni Sans', sans-serif;
 
     /* --- BASE: Mobile First --- */
-    font-size: clamp(0.9rem, 4vw, 1.25rem);
+    font-size: clamp(0.9rem, 6vw, 2rem);
 
     /* --- 769px+: Tablety --- */
     @media (min-width: 769px) {
-        font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+        font-size: clamp(0.9rem, 6vw, 2rem);
     }
 
     /* --- 1025px+: Desktop --- */
@@ -1978,41 +2261,11 @@ function MainSite() {
                 </CounterSubContainer>
             </CounterContainer>
 
-            {/* <ScheduleSection id="konkursy">
-                <ScheduleGearsCol>
-                    <ScheduleGearImg src={Gear1} size={120} top={0} left={0} alt="" aria-hidden="true" />
-                    <ScheduleGearImg src={Gear4} size={80} top={-20} left={135} alt="" aria-hidden="true" />
-                    <ScheduleGearImg src={Gear3} size={70} top={130} left={10} alt="" aria-hidden="true" />
-                </ScheduleGearsCol>
-                <ScheduleItemsList>
-                    {[
-                        {
-                            time: '15:00',
-                            name: 'Konkurs I',
-                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque.',
-                        },
-                        {
-                            time: '15:30',
-                            name: 'Konkurs II',
-                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque.',
-                        },
-                        {
-                            time: '16:00',
-                            name: 'Konkurs III',
-                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque.',
-                        },
-                    ].map((item) => (
-                        <ScheduleItem key={item.time}>
-                            <ScheduleTime>{item.time}</ScheduleTime>
-                            <ScheduleItemContent>
-                                <ScheduleItemName>{item.name}</ScheduleItemName>
-                                <ScheduleItemDescription>{item.description}</ScheduleItemDescription>
-                            </ScheduleItemContent>
-                        </ScheduleItem>
-                    ))}
-                </ScheduleItemsList>
-                <ScheduleVerticalTitle>Konkursy</ScheduleVerticalTitle>
-            </ScheduleSection> */}
+            <MapContainer>
+                <MapTitle>Mapa Targów</MapTitle>
+                <img src={ITPMap} alt="Mapa Inżynierskich Targów Pracy 2026 na Stadionie Miejskim w Krakowie - rozmieszczenie stoisk firm" />
+            </MapContainer>
+
 
             <SponsorsSection id="sponsorzy">
                 <SponsorsVerticalTitle>Sponsorzy i Patroni</SponsorsVerticalTitle>
@@ -2073,16 +2326,70 @@ function MainSite() {
                             <SponsorLink href="https://podprad.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoPlynPodPrad} alt="PłyńPodPrąd" /></SponsorLogoCard></SponsorLink>
                             <SponsorLink href="https://allinuj.com/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={100} src={AllInUJ} alt="All In UJ" /></SponsorLogoCard></SponsorLink>
                             <SponsorLink href="https://www.infopraca.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={100} src={LogoInfoPraca} alt="InfoPraca" /></SponsorLogoCard></SponsorLink>
-                            {/* <SponsorLogoCard><SponsorLogoText>KrakowDlaWas</SponsorLogoText></SponsorLogoCard> */}
                             <SponsorLink href="https://glos24.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={60} src={LogoGlos24} alt="Głos24" /></SponsorLogoCard></SponsorLink>
-                            {/* <SponsorLogoCard><SponsorLogoText>Inzynieria.com</SponsorLogoText></SponsorLogoCard> */}
+                            <SponsorLink href="https://inzynieria.com/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={60} src={LogoInzynieria} alt="Inżynieria.com" /></SponsorLogoCard></SponsorLink>
                             <SponsorLink href="https://www.facebook.com/magazyn.bisagh/?locale=pl_PL" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg src={LogoBIS} alt="BIS" /></SponsorLogoCard></SponsorLink>
                             <SponsorLink href="https://crossweb.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={100} src={LogoCrossweb} alt="Crossweb" /></SponsorLogoCard></SponsorLink>
+                            <SponsorLink href="https://www.praca.pl/" target="_blank" rel="noopener noreferrer"><SponsorLogoCard><SponsorLogoImg height={100} src={LogoPraca} alt="Praca.pl" /></SponsorLogoCard></SponsorLink>
                         </SponsorLogoGrid>
                     </SponsorGroup>
 
                 </SponsorsContent>
             </SponsorsSection>
+
+            <ScheduleSection id="konkursy">
+                <ScheduleGearsCol>
+                    <ScheduleGearImg src={Gear1} size={120} top={0} left={0} alt="" aria-hidden="true" />
+                    <ScheduleGearImg src={Gear4} size={80} top={-20} left={135} alt="" aria-hidden="true" />
+                    <ScheduleGearImg src={Gear3} size={70} top={130} left={10} alt="" aria-hidden="true" />
+                </ScheduleGearsCol>
+                <ScheduleItemsList>
+                    {[
+                        {
+                            time: '10:30',
+                            name: 'Rozwinięcie skrótu #ITP',
+                            description: 'Zwycięzcy będą wybierani na podstawie ankiet przeprowadzanych na wydarzeniu. Najlepsze odpowiedzi na pytanie dotyczące rozwinięcia skrótu #ITP zostaną nagrodzone. Wyniki konkursu będą rozstrzygane w trzydziesto minutowych odstępach.',
+                        },
+                        {
+                            time: '10:30',
+                            name: 'Relacja na social mediach',
+                            description: 'Zwycięzcy będą wybierani na podstawie zdjęć opublikowanych podczas wydarzenia na Instagramie z oznaczeniem @bestkrk @itp_best. Najciekawsze i najbardziej kreatywne relacje zostaną nagrodzone. Wyniki konkursu będą rozstrzygane w trzydziesto minutowych odstępach. Po stadionie będzie chodziła też osoba z ramką, z którą będzie można robić sobie zdjęcia.',
+                        },
+                    ].map((item, index) => (
+                        <ScheduleItem key={`${item.time}-${index}`}>
+                            <ScheduleTime>{item.time}</ScheduleTime>
+                            <ScheduleItemContent>
+                                <ScheduleItemName>{item.name}</ScheduleItemName>
+                                <ScheduleItemDescription>{item.description}</ScheduleItemDescription>
+                            </ScheduleItemContent>
+                        </ScheduleItem>
+                    ))}
+                </ScheduleItemsList>
+                <ScheduleVerticalTitle>Konkursy</ScheduleVerticalTitle>
+            </ScheduleSection>
+
+            <KonkursyPartnersSection>
+                <KonkursyPartnersTitle>
+                    Konkursy zostały zorganizowane przy pomocy Partnerów Konkursu:
+                </KonkursyPartnersTitle>
+                <KonkursyPartnersGrid>
+                    <KonkursyPartnerLink href="https://altenberg.pl/" target="_blank" rel="noopener noreferrer">
+                        <KonkursyPartnerLogo src={LogoAltenberg} alt="Altenberg" />
+                    </KonkursyPartnerLink>
+                    <KonkursyPartnerLink href="https://helion.pl/" target="_blank" rel="noopener noreferrer">
+                        <KonkursyPartnerLogo src={LogoHelion} alt="Helion" />
+                    </KonkursyPartnerLink>
+                    <KonkursyPartnerLink href="https://interskills.pl/" target="_blank" rel="noopener noreferrer">
+                        <KonkursyPartnerLogo src={LogoInterskills} alt="Interskills" />
+                    </KonkursyPartnerLink>
+                    <KonkursyPartnerLink href="https://www.vrstudio.pro/" target="_blank" rel="noopener noreferrer">
+                        <KonkursyPartnerLogo src={LogoVRStudio} alt="VR Studio" />
+                    </KonkursyPartnerLink>
+                    <KonkursyPartnerLink href="https://wawel.com.pl/" target="_blank" rel="noopener noreferrer">
+                        <KonkursyPartnerLogo src={LogoWawel} alt="Wawel" />
+                    </KonkursyPartnerLink>
+                </KonkursyPartnersGrid>
+            </KonkursyPartnersSection>
 
             <CVSection>
                 <CVContent>
@@ -2101,10 +2408,6 @@ function MainSite() {
                 </CVImageWrapper>
             </CVSection>
 
-            {/* <MapTitle>Mapa targów</MapTitle>
-            <MapContainer>
-                <img src={ITPMap} alt="Mapa Inżynierskich Targów Pracy 2026 na Stadionie Miejskim w Krakowie - rozmieszczenie stoisk firm" />
-            </MapContainer> */}
             {/* <CarouselTitle>Sprawdź kto zaufał nam we wcześniejszych edycjach:</CarouselTitle>
             <SponsorsCarousel slides={[WoodwardLogo, AptivLogo, AllInUJ, GEHealthcareLogo, IBMLogo]} /> */}
 
@@ -2136,6 +2439,40 @@ function MainSite() {
                     </OrganizerCard>
                 </CardsContainer>
             </OrganizersContainer>
+
+            <MapSection>
+                <MapLeftSection>
+                    <MapTitle>BEST AGH KRAKÓW - Inżynierskie Targi Pracy</MapTitle>
+                    <MapDescription>
+                        Inżynierskie Targi Pracy to cykliczne wydarzenie organizowane przez BEST (Board of European Students of Technology) w różnych miastach Polski. Każda edycja łączy świat akademicki z biznesem, tworząc przestrzeń spotkania studentów, absolwentów i pracodawców. BEST AGH Kraków, BEST Warszawa oraz BEST Gdańsk organizują targi, które dają możliwość nawiązania kontaktów i rozpoczęcia kariery w wiodących firmach technologicznych.
+                    </MapDescription>
+                    <SocialMediaList>
+                        <SocialMediaItem href="https://www.facebook.com/BEST.AGH.Krakow" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                            <SocialMediaText>BEST AGH Kraków</SocialMediaText>
+                        </SocialMediaItem>
+                        <SocialMediaItem href="https://www.instagram.com/bestkrk/" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                            <SocialMediaText>BEST AGH Kraków</SocialMediaText>
+                        </SocialMediaItem>
+                        <SocialMediaItem href="https://www.linkedin.com/company/best-agh-krakow/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            <SocialMediaText>BEST AGH Kraków</SocialMediaText>
+                        </SocialMediaItem>
+                    </SocialMediaList>
+                </MapLeftSection>
+                <MapRightSection>
+                    <MapImageWrapper>
+                        <MapImage src={PolandMap} alt="Mapa Polski z zaznaczonymi miastami organizacji Inżynierskich Targów Pracy" />
+                    </MapImageWrapper>
+                </MapRightSection>
+            </MapSection>
         </>
     );
 }

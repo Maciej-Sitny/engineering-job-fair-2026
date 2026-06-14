@@ -250,10 +250,11 @@ const Footer = () => {
           <MenuList>
             <MenuItem><MenuLink to="/o-nas">O nas</MenuLink></MenuItem>
             <MenuItem><MenuLink to="/wystawcy">Wystawcy</MenuLink></MenuItem>
+            <MenuItem><MenuLink to="/oferty-pracy">Oferty pracy</MenuLink></MenuItem>
             <MenuItem><MenuLink to="/harmonogram">Harmonogram</MenuLink></MenuItem>
             <MenuItem><MenuLink to="/#kontakt">Kontakt</MenuLink></MenuItem>
             <MenuItem><MenuLink to="/strefa-firm">Strefa firm</MenuLink></MenuItem>
-            <MenuItem><MenuLink to="/klauzula-cv">Klauzula CV</MenuLink></MenuItem>
+            <MenuItem><MenuLink to="/regulaminy">Regulaminy</MenuLink></MenuItem>
           </MenuList>
         </MenuSection>
 
